@@ -556,3 +556,7 @@ Recommended core statement:
 Optional harder second line:
 
 *Garbage in, garbage out.*
+
+## License
+
+AISA 11.1 BCIO Package © 2026 by [Oleksii Kartashov](https://github.com/oleksiikartashovde-glitch) is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
