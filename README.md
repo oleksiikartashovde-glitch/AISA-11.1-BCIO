@@ -1,4 +1,5 @@
-# AISA 11.1
+# AISA 11.1 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19388359.svg)](https://doi.org/10.5281/zenodo.19388359)
+
 
 *Ontology-driven case analysis across all 13 modules*
 
