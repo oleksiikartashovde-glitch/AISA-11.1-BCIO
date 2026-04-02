@@ -1,0 +1,1721 @@
+{
+  "name": "APEASE",
+  "version": "2.0_L99",
+  "description": "APEASE entry and reference layer. Six criteria with BCIO ID mappings, high-level formulas, and trigger conditions. Activated only by explicit trigger — not default runtime mode. Deep analysis spec: APEASE_FULL_SPEC.json.",
+  "role_in_AISA": "Entry gate for APEASE mode. Answers: should APEASE be activated? Which criterion maps to which BCIO IDs? APEASE is not active by default — requires explicit trigger E1/E2/E3.",
+  "iteration_logic": "APEASE is not a one-time gate but an iterative navigation system. After each wave: re-measure all six criteria, identify which failed thresholds, redesign the intervention using the ontology, re-launch. The ontology provides the solution space; APEASE provides the coordinate system.",
+  "criteria": {
+    "Acceptability": {
+      "code": "A",
+      "what_we_measure": "Acceptability across ALL stakeholders: target group, funders, practitioners, community groups, commercial groups. Primary: % not refusing at first contact (target group). Also: practitioner survey + adherence, funder qualitative assessment, community position analysis.",
+      "formula": "A = (N_total - N_refused) / N_total × 100% | A_norm = A / 100 | A_weighted = w_target × A_target + w_practitioners × A_practitioners + w_funders × A_funders | A_predicted = A_base_analog × context_adjustment_factor (0.7–1.3)",
+      "operability": "Requires pilot contact or literature analogue. Before launch: expert judgement. After pilot: real measurement.",
+      "veto_logic": "Define threshold before launch. If A < threshold: redesign first contact mode or source.",
+      "bcio_terms": [
+        {
+          "id": "BCIO:006088.00.04.ma.r",
+          "label": "healthcare access",
+          "definition": "A <behavioural opportunity> regarding how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:050224.00.02.ma.r",
+          "label": "belief about healthcare accessibility",
+          "definition": "A <belief about one's environment> in terms of how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:006017.01.31.ma",
+          "label": "belief about barriers to a behaviour",
+          "definition": "A <belief> about a factor that could restrict or impede a person from engaging in a behaviour."
+        },
+        {
+          "id": "BCIO:006142.00.02.ma.r.f",
+          "label": "belief about the credibility of a message's source",
+          "definition": "A <belief about message> in terms of whether a verbal, graphic, written or recorded communication is provided by people or institutions who provide reliable information."
+        },
+        {
+          "id": "BCIO:006143.00.02.ma",
+          "label": "belief about message trustworthiness",
+          "definition": "A <belief about message> in terms of whether a verbal, graphic, written or recording communication provides information that can be relied on as honest or truthful."
+        },
+        {
+          "id": "BCIO:006059.00.08.ma.e",
+          "label": "motivation to comply",
+          "definition": "A <behavioural motivation> to act in accordance with the likely approval of others."
+        },
+        {
+          "id": "BCIO:006300.00.00.ma",
+          "label": "approval-based motivation",
+          "definition": "A <need-based motivation> related to gaining or maintaining social approval or a positive self-evaluation."
+        },
+        {
+          "id": "BCIO:050328.03.27.ma",
+          "label": "attitude",
+          "definition": "A <mental disposition> that is an affective attitude or an evaluative belief about something."
+        },
+        {
+          "id": "BCIO:006042.00.02.ma",
+          "label": "normative belief",
+          "definition": "A <perceived norm> regarding whether key others think one should perform a behaviour."
+        },
+        {
+          "id": "BCIO:050935.00.13.ma",
+          "label": "appraisal of social identity",
+          "definition": "An emotional-relevance appraisal> regarding one's social group memberships."
+        },
+        {
+          "id": "BCIO:050715.00.03.ma",
+          "label": "motivational disposition not to change behaviour",
+          "definition": "A <motivational disposition> not to change one’s behaviour pattern."
+        },
+        {
+          "id": "BCIO:050947.00.08.ma.e",
+          "label": "motivation to deviate",
+          "definition": "A <behavioural motivation> to act contrary to likely approval of others."
+        },
+        {
+          "id": "BCIO:006065.00.12.ma.e",
+          "label": "need for autonomy",
+          "definition": "A <psychological need> to have a sense of personal agency and initiative."
+        },
+        {
+          "id": "BCIO:006067.00.12.ma",
+          "label": "need for a sense of safety",
+          "definition": "A <psychological need> to feel safe from threats."
+        },
+        {
+          "id": "BCIO:050607.00.01.ma.r",
+          "label": "belief about the positive health consequences of a behaviour",
+          "definition": "A <belief about health consequences of behaviour> in which the consequences are evaluated as positive."
+        },
+        {
+          "id": "BCIO:006305.02.31.ma",
+          "label": "belief about susceptibility to a threat",
+          "definition": "A <belief> about vulnerability to a threat."
+        },
+        {
+          "id": "BCIO:006019.06.03.ma",
+          "label": "belief about consequences of behaviour",
+          "definition": "A <belief about consequences of an occurrence> in terms of what results from or follows the performance of a behaviour."
+        },
+        {
+          "id": "BCIO:006015.03.27.ma",
+          "label": "awareness",
+          "definition": "A <mental disposition> that is realized by experiencing events, objects, sensory patterns or cognitive representations."
+        },
+        {
+          "id": "BCIO:006052.06.27.ma",
+          "label": "knowledge",
+          "definition": "A <mental disposition> to understand the nature of the world, or a specific aspect of the world, that corresponds to the actual state of the world and is acquired through experience or learning."
+        },
+        {
+          "id": "BCIO:050887.00.01.be.p.ma.sd.r.f",
+          "label": "leadership role",
+          "definition": "A social role in which the holder is given or creates authority to exert influence on other members of a social group."
+        },
+        {
+          "id": "BCIO:010101.00.05.so",
+          "label": "friend",
+          "definition": "A relatedness between person source and the target population that is a person whom the participant knows, likes and trusts, typically exclusive of sexual or family relations."
+        },
+        {
+          "id": "BCIO:044113.00.50.sd.e",
+          "label": "patient communication style",
+          "definition": "A communication style conveying willingness to take time to understand or complete a process."
+        },
+        {
+          "id": "BCIO:044084.00.50.sd",
+          "label": "autonomy-supportive communication style",
+          "definition": "A communication style which aims to promote the recipient's capacity to make their own decisions."
+        },
+        {
+          "id": "BCIO:007075.00.05.bc",
+          "label": "present information from credible influence BCT",
+          "definition": "An <awareness of other people's thoughts, feelings and actions BCT> that presents information from a credible person or organisation to influence the behaviour."
+        },
+        {
+          "id": "BCIO:007074.00.05.bc",
+          "label": "increase awareness of others approval BCT",
+          "definition": "An <awareness of other people's thoughts, feelings and actions BCT> that increases awareness of whether others will like, approve, dislike, or disapprove of the behaviour."
+        },
+        {
+          "id": "BCIO:006157.00.00.ma",
+          "label": "mental plan for coping with barriers",
+          "definition": "A <mental plan for a behaviour> regarding a strategy to deal with conditions that could prevent the performance of a behaviour."
+        },
+        {
+          "id": "BCIO:050952.02.11.ma.e",
+          "label": "willingness to change behaviour",
+          "definition": "A <bodily disposition> to change one's behaviour."
+        },
+        {
+          "id": "BCIO:050798.00.01.ma.e",
+          "label": "willingness to adopt new behaviours",
+          "definition": "A <willingness to change behaviour> to adopt new behaviours."
+        },
+        {
+          "id": "BCIO:006078.00.13.ma",
+          "label": "appraisal of obligation to act",
+          "definition": "An <emotional-relevance appraisal> that represents an evaluation of how much one is personally obliged to respond to an event or person in need."
+        },
+        {
+          "id": "BCIO:006143.00.02.ma",
+          "label": "belief about message trustworthiness",
+          "definition": "A <belief about message> in terms of whether a verbal, graphic, written or recording communication provides information that can be relied on as honest or truthful."
+        }
+      ],
+      "theory_ids": [
+        "RCH:000001",
+        "RCH:000002",
+        "RCH:000003",
+        "RCH:000004",
+        "RCH:000005",
+        "RCH:000008",
+        "RCH:000010",
+        "RCH:000013",
+        "TG:ABC049",
+        "TG:ABC050"
+      ],
+      "theories": [
+        {
+          "id": "RCH:000001",
+          "label": "Diffusion of Innovations",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Diffusion of Innovations absent: text does not report adopter categories or S-curve trajectory. Early majority vs laggard penetration uncharacterised. Reach plateaus after early adopters invisible."
+        },
+        {
+          "id": "RCH:000002",
+          "label": "Threshold Model",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Threshold Model absent: text does not report individual activation thresholds for adoption. Critical mass dynamics and cascade tipping point undetected. Population-level reach non-linear dynamics invisible."
+        },
+        {
+          "id": "RCH:000003",
+          "label": "Two-Step Flow",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Two-Step Flow absent: text does not identify opinion leaders as intermediate reach agents. Direct vs mediated reach pathways indistinguishable. Multiplier effect of key influencers unquantified."
+        },
+        {
+          "id": "RCH:000004",
+          "label": "Selective Exposure Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Selective Exposure Theory absent: text does not report pre-existing attitudes of reached population. Self-selection into intervention by already-motivated individuals undetected. Reach bias invisible."
+        },
+        {
+          "id": "RCH:000005",
+          "label": "RE-AIM Framework",
+          "author": "",
+          "year": "",
+          "gap_pattern": "RE-AIM absent: text does not report representativeness of reached sample. Efficacy-effectiveness gap due to biased reach undetectable. Public health impact of intervention underestimated."
+        },
+        {
+          "id": "RCH:000008",
+          "label": "Health Belief Model",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Health Belief Model absent: text does not report perceived susceptibility or severity as reach determinants. Who self-selects into intervention based on risk perception uncharacterised. Reach skewed toward high-risk perceivers."
+        },
+        {
+          "id": "RCH:000010",
+          "label": "Uses and Gratifications",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Uses and Gratifications absent: text does not report what needs participants sought to satisfy through intervention. Active audience selection creating reach bias uncharacterised."
+        },
+        {
+          "id": "RCH:000013",
+          "label": "Agenda-Setting Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Agenda-Setting absent: text does not report media framing effects on intervention reach. Competing media narratives reducing salience of target behaviour undetected."
+        },
+        {
+          "id": "TG:ABC049",
+          "label": "Volitional Help Sheet Model",
+          "author": "Armitage",
+          "year": "2008",
+          "gap_pattern": "Volitional Help Sheet absent: text does not report barrier-specific implementation intention planning. Generic planning BCT misses individualised barrier-action linkage."
+        },
+        {
+          "id": "TG:ABC050",
+          "label": "Stress and Coping Theory",
+          "author": "Lazarus & Folkman",
+          "year": "1984",
+          "gap_pattern": "Stress and Coping absent: text does not report primary and secondary appraisal independently. Threat appraisal without coping appraisal produces emotional-focused response not problem-focused behaviour change."
+        }
+      ],
+      "original_question": "How far is it acceptable to key stakeholders? Includes: target group, potential funders, practitioners delivering intervention, relevant community and commercial groups.",
+      "stakeholders": {
+        "target_group": {
+          "refusal_consequence": "Low Reach, zero population effect",
+          "measure": "% not refusing at first contact"
+        },
+        "funders": {
+          "refusal_consequence": "No funding → programme not launched",
+          "measure": "Qualitative: willing to fund?"
+        },
+        "practitioners": {
+          "refusal_consequence": "Sabotage, low implementation quality (fidelity)",
+          "measure": "Survey + protocol adherence"
+        },
+        "community_groups": {
+          "refusal_consequence": "Political resistance, PR crisis",
+          "measure": "Public opinion surveys"
+        },
+        "commercial_groups": {
+          "refusal_consequence": "Lawsuits, lobbying against",
+          "measure": "Industry position analysis"
+        }
+      },
+      "factors_target_group": [
+        "Contact mode and channel",
+        "Who makes the offer",
+        "Topic stigma",
+        "Prior experience with similar programmes",
+        "Level of institutional trust",
+        "Voluntary vs coercive",
+        "Timing (crisis vs stable state)",
+        "Cultural and religious appropriateness"
+      ],
+      "factors_practitioners": [
+        "Match with professional identity (TDF domain 3)",
+        "Perceived additional workload",
+        "Trust in evidence base",
+        "Availability of training and support",
+        "Organisational culture"
+      ],
+      "formulas_L99": {
+        "basic": "A = (N_total - N_refused) / N_total × 100%; A_norm = A / 100",
+        "by_subgroup": "A_subgroup_i = (N_total_i - N_refused_i) / N_total_i × 100%",
+        "multi_stakeholder": "A_weighted = w_target × A_target + w_practitioners × A_practitioners + w_funders × A_funders (w_target typically 0.5-0.7)",
+        "predictive": "A_predicted = A_base_analog × context_adjustment_factor (factor: 0.7–1.3)"
+      }
+    },
+    "Practicability": {
+      "code": "P",
+      "what_we_measure": "Three levels: (1) Initial feasibility — can it be launched with setup resources? (2) Scalability — at planned scale? (3) Sustainability — without external support in routine conditions? Pilot with grant ≠ sustainable in routine.",
+      "formula": "P = N_feasible / N_total_steps × 100% | P_weighted = (N_fully + 0.5 × N_conditionally) / N_total × 100% | P_critical = N_critical_feasible / N_critical_steps × 100% | P_sustainable = P_weighted × sustainability_factor (1.0=fully; 0.7=moderate external support; 0.5=grant-dependent)",
+      "operability": "Requires written protocol and resource inventory. Calculable before launch.",
+      "veto_logic": "If P < threshold: identify infeasible steps, find hire/outsource/redesign solution before launch.",
+      "bcio_terms": [
+        {
+          "id": "BCIO:050325.00.03.ma",
+          "label": "psychological behavioural capability",
+          "definition": "A <behavioural capability> that involves psychological abilities."
+        },
+        {
+          "id": "BCIO:006009.01.03.ma",
+          "label": "physical behavioural capability",
+          "definition": "A <behavioural capability> that involves sensory or musculoskeletal abilities."
+        },
+        {
+          "id": "BCIO:006012.01.00.ma",
+          "label": "social skill",
+          "definition": "A <social behavioural capability> acquired through training or practice."
+        },
+        {
+          "id": "BCIO:050839.00.03.be.ma.sd.f",
+          "label": "task complexity",
+          "definition": "A process attribute that is the complexity of thought or behaviour required to achieve a goal."
+        },
+        {
+          "id": "BCIO:006089.03.04.ma",
+          "label": "physical behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves time and parts of the environmental system that do not involve people or organisations."
+        },
+        {
+          "id": "BCIO:006090.00.04.ma",
+          "label": "social behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves the social environmental system."
+        },
+        {
+          "id": "BCIO:006088.00.04.ma.r",
+          "label": "healthcare access",
+          "definition": "A <behavioural opportunity> regarding how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:050224.00.02.ma.r",
+          "label": "belief about healthcare accessibility",
+          "definition": "A <belief about one's environment> in terms of how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:006102.00.14.ma.f",
+          "label": "plan enactment",
+          "definition": "A <bodily process> by which a person attempts to follow the steps in a plan."
+        },
+        {
+          "id": "BCIO:050844.00.01.ma",
+          "label": "action planning",
+          "definition": "<Planning> that has as a part some goal that is specified in terms of some behaviour and a time or place where the behaviour is to be enacted."
+        },
+        {
+          "id": "BCIO:007010.00.17.bc.f",
+          "label": "action planning BCT",
+          "definition": "A <goal directed BCT> that involves making a detailed plan for the performance of the behaviour, which must include at least one of context, frequency, duration or intensity."
+        },
+        {
+          "id": "BCIO:006111.00.05.ma.d",
+          "label": "decision simplification",
+          "definition": "A <cognitive process> used prior to decision-making that reduces the perceived scope or complexity of available options."
+        },
+        {
+          "id": "BCIO:050956.00.00.ma.f",
+          "label": "degree of organisational hierarchy",
+          "definition": "An <organisational attribute> that is the strength and depth of formal authority relations between members of an organisation."
+        },
+        {
+          "id": "BCIO:050963.00.01.ma.f",
+          "label": "belief about accountability for the consequences of an action",
+          "definition": "A <belief about responsibility>  about whether one should be accountable for the outcomes of an event."
+        },
+        {
+          "id": "BCIO:050562.00.12.ma.f",
+          "label": "active goal",
+          "definition": "A <goal> that is being pursued at any one point in time."
+        },
+        {
+          "id": "BCIO:050886.00.31.be.p.ma.sd.e",
+          "label": "extent of past behavioural achievement",
+          "definition": "A personal attribute that is the extent to which the person’s past behaviour has reached or exceeded a standard."
+        },
+        {
+          "id": "BCIO:006043.00.02.ma",
+          "label": "self-efficacy belief for a behaviour and its associated outcomes",
+          "definition": "A <self-efficacy belief> to organise and execute a behaviour and achieve the outcomes associated with this behaviour."
+        },
+        {
+          "id": "BCIO:006154.04.02.ma",
+          "label": "self-efficacy belief for a behaviour",
+          "definition": "A <self-efficacy belief> to organise and execute a behaviour."
+        },
+        {
+          "id": "BCIO:006044.02.03.ma",
+          "label": "situational self-efficacy belief for a behaviour",
+          "definition": "A <self-efficacy belief for a behaviour> when a barrier or facilitator of the behaviour is encountered."
+        },
+        {
+          "id": "BCIO:050709.00.03.ma",
+          "label": "motivational disposition for behavioural maintenance",
+          "definition": "A <motivational disposition> in which the person is motivated to maintain an established behavioural pattern."
+        },
+        {
+          "id": "BCIO:050834.01.09.be.ma.sd",
+          "label": "regulatory behaviour",
+          "definition": "An experience-related behaviour that involves monitoring and acting upon some parts of the person or their environment."
+        },
+        {
+          "id": "BCIO:007017.08.19.bc.f",
+          "label": "monitoring BCT",
+          "definition": "A <behaviour change technique> that involves gathering or using information about performance."
+        },
+        {
+          "id": "BCIO:007023.00.02.bc",
+          "label": "provide feedback on behaviour BCT",
+          "definition": "A <provide feedback BCT> that provides information about the person's previous performance of the behaviour."
+        },
+        {
+          "id": "BCIO:050400.00.03.be.ma.sd.sh",
+          "label": "arranging a healthcare service appointment",
+          "definition": "Utilising healthcare that involves scheduling a time to interact with a person or organisation providing healthcare."
+        },
+        {
+          "id": "BCIO:044120.00.50.sd",
+          "label": "structured communication style",
+          "definition": "A communication style involving the communication content having constituent pre-planned parts."
+        },
+        {
+          "id": "BCIO:050231.00.01.ma.sh",
+          "label": "temporal orientation to the present",
+          "definition": "A <temporal orientation> to focus more on present than future outcomes."
+        },
+        {
+          "id": "BCIO:007002.04.17.bc.sh",
+          "label": "goal setting BCT",
+          "definition": "A <goal directed BCT> that sets goals."
+        },
+        {
+          "id": "BCIO:009000.00.03.bc.be.p.ma.md.se.so.sd.sh",
+          "label": "behaviour change intervention schedule of delivery",
+          "definition": "A BCI attribute that involves its temporal organisation."
+        },
+        {
+          "id": "BCIO:022000.00.03.bc.be.p.ma.md.se.so.sd.d",
+          "label": "behaviour change intervention dose",
+          "definition": "A BCI content attribute that is its amount."
+        },
+        {
+          "id": "BCIO:011000.15.03.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention mode of delivery",
+          "definition": "An attribute of a BCI delivery that is the physical or informational medium through which a BCI is provided."
+        }
+      ],
+      "theory_ids": [
+        "FID:000001",
+        "FID:000002",
+        "FID:000003",
+        "FID:000004",
+        "FID:000005",
+        "FID:000006",
+        "FID:000007",
+        "FID:000008",
+        "FID:000009",
+        "FID:000010"
+      ],
+      "theories": [
+        {
+          "id": "FID:000001",
+          "label": "Principal-Agent Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Principal-Agent Theory absent: text does not report accountability structure between designer and implementer. Competing incentives driving protocol deviation undetected. Fidelity loss attributed to context not agency."
+        },
+        {
+          "id": "FID:000002",
+          "label": "Information Asymmetry",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Information Asymmetry absent: text does not report knowledge differential between implementer and participant. Strategic behaviour by either party undetected. Reported compliance may differ from actual compliance."
+        },
+        {
+          "id": "FID:000003",
+          "label": "Street-Level Bureaucracy",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Street-Level Bureaucracy absent: text does not report frontline implementer adaptations to protocol. Discretionary modification of intervention at delivery point invisible — delivered intervention diverges from designed."
+        },
+        {
+          "id": "FID:000004",
+          "label": "Rule-Following",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Rule-Following absent: text does not report norm clarity or perceived legitimacy of protocol rules. Compliance driven by rule acceptance vs enforcement uncharacterised. Voluntary vs coerced fidelity indistinguishable."
+        },
+        {
+          "id": "FID:000005",
+          "label": "Error Propagation",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Error Propagation absent: text does not report error accumulation across implementation steps. Single-point fidelity measures miss cascading deviations. Compounded deviation from original protocol unquantified."
+        },
+        {
+          "id": "FID:000006",
+          "label": "Implementation Intentions",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Implementation Intentions absent: text does not report specific if-then action plans. Gap between intention and behaviour in barrier situations undetected. Situational failure of volitional control invisible."
+        },
+        {
+          "id": "FID:000007",
+          "label": "Active Implementation Frameworks",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Active Implementation Frameworks absent: text does not assess installation, initial implementation or full implementation stages. Fidelity measured at wrong stage of implementation lifecycle."
+        },
+        {
+          "id": "FID:000008",
+          "label": "Program Differentiation",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Program Differentiation absent: text does not distinguish active components from inert delivery features. Cannot isolate which elements drive effect — replication package undefined."
+        },
+        {
+          "id": "FID:000009",
+          "label": "Normalisation Process Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Normalisation Process Theory absent: text does not report embedding of intervention in routine practice. Sustainability of implementation after trial end unassessable. Normalisation as fidelity outcome invisible."
+        },
+        {
+          "id": "FID:000010",
+          "label": "Institutional Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Institutional Theory absent: text does not report institutional pressures shaping implementation. Isomorphic forces (coercive, normative, mimetic) driving superficial rather than substantive compliance invisible."
+        }
+      ],
+      "original_question": "Can it be implemented at scale in the intended context, with available material and human resources? What would need to be done to ensure resources and personnel are in place, and IS THE INTERVENTION SUSTAINABLE?",
+      "three_levels": {
+        "initial_feasibility": "Can it be launched with setup resources?",
+        "scalability": "Can it be implemented at planned scale?",
+        "sustainability": "Can it be maintained without external support in routine conditions? (Critical: pilot with grant ≠ sustainable in routine)"
+      },
+      "formulas_L99": {
+        "basic": "P = N_feasible / N_total_steps × 100%",
+        "weighted": "P_weighted = (N_fully_feasible + 0.5 × N_conditionally) / N_total × 100%",
+        "critical_steps": "P_critical = N_critical_feasible / N_critical_steps × 100%",
+        "sustainable": "P_sustainable = P_weighted × sustainability_factor",
+        "sustainability_factors": {
+          "fully_sustainable": 1.0,
+          "moderate_external_support": 0.7,
+          "grant_dependent": 0.5
+        }
+      }
+    },
+    "Effectiveness": {
+      "code": "E",
+      "what_we_measure": "Two components: (1) Reach — % of target group actually exposed. (2) Effect size among reached — behaviour/outcome change in participants. Population effect = Reach × Effect size. Study with d=0.80 at Reach=20% < study with d=0.40 at Reach=70% for population.",
+      "formula": "E_binary = outcome(T) >= theta → {1,0} | Cohen's d = (M_int - M_ctrl) / SD_pooled | ARR = R_control - R_intervention | NNT = 1/ARR | E_population = Reach × ARR × N_target | E_norm = min(d / d_max, 1)",
+      "operability": "Before launch: forecast from meta-analyses and analogues. After launch: real measurement at T.",
+      "veto_logic": "If predicted effect size below theta: pilot on N=30 before full deployment.",
+      "bcio_terms": [
+        {
+          "id": "BCIO:002000.00.00.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention outcome behaviour",
+          "definition": "Human behaviour that is an intervention outcome."
+        },
+        {
+          "id": "BCIO:050209.02.17.be.ma.sd",
+          "label": "individual human behaviour change",
+          "definition": "A process that results in a difference in enactment of some individual human behaviour or individual human behaviour pattern from what would have been the case otherwise."
+        },
+        {
+          "id": "BCIO:006000.11.20.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention mechanism of action",
+          "definition": "A process that is causally active in the relationship between a BCI scenario and its outcome behaviour."
+        },
+        {
+          "id": "BCIO:050979.00.10.ma",
+          "label": "mechanism of action through feedback process to a person",
+          "definition": "A <behaviour change intervention mechanism of action> in which the causal influence occurs in a feedback process to a person."
+        },
+        {
+          "id": "BCIO:050853.00.00.ma",
+          "label": "comparison of current behaviour with a standard",
+          "definition": "<Comparison of current situation with a standard> where the focus is on current behaviour."
+        },
+        {
+          "id": "BCIO:050768.00.04.ma",
+          "label": "self-regulation through behavioural feedback",
+          "definition": "A <self-regulation of behaviour> that is informed by feedback."
+        },
+        {
+          "id": "BCIO:006136.00.02.ma.e",
+          "label": "intrinsic motivation",
+          "definition": "<Autonomous motivation> due to a behaviour's inherent enjoyment, satisfaction or benefits to oneself."
+        },
+        {
+          "id": "BCIO:006307.01.08.ma.e",
+          "label": "extrinsic motivation",
+          "definition": "<Behaviour motivation> that is based on external rewards, punishments or pressure regarding a behaviour."
+        },
+        {
+          "id": "BCIO:006154.04.02.ma",
+          "label": "self-efficacy belief for a behaviour",
+          "definition": "A <self-efficacy belief> to organise and execute a behaviour."
+        },
+        {
+          "id": "BCIO:050576.00.03.ma",
+          "label": "behaviour maintenance self-efficacy",
+          "definition": "A <self-efficacy belief for a behaviour> that continues a behaviour pattern."
+        },
+        {
+          "id": "BCIO:050584.00.03.ma",
+          "label": "behavioural recovery self-efficacy",
+          "definition": "A <self-efficacy belief for a behaviour> following a lapse in that behaviour"
+        },
+        {
+          "id": "BCIO:006125.00.06.ma.e",
+          "label": "operant conditioning",
+          "definition": "<Associative learning> in which the likelihood of a particular behavioural response is influenced by the past consequences associated with performing that behaviour."
+        },
+        {
+          "id": "BCIO:006119.07.04.ma.d",
+          "label": "associative learning",
+          "definition": "<Learning> that involves changing the strength of association between two or more mental processes."
+        },
+        {
+          "id": "BCIO:006309.00.06.ma.sh",
+          "label": "habit learning",
+          "definition": "<Associative learning> that involves strengthening an association between a stimulus and an impulse through repetition of co-occurrence of the stimulus and the behaviour."
+        },
+        {
+          "id": "BCIO:006158.00.15.be.ma.sd",
+          "label": "habitual behaviour",
+          "definition": "An <individual human behaviour> that results from a learnt stimulus-behaviour co-occurrence."
+        },
+        {
+          "id": "BCIO:050965.02.06.ma.e",
+          "label": "generalisation in learning",
+          "definition": "<Associative learning> in which prior learning that an antecedent stimulus signals certain consequences of a behaviour spreads to a stimulus or behaviour that differs from the original stimulus or behaviour."
+        },
+        {
+          "id": "BCIO:050239.05.32.ma.d",
+          "label": "learning",
+          "definition": "A <mental process> in which a lasting mental or behavioural change occurs as the result of experience."
+        },
+        {
+          "id": "BCIO:013000.00.00.bc.be.p.ma.md.se.so.sd.e",
+          "label": "participant engagement with behaviour change intervention",
+          "definition": "Participant engagement with intervention, where the intervention focuses on changing behaviour."
+        },
+        {
+          "id": "BCIO:050947.00.08.ma.e",
+          "label": "motivation to deviate",
+          "definition": "A <behavioural motivation> to act contrary to likely approval of others."
+        },
+        {
+          "id": "BCIO:006023.00.31.ma.e",
+          "label": "belief about gain",
+          "definition": "A <belief> about the existence of an increase from an initial reference point."
+        },
+        {
+          "id": "BCIO:006027.00.31.ma.e",
+          "label": "belief about reduction",
+          "definition": "A <belief> about the existence of a decrease from an initial reference point."
+        },
+        {
+          "id": "BCIO:006019.06.03.ma",
+          "label": "belief about consequences of behaviour",
+          "definition": "A <belief about consequences of an occurrence> in terms of what results from or follows the performance of a behaviour."
+        },
+        {
+          "id": "BCIO:020000.00.07.bc.be.p.ma.md.se.so.sd.f",
+          "label": "behaviour change intervention evaluation study risk of bias or error",
+          "definition": "An information content entity that is about the likelihood of the BCI evaluation finding misrepresenting the outcome behaviour."
+        },
+        {
+          "id": "BCIO:018000.01.00.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention evaluation study",
+          "definition": "An intervention evaluation study of a BCI scenario."
+        },
+        {
+          "id": "BCIO:024000.00.01.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention evaluation study plan",
+          "definition": "A plan for a BCI evaluation study."
+        },
+        {
+          "id": "BCIO:050551.01.04.bc.be.p.ma.md.se.so.sd.r",
+          "label": "research study sample",
+          "definition": "A population whose behaviour is studied in a research study."
+        },
+        {
+          "id": "BCIO:007017.08.19.bc.f",
+          "label": "monitoring BCT",
+          "definition": "A <behaviour change technique> that involves gathering or using information about performance."
+        },
+        {
+          "id": "BCIO:050603.00.31.ma",
+          "label": "belief about the discrepancy between one?s current and target state",
+          "definition": "A <belief> about the discrepancy between one’s current and target state."
+        },
+        {
+          "id": "BCIO:050328.03.27.ma",
+          "label": "attitude",
+          "definition": "A <mental disposition> that is an affective attitude or an evaluative belief about something."
+        },
+        {
+          "id": "BCIO:006016.03.27.ma",
+          "label": "behavioural intention",
+          "definition": "A <mental disposition> to commit to enact or not enact a behaviour."
+        }
+      ],
+      "theory_ids": [
+        "ENG:000001",
+        "ENG:000002",
+        "ENG:000003",
+        "ENG:000004",
+        "ENG:000005",
+        "ENG:000006",
+        "ENG:000007",
+        "ENG:000008",
+        "ENG:000009",
+        "ENG:000014"
+      ],
+      "theories": [
+        {
+          "id": "ENG:000001",
+          "label": "Self-Determination Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Self-Determination Theory absent: text does not report autonomy, competence or relatedness satisfaction. Motivational quality (controlled vs autonomous) invisible — sustained engagement vs compliance indistinguishable."
+        },
+        {
+          "id": "ENG:000002",
+          "label": "ABC Model / REBT",
+          "author": "",
+          "year": "",
+          "gap_pattern": "ABC Model / REBT absent: text does not report irrational beliefs mediating between activating event and consequence. B-layer (belief filter) uncharacterised — emotional and behavioural consequences appear stimulus-driven."
+        },
+        {
+          "id": "ENG:000003",
+          "label": "Prospect Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Prospect Theory absent: text does not report loss vs gain framing of incentives or outcomes. Reference point shifts undetected. Loss aversion as driver of engagement or avoidance invisible."
+        },
+        {
+          "id": "ENG:000004",
+          "label": "Flow Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Flow Theory absent: text does not report challenge-skill balance or absorption state. Engagement quality (flow vs anxiety vs boredom) uncharacterised. Intervention dose calibrated to wrong activation zone."
+        },
+        {
+          "id": "ENG:000005",
+          "label": "Universal Law of Generalization",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Universal Law of Generalisation absent: text does not assess transfer of learned behaviour to new contexts. Generalisation gradient from training context to target context unquantified — ecological validity gap."
+        },
+        {
+          "id": "ENG:000006",
+          "label": "Social Learning Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Social Learning Theory absent: text does not report modelling, vicarious reinforcement or observational pathways. Social transmission of behaviour undetected. Peer effects on engagement invisible."
+        },
+        {
+          "id": "ENG:000007",
+          "label": "Nudge / Choice Architecture",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Nudge / Choice Architecture absent: text does not report default option structure or choice environment design. Engagement through automatic rather than deliberate pathways uncharacterised."
+        },
+        {
+          "id": "ENG:000008",
+          "label": "Psychological Reactance Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Psychological Reactance absent: text does not report perceived autonomy threat. Backfire engagement (increased resistance) indistinguishable from non-response. Reactance as mechanism for null result invisible."
+        },
+        {
+          "id": "ENG:000009",
+          "label": "Self-Efficacy Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Self-Efficacy Theory absent: text does not report self-efficacy beliefs for target behaviour. Confidence as prerequisite for engagement unassessed — low self-efficacy as barrier remains undetected."
+        },
+        {
+          "id": "ENG:000014",
+          "label": "Operant Conditioning",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Operant Conditioning absent: text does not report reinforcement schedule type or contingency structure. Engagement as function of reinforcement pattern uncharacterised — extinction risk after programme end unassessed."
+        }
+      ],
+      "original_question": "How effective is it (likely to be) in achieving policy objectives? How far will it REACH the intended target group and how large an effect will it have on those who are reached?",
+      "two_components": {
+        "reach": "% of target group actually reached by the intervention",
+        "effect_size_among_reached": "How much behaviour/outcome changes in those who participated",
+        "population_effect": "Reach × Effect size among reached = key metric for policies"
+      },
+      "outcome_specificity": {
+        "unacceptable": "improvement in condition",
+        "insufficient": "reduction in depression",
+        "operational": "reduction in PHQ-9 by ≥5 points at 12 weeks, verified by repeat measurement"
+      },
+      "formulas_L99": {
+        "binary": "E_binary = outcome(T) >= theta → {1, 0}",
+        "cohens_d": "d = (M_intervention - M_control) / SD_pooled; SD_pooled = sqrt(((n1-1)×SD1² + (n2-1)×SD2²) / (n1+n2-2))",
+        "d_interpretation": {
+          "negligible": "<0.2",
+          "small": "0.2-0.5",
+          "medium": "0.5-0.8",
+          "large": ">0.8"
+        },
+        "binary_outcomes": "RR = (events_int/N_int)/(events_ctrl/N_ctrl); ARR = R_control - R_int; NNT = 1/ARR",
+        "population_effect": "E_population = Reach × ARR × N_target_population",
+        "normalised": "E_norm = min(d / d_max, 1) where d_max set by context (typically 1.5–2.0)"
+      }
+    },
+    "Affordability": {
+      "code": "Af",
+      "what_we_measure": "Three levels: (1) Cost_inaction — what is currently spent per person due to the problem. (2) Cost_intervention — direct + indirect + setup costs. (3) Saving_projected — Cost_inaction × effect_size_reduction. Af_net = Cost_inaction − Cost_intervention. ROI = (Saving − Cost) / Cost × 100%.",
+      "formula": "Af_total = (C_direct + C_indirect) × N + C_setup | Af_net = Cost_inaction - Af_total | ROI = (Saving_projected - Af_total) / Af_total × 100% | Af_norm = 1 - min(Af_total / Budget_ceiling, 1) | Cost_inaction(T) = Cost_inaction_year1 × Σ(1+g)^t",
+      "operability": "Calculable from budget and operational plan before launch. Pure arithmetic.",
+      "veto_logic": "If Af_norm < threshold: redesign mode of delivery, source, or dose. Scale economy analysis required.",
+      "bcio_terms": [
+        {
+          "id": "BCIO:022000.00.03.bc.be.p.ma.md.se.so.sd.d",
+          "label": "behaviour change intervention dose",
+          "definition": "A BCI content attribute that is its amount."
+        },
+        {
+          "id": "BCIO:009000.00.03.bc.be.p.ma.md.se.so.sd.sh",
+          "label": "behaviour change intervention schedule of delivery",
+          "definition": "A BCI attribute that involves its temporal organisation."
+        },
+        {
+          "id": "BCIO:011000.15.03.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention mode of delivery",
+          "definition": "An attribute of a BCI delivery that is the physical or informational medium through which a BCI is provided."
+        },
+        {
+          "id": "BCIO:011003.00.01.md",
+          "label": "face to face mode of delivery",
+          "definition": "Human interactional mode of delivery that involves an intervention source and recipient being together in the same location and communicating directly."
+        },
+        {
+          "id": "BCIO:011010.17.06.md",
+          "label": "electronic mode of delivery",
+          "definition": "Informational mode of delivery that involves electronic technology in the presentation of information to an intervention recipient."
+        },
+        {
+          "id": "BCIO:050556.00.06.md",
+          "label": "mass media mode of delivery",
+          "definition": "Informational mode of delivery of radio broadcast, television, online press and printed press to a mass audience."
+        },
+        {
+          "id": "BCIO:026000.00.03.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention physical setting",
+          "definition": "A physical environment in which a BCI is delivered."
+        },
+        {
+          "id": "BCIO:010000.04.10.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention source",
+          "definition": "A role played by a person, population or organisation that provides a BCI."
+        },
+        {
+          "id": "BCIO:030000.00.10.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention study investigator",
+          "definition": "A role played by a person that contributes substantively to production or reporting of a BCI evaluation study."
+        },
+        {
+          "id": "BCIO:050956.00.00.ma.f",
+          "label": "degree of organisational hierarchy",
+          "definition": "An <organisational attribute> that is the strength and depth of formal authority relations between members of an organisation."
+        },
+        {
+          "id": "BCIO:050839.00.03.be.ma.sd.f",
+          "label": "task complexity",
+          "definition": "A process attribute that is the complexity of thought or behaviour required to achieve a goal."
+        },
+        {
+          "id": "BCIO:050551.01.04.bc.be.p.ma.md.se.so.sd.r",
+          "label": "research study sample",
+          "definition": "A population whose behaviour is studied in a research study."
+        },
+        {
+          "id": "BCIO:050976.00.14.be.p.ma.sd",
+          "label": "number of people in a population",
+          "definition": "A data item about the number of people in a population."
+        },
+        {
+          "id": "BCIO:050400.00.03.be.ma.sd.sh",
+          "label": "arranging a healthcare service appointment",
+          "definition": "Utilising healthcare that involves scheduling a time to interact with a person or organisation providing healthcare."
+        },
+        {
+          "id": "BCIO:006089.03.04.ma",
+          "label": "physical behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves time and parts of the environmental system that do not involve people or organisations."
+        },
+        {
+          "id": "BCIO:044120.00.50.sd",
+          "label": "structured communication style",
+          "definition": "A communication style involving the communication content having constituent pre-planned parts."
+        },
+        {
+          "id": "BCIO:007010.00.17.bc.f",
+          "label": "action planning BCT",
+          "definition": "A <goal directed BCT> that involves making a detailed plan for the performance of the behaviour, which must include at least one of context, frequency, duration or intensity."
+        },
+        {
+          "id": "BCIO:007096.00.07.bc.sh",
+          "label": "context-specific repetition of behaviour BCT",
+          "definition": "An <advise specific behaviour BCT> that advises the person to repeat the behaviour in the same context."
+        },
+        {
+          "id": "BCIO:011064.00.14.md.e",
+          "label": "gamification mode of delivery",
+          "definition": "Mode of delivery that involves application of typical elements of game playing  to other areas of activity, typically as an online marketing technique to encourage engagement with a product or service."
+        },
+        {
+          "id": "BCIO:050684.00.00.ma.e.sh",
+          "label": "intermittent schedule of reinforcement",
+          "definition": "A <schedule of reinforcement> in which the event following the behaviour occurs on some but not all occasions."
+        },
+        {
+          "id": "BCIO:050887.00.01.be.p.ma.sd.r.f",
+          "label": "leadership role",
+          "definition": "A social role in which the holder is given or creates authority to exert influence on other members of a social group."
+        },
+        {
+          "id": "BCIO:007034.04.02.bc",
+          "label": "arrange support BCT",
+          "definition": "A <social support BCT> that organises support from another for the person."
+        },
+        {
+          "id": "BCIO:050950.00.04.ma.r.e",
+          "label": "social learning",
+          "definition": "<Learning> that involves a social influence process."
+        },
+        {
+          "id": "BCIO:050488.00.09.be.p.ma.sd.d.r",
+          "label": "personal history part of intervention exposure",
+          "definition": "A personal history part  that includes exposure to one or more interventions."
+        },
+        {
+          "id": "BCIO:007055.00.04.bc.e",
+          "label": "demonstrate the behaviour BCT",
+          "definition": "A <guide how to perform behaviour BCT> that provides an observable sample of the performance of the behaviour for the person to aspire to or imitate."
+        },
+        {
+          "id": "BCIO:007002.04.17.bc.sh",
+          "label": "goal setting BCT",
+          "definition": "A <goal directed BCT> that sets goals."
+        },
+        {
+          "id": "BCIO:007017.08.19.bc.f",
+          "label": "monitoring BCT",
+          "definition": "A <behaviour change technique> that involves gathering or using information about performance."
+        },
+        {
+          "id": "BCIO:050231.00.01.ma.sh",
+          "label": "temporal orientation to the present",
+          "definition": "A <temporal orientation> to focus more on present than future outcomes."
+        },
+        {
+          "id": "BCIO:006111.00.05.ma.d",
+          "label": "decision simplification",
+          "definition": "A <cognitive process> used prior to decision-making that reduces the perceived scope or complexity of available options."
+        },
+        {
+          "id": "BCIO:050562.00.12.ma.f",
+          "label": "active goal",
+          "definition": "A <goal> that is being pursued at any one point in time."
+        }
+      ],
+      "theory_ids": [
+        "DOS:000001",
+        "DOS:000002",
+        "DOS:000003",
+        "DOS:000004",
+        "DOS:000005",
+        "DOS:000006",
+        "DOS:000007",
+        "DOS:000008",
+        "DOS:000009",
+        "DOS:000011"
+      ],
+      "theories": [
+        {
+          "id": "DOS:000001",
+          "label": "Mere Exposure Effect",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Mere Exposure Effect absent: text does not report exposure frequency or repetition count. Dose module cannot distinguish novelty from familiarity effects. Engagement through repeated exposure is undetectable."
+        },
+        {
+          "id": "DOS:000002",
+          "label": "Diminishing Marginal Returns",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Diminishing Marginal Returns absent: text does not report dose-response curve shape. Assumption of linear dose-effect relationship persists unchallenged. Optimal dose threshold not identifiable."
+        },
+        {
+          "id": "DOS:000003",
+          "label": "Cognitive Load Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Cognitive Load Theory absent: text does not report information density or working memory demands of intervention materials. Dose of cognitive complexity unquantified — overload risk invisible."
+        },
+        {
+          "id": "DOS:000004",
+          "label": "Yerkes-Dodson Law",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Yerkes-Dodson Law absent: text does not report arousal level of participants. Optimal activation zone for performance not assessed. Under- or over-stimulation indistinguishable from null effect."
+        },
+        {
+          "id": "DOS:000005",
+          "label": "Dose-Response Relationship",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Dose-Response Relationship absent: no quantitative dose-outcome mapping reported. Cannot assess whether effect is threshold, linear or saturation type. Dose optimisation impossible without this data."
+        },
+        {
+          "id": "DOS:000006",
+          "label": "Weber-Fechner Law",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Weber-Fechner Law absent: text does not report perceptual sensitivity to incremental dose changes. Subjective magnitude of dose change uncharacterised — same objective dose change may be imperceptible."
+        },
+        {
+          "id": "DOS:000007",
+          "label": "Habituation/Sensitization",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Habituation/Sensitization absent: text does not report change in response across repeated exposures. Cannot distinguish adaptation from genuine behaviour change. Tolerance to intervention dose invisible."
+        },
+        {
+          "id": "DOS:000008",
+          "label": "Priming Effect",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Priming Effect absent: text does not report prior stimulus context or associative pre-exposure. Subliminal dose of framing unaccounted for. Cannot detect how antecedent stimuli shaped measured response."
+        },
+        {
+          "id": "DOS:000009",
+          "label": "Allostatic Load Model",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Allostatic Load absent: text does not report cumulative stress burden on participants. Chronic overload as explanation for non-response or dropout undetectable."
+        },
+        {
+          "id": "DOS:000011",
+          "label": "Hormesis",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Hormesis absent: text does not test low-dose stimulation vs high-dose inhibition. U-shaped or inverted-U dose-response not considered. Potentially beneficial low-dose effects classified as null."
+        }
+      ],
+      "original_question": "How far can it be afforded when delivered at the scale intended? Can the necessary budget be found? Will it provide a good return on investment?",
+      "three_levels": {
+        "level_1_cost_of_inaction": {
+          "what": "What is currently spent per person in the target population due to the problem.",
+          "components": {
+            "medical": "Hospitalisations, outpatient, drugs, diagnostics, emergency, rehabilitation",
+            "productivity": "Absenteeism (days absent) + presenteeism (productivity loss while present) + early disability + premature death",
+            "social_transfers": "Disability benefits, housing subsidies, communal subsidies",
+            "legal": "Law enforcement, judicial costs — applicable for addictions, aggressive behaviour, DUI",
+            "educational": "Grade repetition, dropout, academic underperformance — for child/youth problems",
+            "burden_of_disease": "DALY/QALY: YLD (years lived with disability) + YLL (years of life lost)",
+            "population_economic": "Employment, consumption, communal expenditure, demand/supply levels — for large-scale social problems"
+          }
+        },
+        "level_2_cost_of_intervention": {
+          "direct_per_participant": "Specialist time (hours × rate × overhead), materials, premises rental, transport, IT per user, participant costs (transport, time, income loss)",
+          "indirect_overhead": "Staff training (including time), supervision, quality control, administration, monitoring and evaluation",
+          "setup_costs": "Protocol and materials development, IT infrastructure (one-time), initial staff training, piloting, ethics and regulatory approval"
+        },
+        "level_3_projected_saving": {
+          "formula": "Saving_projected = Cost_inaction_per_person × N × effect_size_reduction × T_horizon"
+        }
+      },
+      "formulas_L99": {
+        "cost_inaction_full": "Cost_inaction = (C_medical + C_productivity + C_social + C_legal + C_educational) × N × T_horizon",
+        "af_total": "Af_total = (C_direct + C_indirect) × N + C_setup",
+        "saving_projected": "Saving_projected = Cost_inaction × effect_size_reduction",
+        "af_net": "Af_net = Cost_inaction - Af_total (positive = economically justified)",
+        "roi": "ROI = (Saving_projected - Af_total) / Af_total × 100%",
+        "cost_per_qaly": "Cost_per_QALY = Af_total / (QALY_gained_per_person × N)",
+        "af_norm": "Af_norm = 1 - min(Af_total / Budget_ceiling, 1)",
+        "inaction_temporal": "Cost_inaction(T) = Cost_inaction_year1 × Σ(1+g)^t for t=0..T-1 where g = annual growth rate (typically 5-15% for chronic conditions)"
+      },
+      "closed_loop": "Inaction generates accumulating Spill-over AE (mortality, chronification, social degradation, problem transmission) → each AE has monetary cost → total = Cost_inaction → Cost_inaction grows non-linearly with chronification → Af_net = Cost_inaction - Af_total → justifies intervention"
+    },
+    "Side_effects": {
+      "code": "S",
+      "what_we_measure": "Four quadrants: (1) Adverse AE of intervention. (2) Beneficial spillover of intervention (halo, social contagion, family). (3) Adverse AE of inaction (chronification, mortality, social degradation). (4) Beneficial spillover of inaction (rare: antagonistic intervention effect). All four quadrants required. Ignoring positive spillover = systematic underestimation.",
+      "formula": "S_adverse_int = Σ P(AE_i) × severity(AE_i) | S_weighted = Σ P(AE_i) × severity(AE_i) × reversibility_weight | S_beneficial_int = Σ P(BE_j) × magnitude(BE_j) | S_adverse_inaction = Σ P(AE_k) × severity(AE_k) | S_net = (S_adverse_inaction - S_adverse_intervention) + S_beneficial_intervention | S_norm = 1 - S_adverse_intervention / S_max | S_norm_adjusted = min(S_norm + S_beneficial_int / S_max × 0.2, 1.0)",
+      "operability": "Requires Delphi, ethics review, or literature review to catalogue adverse effects. Before launch: expert judgement.",
+      "veto_logic": "If S_norm < threshold: redesign to remove high-severity pathways. Mandatory stopping rules.",
+      "bcio_terms": [
+        {
+          "id": "BCIO:020000.00.07.bc.be.p.ma.md.se.so.sd.f",
+          "label": "behaviour change intervention evaluation study risk of bias or error",
+          "definition": "An information content entity that is about the likelihood of the BCI evaluation finding misrepresenting the outcome behaviour."
+        },
+        {
+          "id": "BCIO:050947.00.08.ma.e",
+          "label": "motivation to deviate",
+          "definition": "A <behavioural motivation> to act contrary to likely approval of others."
+        },
+        {
+          "id": "BCIO:050716.00.03.ma",
+          "label": "motivational disposition to change behaviour",
+          "definition": "A <motivational disposition> to change one’s behaviour pattern."
+        },
+        {
+          "id": "BCIO:050715.00.03.ma",
+          "label": "motivational disposition not to change behaviour",
+          "definition": "A <motivational disposition> not to change one’s behaviour pattern."
+        },
+        {
+          "id": "BCIO:050717.00.12.ma",
+          "label": "need for comfort",
+          "definition": "A <psychological need> to feel comfortable."
+        },
+        {
+          "id": "BCIO:050718.00.12.ma",
+          "label": "need to hold a world view",
+          "definition": "A <psychological need> to hold a set of beliefs about the wider social environment."
+        },
+        {
+          "id": "BCIO:006027.00.31.ma.e",
+          "label": "belief about reduction",
+          "definition": "A <belief> about the existence of a decrease from an initial reference point."
+        },
+        {
+          "id": "BCIO:006305.02.31.ma",
+          "label": "belief about susceptibility to a threat",
+          "definition": "A <belief> about vulnerability to a threat."
+        },
+        {
+          "id": "BCIO:050935.00.13.ma",
+          "label": "appraisal of social identity",
+          "definition": "An emotional-relevance appraisal> regarding one's social group memberships."
+        },
+        {
+          "id": "BCIO:006090.00.04.ma",
+          "label": "social behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves the social environmental system."
+        },
+        {
+          "id": "BCIO:006001.09.03.ma",
+          "label": "social environmental system",
+          "definition": "An <environmental system> that consists of people, their pets, social and cultural institutions and processes that influence the life of people and social groups."
+        },
+        {
+          "id": "BCIO:050963.00.01.ma.f",
+          "label": "belief about accountability for the consequences of an action",
+          "definition": "A <belief about responsibility>  about whether one should be accountable for the outcomes of an event."
+        },
+        {
+          "id": "BCIO:050956.00.00.ma.f",
+          "label": "degree of organisational hierarchy",
+          "definition": "An <organisational attribute> that is the strength and depth of formal authority relations between members of an organisation."
+        },
+        {
+          "id": "ADDICTO:0001378.00.11.bc.be.p.ma.md.se.so.sd.d",
+          "label": "drug withdrawal syndrome",
+          "definition": "A bodily disposition to undergo pathological processes resulting from cessation of a substance."
+        },
+        {
+          "id": "ADDICTO:0000511.00.16.bc.be.p.ma.md.se.so.sd.d",
+          "label": "subjective craving",
+          "definition": "A subjective affective feeling involving a strong desire or urge."
+        },
+        {
+          "id": "BCIO:007087.00.03.bc",
+          "label": "arrange satiation BCT",
+          "definition": "An <expose to stimulus BCT> that provides sustained exposure to a stimulus to reduce or extinguish an unwanted behaviour."
+        },
+        {
+          "id": "BCIO:050227.00.27.ma.d.e",
+          "label": "disengagement due to workload",
+          "definition": "A <mental disposition> to be detached from other people due to exhaustion experienced in one's working environment."
+        },
+        {
+          "id": "BCIO:050839.00.03.be.ma.sd.f",
+          "label": "task complexity",
+          "definition": "A process attribute that is the complexity of thought or behaviour required to achieve a goal."
+        },
+        {
+          "id": "BCIO:006109.00.16.ma.d",
+          "label": "feeling an urge",
+          "definition": "A <subjective affective feeling> that  arises when an impulse to enact a behaviour is activated but not immediately acted upon."
+        },
+        {
+          "id": "BCIO:007121.00.11.bc",
+          "label": "vicarious punishment BCT",
+          "definition": "An <increase awareness of consequences BCT> that prompts observation of another person being punished when they perform the behaviour."
+        },
+        {
+          "id": "BCIO:007189.04.01.bc",
+          "label": "promise aversive consequence for behaviour BCT",
+          "definition": "A <promise consequence for behaviour BCT> where the consequence is aversive."
+        },
+        {
+          "id": "BCIO:007195.02.01.bc",
+          "label": "promise aversive consequence for outcome of behaviour BCT",
+          "definition": "A <promise consequence for outcome of behaviour BCT> where the consequence is aversive."
+        },
+        {
+          "id": "BCIO:007073.00.05.bc",
+          "label": "prompt social comparison BCT",
+          "definition": "An <awareness of other people's thoughts, feelings and actions BCT> that draws attention to other people's behaviour and compares it with the person's own behaviour."
+        },
+        {
+          "id": "BCIO:050721.00.03.ma",
+          "label": "negative reinforcement process",
+          "definition": "A <reinforcement process> in which the likelihood of behaviour is increased it being followed by termination or avoidance of a negatively appraised behaviour."
+        },
+        {
+          "id": "BCIO:006003.00.08.ma",
+          "label": "friendship network",
+          "definition": "A <social environmental system> that consists of persons who share a bond of mutual affection and are in contact or communication."
+        },
+        {
+          "id": "BCIO:050701.00.31.ma",
+          "label": "low self-efficacy",
+          "definition": "An <personal attribute> of self-efficacy belief that is low."
+        },
+        {
+          "id": "BCIO:006066.00.12.ma",
+          "label": "need for self-esteem",
+          "definition": "A <psychological need> to have a positive evaluation of oneself and one's qualities and characteristics."
+        },
+        {
+          "id": "BCIO:006067.00.12.ma",
+          "label": "need for a sense of safety",
+          "definition": "A <psychological need> to feel safe from threats."
+        },
+        {
+          "id": "BCIO:036072.01.07.be.ma.sd",
+          "label": "antisocial behaviour",
+          "definition": "A socially-related behaviour that a population judges to be is contrary to the laws or accepted current norms of social conduct within a specific social context and causes annoyance and or disapproval in others."
+        },
+        {
+          "id": "BCIO:006019.06.03.ma",
+          "label": "belief about consequences of behaviour",
+          "definition": "A <belief about consequences of an occurrence> in terms of what results from or follows the performance of a behaviour."
+        }
+      ],
+      "theory_ids": [
+        "ENG:000008",
+        "TG:EFF005",
+        "TG:EFF006",
+        "TG:EFF007",
+        "TG:EFF008",
+        "TG:PAR009",
+        "TG:PAR010",
+        "TG:BIAS016",
+        "TG:ABC033",
+        "TG:ABC034"
+      ],
+      "theories": [
+        {
+          "id": "ENG:000008",
+          "label": "Psychological Reactance Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Psychological Reactance absent: text does not report perceived autonomy threat. Backfire engagement (increased resistance) indistinguishable from non-response. Reactance as mechanism for null result invisible."
+        },
+        {
+          "id": "TG:EFF005",
+          "label": "Boomerang Effect",
+          "author": "Brehm",
+          "year": "1966",
+          "gap_pattern": "Intervention activates reactance (050947) instead of compliance: engagement reverses. Autonomy threat triggers motivation to deviate."
+        },
+        {
+          "id": "TG:EFF006",
+          "label": "Sleeper Effect",
+          "author": "Hovland & Weiss",
+          "year": "1951",
+          "gap_pattern": "Sleeper Effect absent: delayed persuasion from initially discounted source invisible. Short-term outcome measurement misses later effect emergence as source cue dissipates."
+        },
+        {
+          "id": "TG:EFF007",
+          "label": "Bystander Effect",
+          "author": "Darley & Latane",
+          "year": "1968",
+          "gap_pattern": "Accountability (050963) diffuses with group size: individual responsibility felt by none."
+        },
+        {
+          "id": "TG:EFF008",
+          "label": "Spotlight Effect",
+          "author": "Gilovich et al.",
+          "year": "2000",
+          "gap_pattern": "Spotlight Effect absent: self-consciousness about performance in intervention context inflating social desirability bias invisible."
+        },
+        {
+          "id": "TG:PAR009",
+          "label": "Catch-22",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Rule excludes possibility of using exception — autonomy and accountability loop"
+        },
+        {
+          "id": "TG:PAR010",
+          "label": "Abilene Paradox",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Group collectively acts against individual preferences — social reach distorts individual engagement"
+        },
+        {
+          "id": "TG:BIAS016",
+          "label": "Bandwagon Effect",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Adoption accelerates with perceived social reach — engagement driven by social proof"
+        },
+        {
+          "id": "TG:ABC033",
+          "label": "Rational Addiction Model",
+          "author": "Becker & Murphy",
+          "year": "1988",
+          "gap_pattern": "Rational Addiction Model absent: text does not report intertemporal utility calculation. Rational tolerance and withdrawal anticipation as addiction maintenance mechanism invisible."
+        },
+        {
+          "id": "TG:ABC034",
+          "label": "Reflective-Impulsive Model",
+          "author": "Strack & Deutsch",
+          "year": "2004",
+          "gap_pattern": "Reflective-Impulsive Model absent: text does not distinguish automatic from reflective behaviour determinants. Intervention targets reflective system while behaviour driven by impulsive system."
+        }
+      ],
+      "original_name": "Spill-over effects (NOT Side-effects)",
+      "critical_note": "Original term is Spill-over, not Side-effects. Spill-over includes BOTH adverse and beneficial effects. Ignoring positive spillover = systematic underestimation of intervention value.",
+      "four_quadrants": {
+        "Q1_adverse_intervention": {
+          "label": "Negative spillover of intervention",
+          "categories": {
+            "physical": "Adverse drug reactions, physical exhaustion from intensive training",
+            "psychological": "Anxiety in exposure therapy, therapist dependency, iatrogenic stigma, J-curve deterioration",
+            "social": "Stigmatisation of participation, family conflicts when disclosing problems, social isolation",
+            "systemic": "Resource displacement from other programmes, opportunity cost, unwanted policy effects",
+            "economic": "Participant costs (time, transport), income loss during participation",
+            "displacement": "Substitution of one unwanted behaviour with another (quit smoking → overeating)"
+          }
+        },
+        "Q2_beneficial_intervention": {
+          "label": "Positive spillover of intervention",
+          "categories": {
+            "halo_effect": "Programme on PA → improved nutrition + sleep without separate intervention (general self-efficacy increase)",
+            "social_spread": "Participant changes behaviour → changes norm in group → others change (social contagion)",
+            "family_spillover": "Intervention with one parent → behaviour change in children and partner (modelling + environment change)",
+            "economic_spillover": "Reduced AUD → increased motivation and productivity (halo)",
+            "system_positive": "Freeing healthcare resources from treating consequences → available for others",
+            "normative_shift": "Sufficient participants → changes descriptive norm in population (critical mass)"
+          }
+        },
+        "Q3_adverse_inaction": {
+          "label": "Negative spillover of inaction",
+          "categories": {
+            "clinical_progression": "Chronification, complications, comorbidity, death",
+            "social_degradation": "Family breakdown, job loss, homelessness, criminalisation",
+            "problem_transmission": "Parental addiction → children; infectious diseases → community",
+            "system_overload": "Growing emergency service demands, rising late-stage treatment costs",
+            "normative_consolidation": "Unwanted behaviour normalises in group, becomes harder to change"
+          }
+        },
+        "Q4_beneficial_inaction": {
+          "label": "Positive spillover of inaction (rare, but exists)",
+          "note": "Antagonistic effect of intervention: coercive intervention → increased resistance → worse than without it. Stigmatising intervention → stigma amplifies problem.",
+          "relevance": "Important when evaluating Coercion and some forms of Restriction"
+        }
+      },
+      "formulas_L99": {
+        "adverse_intervention_basic": "S_adverse_int = Σ P(AE_i) × severity(AE_i)",
+        "adverse_intervention_weighted": "S_weighted = Σ P(AE_i) × severity(AE_i) × reversibility_weight(AE_i)",
+        "reversibility_weights": {
+          "irreversible": 1.0,
+          "long_term_reversible_over_1yr": 0.7,
+          "medium_term_1_12mo": 0.5,
+          "short_term_under_1mo": 0.2
+        },
+        "beneficial_intervention": "S_beneficial_int = Σ P(BE_j) × magnitude(BE_j)",
+        "adverse_inaction": "S_adverse_inaction = Σ P(AE_k) × severity(AE_k)",
+        "net_balance": "S_net = (S_adverse_inaction - S_adverse_intervention) + S_beneficial_intervention (positive = intervention improves overall effect profile)",
+        "norm_basic": "S_norm = 1 - S_adverse_intervention / S_max where S_max = N_AE × 5",
+        "norm_adjusted": "S_norm_adjusted = min(S_norm + S_beneficial_int / S_max × 0.2, 1.0)",
+        "monetise_inaction": "Cost_spillover_inaction = Σ P(AE_k) × unit_cost(AE_k) × N → feeds back into Cost_inaction",
+        "monetise_beneficial": "Value_beneficial_spillover = Σ P(BE_j) × unit_value(BE_j) × N → adds to Saving_projected"
+      },
+      "stopping_rules": {
+        "immediate_stop": "Any severity=5 AE: ≥1 case. Severity=4 AE: ≥5% participants. Severity=3 AE escalating: ≥20% participants.",
+        "planned_monitoring": "Weekly AE screening (3-question form). Monthly structured team review. Positive spillover assessment: T=3mo and T=end_of_wave."
+      },
+      "postfactum_gaps": {
+        "positive_spillover_missing": "~70% of studies",
+        "inaction_spillover_missing": "~80% of studies",
+        "AE_short_term_only": "~60% of studies",
+        "displacement_not_assessed": "~75% of studies",
+        "participants_only_not_system": "~65% of studies"
+      }
+    },
+    "Equity": {
+      "code": "Eq",
+      "what_we_measure": "Whether intervention increases OR decreases inequality. Tudor Hart Inverse Care Law: availability inversely proportional to need. Metrics: simple gap (Eq_gap), Slope Index of Inequality (SII), Concentration Index (CI), Burden-Reach Mismatch, Direction check. Direction check mandatory: Delta_inequality = Eq_gap_after - Eq_gap_before.",
+      "formula": "Eq_gap = Reach_max - Reach_min [pp] | Eq_norm = 1 - Eq_gap / 100 | Mismatch_i = Burden_share_i - Reach_share_i | SII: Reach = alpha + beta × SES_rank (negative beta = lower SES → lower Reach) | CI = 2 × cov(Reach_i, SES_rank_i) / mean(Reach) | Delta_inequality = Eq_gap_after - Eq_gap_before (negative = reduced inequality)",
+      "operability": "Requires population data and access geography. Often available in administrative databases.",
+      "veto_logic": "If Eq_norm < threshold: redesign access points, add equity measures (subsidies, translators, outreach).",
+      "bcio_terms": [
+        {
+          "id": "BCIO:006088.00.04.ma.r",
+          "label": "healthcare access",
+          "definition": "A <behavioural opportunity> regarding how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:050224.00.02.ma.r",
+          "label": "belief about healthcare accessibility",
+          "definition": "A <belief about one's environment> in terms of how easy it is for a person to approach and use a healthcare service."
+        },
+        {
+          "id": "BCIO:050551.01.04.bc.be.p.ma.md.se.so.sd.r",
+          "label": "research study sample",
+          "definition": "A population whose behaviour is studied in a research study."
+        },
+        {
+          "id": "BCIO:050976.00.14.be.p.ma.sd",
+          "label": "number of people in a population",
+          "definition": "A data item about the number of people in a population."
+        },
+        {
+          "id": "BCIO:015000.00.00.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention population",
+          "definition": "An intervention population who are exposed to a behaviour change intervention."
+        },
+        {
+          "id": "BCIO:015027.00.04.be.p.ma.sd",
+          "label": "household income",
+          "definition": "An aggregate of the individual incomes received by all the members of a household."
+        },
+        {
+          "id": "BCIO:015068.00.14.be.p.ma.sd",
+          "label": "socioeconomic status category",
+          "definition": "A  data item about a category assigned to a person based on an assessment of a score calculated from various measures of their income, education, occupation, family size or household."
+        },
+        {
+          "id": "BCIO:006090.00.04.ma",
+          "label": "social behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves the social environmental system."
+        },
+        {
+          "id": "BCIO:006001.09.03.ma",
+          "label": "social environmental system",
+          "definition": "An <environmental system> that consists of people, their pets, social and cultural institutions and processes that influence the life of people and social groups."
+        },
+        {
+          "id": "BCIO:006003.00.08.ma",
+          "label": "friendship network",
+          "definition": "A <social environmental system> that consists of persons who share a bond of mutual affection and are in contact or communication."
+        },
+        {
+          "id": "BCIO:050887.00.01.be.p.ma.sd.r.f",
+          "label": "leadership role",
+          "definition": "A social role in which the holder is given or creates authority to exert influence on other members of a social group."
+        },
+        {
+          "id": "BCIO:050950.00.04.ma.r.e",
+          "label": "social learning",
+          "definition": "<Learning> that involves a social influence process."
+        },
+        {
+          "id": "BCIO:050556.00.06.md",
+          "label": "mass media mode of delivery",
+          "definition": "Informational mode of delivery of radio broadcast, television, online press and printed press to a mass audience."
+        },
+        {
+          "id": "MeSH:D055808.00.00.p.ma.r",
+          "label": "diffusion of innovation",
+          "definition": "The broad dissemination of new technologies, ideas, or practices through a population."
+        },
+        {
+          "id": "BCIO:036011.01.07.be.ma.sd.r",
+          "label": "social organisation behaviour",
+          "definition": "A socially-related behaviour that involves a person contributing to the functioning of a social structure or a person in relation to a social structure."
+        },
+        {
+          "id": "BCIO:050681.00.02.ma.r",
+          "label": "intention for collective behaviour",
+          "definition": "A <behavioural intention> to enact a behaviour with one or more others."
+        },
+        {
+          "id": "BCIO:050935.00.13.ma",
+          "label": "appraisal of social identity",
+          "definition": "An emotional-relevance appraisal> regarding one's social group memberships."
+        },
+        {
+          "id": "BCIO:006042.00.02.ma",
+          "label": "normative belief",
+          "definition": "A <perceived norm> regarding whether key others think one should perform a behaviour."
+        },
+        {
+          "id": "BCIO:006078.00.13.ma",
+          "label": "appraisal of obligation to act",
+          "definition": "An <emotional-relevance appraisal> that represents an evaluation of how much one is personally obliged to respond to an event or person in need."
+        },
+        {
+          "id": "BCIO:050607.00.01.ma.r",
+          "label": "belief about the positive health consequences of a behaviour",
+          "definition": "A <belief about health consequences of behaviour> in which the consequences are evaluated as positive."
+        },
+        {
+          "id": "BCIO:044011.00.42.sd.r",
+          "label": "agenda-sharing communication",
+          "definition": "A communication in which the initiator and one or more activity participants work together to determine a focus for the activity to be undertaken."
+        },
+        {
+          "id": "BCIO:050821.00.04.be.ma.sd.r",
+          "label": "health-promoting behaviour",
+          "definition": "A health-related behaviour that improves the person’s health."
+        },
+        {
+          "id": "BCIO:050917.00.01.be.p.ma.sd.r",
+          "label": "high frequency of past behaviour",
+          "definition": "A frequency of past behaviour that is above a threshold."
+        },
+        {
+          "id": "BCIO:050454.00.04.be.ma.sd.r",
+          "label": "behaviour starting point",
+          "definition": "A time point that is the start of an individual human behaviour."
+        },
+        {
+          "id": "BCIO:006089.03.04.ma",
+          "label": "physical behavioural opportunity",
+          "definition": "A <behavioural opportunity> that involves time and parts of the environmental system that do not involve people or organisations."
+        },
+        {
+          "id": "BCIO:026000.00.03.bc.be.p.ma.md.se.so.sd",
+          "label": "behaviour change intervention physical setting",
+          "definition": "A physical environment in which a BCI is delivered."
+        },
+        {
+          "id": "BCIO:011003.00.01.md",
+          "label": "face to face mode of delivery",
+          "definition": "Human interactional mode of delivery that involves an intervention source and recipient being together in the same location and communicating directly."
+        },
+        {
+          "id": "BCIO:011010.17.06.md",
+          "label": "electronic mode of delivery",
+          "definition": "Informational mode of delivery that involves electronic technology in the presentation of information to an intervention recipient."
+        },
+        {
+          "id": "BCIO:007034.04.02.bc",
+          "label": "arrange support BCT",
+          "definition": "A <social support BCT> that organises support from another for the person."
+        },
+        {
+          "id": "BCIO:050349.02.01.bc",
+          "label": "restructure the social environment BCT",
+          "definition": "A <restructure the environment BCT> that alters the social environment in which the behaviour is, or would have been, performed in a way that facilitates or impedes the behaviour."
+        }
+      ],
+      "theory_ids": [
+        "RCH:000001",
+        "RCH:000002",
+        "RCH:000005",
+        "RCH:000006",
+        "RCH:000009",
+        "RCH:000011",
+        "RCH:000012",
+        "TG:SOC013",
+        "TG:SOC004",
+        "TG:EFF014"
+      ],
+      "theories": [
+        {
+          "id": "RCH:000001",
+          "label": "Diffusion of Innovations",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Diffusion of Innovations absent: text does not report adopter categories or S-curve trajectory. Early majority vs laggard penetration uncharacterised. Reach plateaus after early adopters invisible."
+        },
+        {
+          "id": "RCH:000002",
+          "label": "Threshold Model",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Threshold Model absent: text does not report individual activation thresholds for adoption. Critical mass dynamics and cascade tipping point undetected. Population-level reach non-linear dynamics invisible."
+        },
+        {
+          "id": "RCH:000005",
+          "label": "RE-AIM Framework",
+          "author": "",
+          "year": "",
+          "gap_pattern": "RE-AIM absent: text does not report representativeness of reached sample. Efficacy-effectiveness gap due to biased reach undetectable. Public health impact of intervention underestimated."
+        },
+        {
+          "id": "RCH:000006",
+          "label": "Social-Ecological Model",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Social-Ecological Model absent: text does not report multilevel reach barriers (individual, interpersonal, community, policy). Single-level reach intervention cannot address multilevel access inequities."
+        },
+        {
+          "id": "RCH:000009",
+          "label": "Equity Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Equity Theory absent: text does not report distributional fairness of reach across population subgroups. Systematic under-reach of disadvantaged groups undetected. Intervention may widen health inequities."
+        },
+        {
+          "id": "RCH:000011",
+          "label": "CBPR",
+          "author": "",
+          "year": "",
+          "gap_pattern": "CBPR absent: text does not report community participation in intervention design or delivery. Community trust deficit as reach barrier undetected. Hard-to-reach populations remain unreached."
+        },
+        {
+          "id": "RCH:000012",
+          "label": "Tipping Point Theory",
+          "author": "",
+          "year": "",
+          "gap_pattern": "Tipping Point absent: text does not report whether critical mass threshold for population-level behaviour change was reached. Below-threshold intervention produces no durable collective change."
+        },
+        {
+          "id": "TG:SOC013",
+          "label": "Social Capital Theory",
+          "author": "Bourdieu/Putnam",
+          "year": "1986",
+          "gap_pattern": "Social Capital Theory absent: network trust and reciprocity as behaviour change resource invisible. Low social capital community requires different reach strategy from high social capital community."
+        },
+        {
+          "id": "TG:SOC004",
+          "label": "Social Exchange Theory",
+          "author": "Homans/Blau",
+          "year": "1958",
+          "gap_pattern": "Social Exchange Theory absent: reciprocity norms and cost-benefit calculus of behaviour change participation invisible. Exit from programme when perceived costs exceed benefits unpredicted."
+        },
+        {
+          "id": "TG:EFF014",
+          "label": "Matthew Effect",
+          "author": "Merton",
+          "year": "1968",
+          "gap_pattern": "Matthew Effect absent: cumulative advantage compounding over time — early reach advantage growing invisible. Intervention reinforcing existing inequalities through preferential reach."
+        }
+      ],
+      "original_question": "How far will it, or is it likely to, INCREASE OR DECREASE differences between advantaged and disadvantaged sectors of society?",
+      "critical_note": "Equity can move in BOTH directions. Intervention may not only reduce but also INCREASE inequality if it disproportionately benefits privileged groups. Tudor Hart's Inverse Care Law: availability of care is inversely proportional to need.",
+      "stratification_axes": [
+        "Geographic (urban/suburban/rural/remote)",
+        "Socioeconomic (income, employment, education)",
+        "Demographic (age, sex, family status)",
+        "Ethnic and linguistic",
+        "Disability (physical, cognitive, sensory)",
+        "Digital literacy",
+        "Insurance coverage / legal status"
+      ],
+      "formulas_L99": {
+        "simple_gap": "Eq_gap = Reach_max - Reach_min [pp]; Eq_norm = 1 - Eq_gap / 100",
+        "weighted_gap": "Eq_weighted = Σ |Reach_i - Reach_mean| × weight_i where weight_i = subpopulation share in target group",
+        "slope_index_of_inequality": "Reach = alpha + beta × SES_rank; beta = SII (negative beta = lower SES → lower Reach)",
+        "burden_reach_mismatch": "Mismatch_i = Burden_share_i - Reach_share_i (positive = bears more burden than receives coverage)",
+        "concentration_index": "CI = 2 × cov(Reach_i, SES_rank_i) / mean(Reach); CI=-1: all resources to poor; CI=0: equality; CI=+1: all to rich",
+        "direction_check": "Delta_inequality = Eq_gap_after - Eq_gap_before (negative = intervention reduced inequality; positive = increased)"
+      }
+    }
+  },
+  "source": "Michie S et al. 2014 + full /L99 operationalisation",
+  "two_roles": {
+    "pre_factum": "Filter before launch — structured judgement at 3 horizons. Output: develop / pilot / reject.",
+    "post_factum": "Gap analysis of published studies — 5-step blind scoring protocol. Output: methodological gap verdict."
+  },
+  "three_horizons": {
+    "H1_entry_point": "Should we develop this? Data: forecasts (3 scenarios). Output: develop / pilot / reject.",
+    "H2_instrument_selection": "Which BCW combination passes APEASE? Data: forecasts + analogues. Output: ranked list.",
+    "H3_iterative_optimisation": "What failed? What to redesign? Data: actual wave data. Output: targeted redesign."
+  },
+  "score_interpretation": {
+    "ge_0.80": "Strong — implement",
+    "0.65_0.79": "Moderate — implement with monitoring of weak dimensions",
+    "0.50_0.64": "Requires optimisation — one more redesign wave",
+    "lt_0.50": "Weak — fundamental concept revision"
+  },
+  "mode_entry_only": true,
+  "apease_not_default_runtime": true,
+  "role": "entry_and_reference",
+  "trigger_conditions": {
+    "E1": "Input contains Problem + Goal + Result without existing BPMS/DREFS analysis",
+    "E2": "Input contains existing BPMS+DREFS configuration OR wave failure data",
+    "E3": "Input is a published study for retrospective APEASE gap analysis",
+    "keyword_triggers": [
+      "apease",
+      "pre-launch",
+      "wave",
+      "criterion",
+      "redesign",
+      "spillover",
+      "postfactum",
+      "cost of inaction",
+      "cost_inaction",
+      "com-b diagnosis",
+      "bcw matrix",
+      "wave plan"
+    ],
+    "not_triggered_by": "Standard BCIO ontology queries, T1-T16 module analysis, graph mode"
+  },
+  "scope": {
+    "what_this_file_answers": "When does it make sense to activate APEASE? What are the 6 criteria and their BCIO ID mappings?",
+    "what_full_spec_answers": "How to perform deep APEASE analysis once mode is active?",
+    "full_spec_file": "APEASE_FULL_SPEC.json",
+    "apease_does_not_override": "BCIO primary route (T1-T16, graph mode, R1-R6). APEASE is a separate mode or post-primary evaluation."
+  }
+}

@@ -1,0 +1,1072 @@
+{
+  "_file_role": "APEASE_FULL_SPEC",
+  "_version": "L99",
+  "_source": "Michie S et al. 2014 + full /L99 operationalisation",
+  "_read_when": "APEASE mode active (E1/E2/E3 entry confirmed) — for BCW matrix selection, COM-B diagnosis, TDF domain mapping, postfactum blind scoring, redesign algorithms. NOT read during standard BCIO analysis.",
+  "architecture": {
+    "definition": "APEASE is a mandatory zero-stage filter applied before any BCW/COM-B/TDF planning. Without APEASE there is no basis to begin intervention design.",
+    "original_author": "Michie S, Atkins L, West R",
+    "year": 2014,
+    "two_roles": {
+      "pre_factum": "Filter before launch — structured judgement at 3 horizons. Output: develop / pilot / reject.",
+      "post_factum": "Gap analysis of published studies — 5-step blind scoring protocol. Output: methodological gap verdict."
+    },
+    "three_horizons": {
+      "H1_entry_point": "Should we develop this? Data: forecasts (3 scenarios). Output: develop / pilot / reject.",
+      "H2_instrument_selection": "Which BCW combination passes APEASE? Data: forecasts + analogues. Output: ranked list.",
+      "H3_iterative_optimisation": "What failed? What to redesign? Data: actual wave data. Output: targeted redesign."
+    },
+    "two_step_decision": {
+      "step_1_satisficing": "For each i in {A,P,E,Af,S,Eq}: if norm_i < gate_i → VETO. If any VETO → STOP, do not aggregate, redesign failed dimension.",
+      "step_2_optimising": "Only if Step 1 fully passed: APEASE_score = Σ(w_i × norm_i). Winner = max score among all candidates passing Step 1.",
+      "mathematical_basis": "Step 1 = lexicographic satisficing. Step 2 = weighted aggregation."
+    },
+    "score_interpretation": {
+      "ge_0.80": "Strong — implement",
+      "0.65_0.79": "Moderate — implement with monitoring of weak dimensions",
+      "0.50_0.64": "Requires optimisation — one more redesign wave",
+      "lt_0.50": "Weak — fundamental concept revision"
+    },
+    "warning": "Score 0.72 with S_norm=0.25 is fundamentally different from 0.72 with uniform profile. Always show radar profile, not just index."
+  },
+  "normalisation": {
+    "Acceptability": {
+      "direction": "direct",
+      "formula": "A_norm = A_pct / 100"
+    },
+    "Practicability": {
+      "direction": "direct",
+      "formula": "P_norm = P_pct / 100"
+    },
+    "Effectiveness": {
+      "direction": "direct",
+      "formula": "E_norm = min(effect / effect_max, 1)"
+    },
+    "Affordability": {
+      "direction": "inverse",
+      "formula": "Af_norm = 1 - min(Af_total / Budget_ceiling, 1)"
+    },
+    "Spill_over": {
+      "direction": "mixed",
+      "formula": "S_norm = 1 - S_net_negative / S_max + S_positive_bonus"
+    },
+    "Equity": {
+      "direction": "inverse",
+      "formula": "Eq_norm = 1 - Eq_gap / 100"
+    }
+  },
+  "veto_thresholds_by_context": {
+    "clinical_high_risk": {
+      "A": 0.7,
+      "P": 0.75,
+      "E": 0.6,
+      "Af": 0.3,
+      "S": 0.8,
+      "Eq": 0.5
+    },
+    "population_low_risk": {
+      "A": 0.6,
+      "P": 0.65,
+      "E": 0.4,
+      "Af": 0.4,
+      "S": 0.7,
+      "Eq": 0.55
+    },
+    "policy_legislation": {
+      "A": 0.4,
+      "P": 0.3,
+      "E": 0.5,
+      "Af": 0.5,
+      "S": 0.6,
+      "Eq": 0.6
+    },
+    "low_resource_setting": {
+      "A": 0.55,
+      "P": 0.6,
+      "E": 0.35,
+      "Af": 0.5,
+      "S": 0.7,
+      "Eq": 0.45
+    },
+    "equity_priority": {
+      "A": 0.6,
+      "P": 0.6,
+      "E": 0.4,
+      "Af": 0.35,
+      "S": 0.7,
+      "Eq": 0.75
+    }
+  },
+  "weights_by_context": {
+    "standard_equal": {
+      "A": 0.167,
+      "P": 0.167,
+      "E": 0.167,
+      "Af": 0.167,
+      "S": 0.167,
+      "Eq": 0.167
+    },
+    "clinical_high_risk": {
+      "A": 0.12,
+      "P": 0.12,
+      "E": 0.28,
+      "Af": 0.12,
+      "S": 0.24,
+      "Eq": 0.12
+    },
+    "low_resource_setting": {
+      "A": 0.12,
+      "P": 0.22,
+      "E": 0.2,
+      "Af": 0.28,
+      "S": 0.1,
+      "Eq": 0.08
+    },
+    "equity_priority": {
+      "A": 0.1,
+      "P": 0.12,
+      "E": 0.18,
+      "Af": 0.14,
+      "S": 0.12,
+      "Eq": 0.34
+    },
+    "corporate_programme": {
+      "A": 0.15,
+      "P": 0.22,
+      "E": 0.25,
+      "Af": 0.2,
+      "S": 0.1,
+      "Eq": 0.08
+    },
+    "high_stigma_vulnerable": {
+      "A": 0.2,
+      "P": 0.12,
+      "E": 0.2,
+      "Af": 0.12,
+      "S": 0.22,
+      "Eq": 0.14
+    }
+  },
+  "criteria": {
+    "Affordability": {
+      "code": "Af",
+      "original_question": "How far can it be afforded when delivered at the scale intended? Can the necessary budget be found? Will it provide a good return on investment?",
+      "three_levels": {
+        "level_1_cost_of_inaction": {
+          "what": "What is currently spent per person in the target population due to the problem.",
+          "components": {
+            "medical": "Hospitalisations, outpatient, drugs, diagnostics, emergency, rehabilitation",
+            "productivity": "Absenteeism (days absent) + presenteeism (productivity loss while present) + early disability + premature death",
+            "social_transfers": "Disability benefits, housing subsidies, communal subsidies",
+            "legal": "Law enforcement, judicial costs — applicable for addictions, aggressive behaviour, DUI",
+            "educational": "Grade repetition, dropout, academic underperformance — for child/youth problems",
+            "burden_of_disease": "DALY/QALY: YLD (years lived with disability) + YLL (years of life lost)",
+            "population_economic": "Employment, consumption, communal expenditure, demand/supply levels — for large-scale social problems"
+          }
+        },
+        "level_2_cost_of_intervention": {
+          "direct_per_participant": "Specialist time (hours × rate × overhead), materials, premises rental, transport, IT per user, participant costs (transport, time, income loss)",
+          "indirect_overhead": "Staff training (including time), supervision, quality control, administration, monitoring and evaluation",
+          "setup_costs": "Protocol and materials development, IT infrastructure (one-time), initial staff training, piloting, ethics and regulatory approval"
+        },
+        "level_3_projected_saving": {
+          "formula": "Saving_projected = Cost_inaction_per_person × N × effect_size_reduction × T_horizon"
+        }
+      },
+      "formulas": {
+        "cost_inaction_full": "Cost_inaction = (C_medical + C_productivity + C_social + C_legal + C_educational) × N × T_horizon",
+        "af_total": "Af_total = (C_direct + C_indirect) × N + C_setup",
+        "saving_projected": "Saving_projected = Cost_inaction × effect_size_reduction",
+        "af_net": "Af_net = Cost_inaction - Af_total (positive = economically justified)",
+        "roi": "ROI = (Saving_projected - Af_total) / Af_total × 100%",
+        "cost_per_qaly": "Cost_per_QALY = Af_total / (QALY_gained_per_person × N)",
+        "af_norm": "Af_norm = 1 - min(Af_total / Budget_ceiling, 1)",
+        "inaction_temporal": "Cost_inaction(T) = Cost_inaction_year1 × Σ(1+g)^t for t=0..T-1 where g = annual growth rate (typically 5-15% for chronic conditions)"
+      },
+      "closed_loop": "Inaction generates accumulating Spill-over AE (mortality, chronification, social degradation, problem transmission) → each AE has monetary cost → total = Cost_inaction → Cost_inaction grows non-linearly with chronification → Af_net = Cost_inaction - Af_total → justifies intervention"
+    },
+    "Spill_over": {
+      "code": "S",
+      "original_name": "Spill-over effects (NOT Side-effects)",
+      "original_question": "What extraneous adverse OR beneficial outcomes might it lead to? How important are they and what is the likelihood they will occur?",
+      "critical_note": "Original term is Spill-over, not Side-effects. Spill-over includes BOTH adverse and beneficial effects. Ignoring positive spillover = systematic underestimation of intervention value.",
+      "four_quadrants": {
+        "Q1_adverse_intervention": {
+          "label": "Negative spillover of intervention",
+          "categories": {
+            "physical": "Adverse drug reactions, physical exhaustion from intensive training",
+            "psychological": "Anxiety in exposure therapy, therapist dependency, iatrogenic stigma, J-curve deterioration",
+            "social": "Stigmatisation of participation, family conflicts when disclosing problems, social isolation",
+            "systemic": "Resource displacement from other programmes, opportunity cost, unwanted policy effects",
+            "economic": "Participant costs (time, transport), income loss during participation",
+            "displacement": "Substitution of one unwanted behaviour with another (quit smoking → overeating)"
+          }
+        },
+        "Q2_beneficial_intervention": {
+          "label": "Positive spillover of intervention",
+          "categories": {
+            "halo_effect": "Programme on PA → improved nutrition + sleep without separate intervention (general self-efficacy increase)",
+            "social_spread": "Participant changes behaviour → changes norm in group → others change (social contagion)",
+            "family_spillover": "Intervention with one parent → behaviour change in children and partner (modelling + environment change)",
+            "economic_spillover": "Reduced AUD → increased motivation and productivity (halo)",
+            "system_positive": "Freeing healthcare resources from treating consequences → available for others",
+            "normative_shift": "Sufficient participants → changes descriptive norm in population (critical mass)"
+          }
+        },
+        "Q3_adverse_inaction": {
+          "label": "Negative spillover of inaction",
+          "categories": {
+            "clinical_progression": "Chronification, complications, comorbidity, death",
+            "social_degradation": "Family breakdown, job loss, homelessness, criminalisation",
+            "problem_transmission": "Parental addiction → children; infectious diseases → community",
+            "system_overload": "Growing emergency service demands, rising late-stage treatment costs",
+            "normative_consolidation": "Unwanted behaviour normalises in group, becomes harder to change"
+          }
+        },
+        "Q4_beneficial_inaction": {
+          "label": "Positive spillover of inaction (rare, but exists)",
+          "note": "Antagonistic effect of intervention: coercive intervention → increased resistance → worse than without it. Stigmatising intervention → stigma amplifies problem.",
+          "relevance": "Important when evaluating Coercion and some forms of Restriction"
+        }
+      },
+      "formulas": {
+        "adverse_intervention_basic": "S_adverse_int = Σ P(AE_i) × severity(AE_i)",
+        "adverse_intervention_weighted": "S_weighted = Σ P(AE_i) × severity(AE_i) × reversibility_weight(AE_i)",
+        "reversibility_weights": {
+          "irreversible": 1.0,
+          "long_term_reversible_over_1yr": 0.7,
+          "medium_term_1_12mo": 0.5,
+          "short_term_under_1mo": 0.2
+        },
+        "beneficial_intervention": "S_beneficial_int = Σ P(BE_j) × magnitude(BE_j)",
+        "adverse_inaction": "S_adverse_inaction = Σ P(AE_k) × severity(AE_k)",
+        "net_balance": "S_net = (S_adverse_inaction - S_adverse_intervention) + S_beneficial_intervention (positive = intervention improves overall effect profile)",
+        "norm_basic": "S_norm = 1 - S_adverse_intervention / S_max where S_max = N_AE × 5",
+        "norm_adjusted": "S_norm_adjusted = min(S_norm + S_beneficial_int / S_max × 0.2, 1.0)",
+        "monetise_inaction": "Cost_spillover_inaction = Σ P(AE_k) × unit_cost(AE_k) × N → feeds back into Cost_inaction",
+        "monetise_beneficial": "Value_beneficial_spillover = Σ P(BE_j) × unit_value(BE_j) × N → adds to Saving_projected"
+      },
+      "stopping_rules": {
+        "immediate_stop": "Any severity=5 AE: ≥1 case. Severity=4 AE: ≥5% participants. Severity=3 AE escalating: ≥20% participants.",
+        "planned_monitoring": "Weekly AE screening (3-question form). Monthly structured team review. Positive spillover assessment: T=3mo and T=end_of_wave."
+      },
+      "postfactum_gaps": {
+        "positive_spillover_missing": "~70% of studies",
+        "inaction_spillover_missing": "~80% of studies",
+        "AE_short_term_only": "~60% of studies",
+        "displacement_not_assessed": "~75% of studies",
+        "participants_only_not_system": "~65% of studies"
+      }
+    },
+    "Acceptability": {
+      "code": "A",
+      "original_question": "How far is it acceptable to key stakeholders? Includes: target group, potential funders, practitioners delivering intervention, relevant community and commercial groups.",
+      "stakeholders": {
+        "target_group": {
+          "refusal_consequence": "Low Reach, zero population effect",
+          "measure": "% not refusing at first contact"
+        },
+        "funders": {
+          "refusal_consequence": "No funding → programme not launched",
+          "measure": "Qualitative: willing to fund?"
+        },
+        "practitioners": {
+          "refusal_consequence": "Sabotage, low implementation quality (fidelity)",
+          "measure": "Survey + protocol adherence"
+        },
+        "community_groups": {
+          "refusal_consequence": "Political resistance, PR crisis",
+          "measure": "Public opinion surveys"
+        },
+        "commercial_groups": {
+          "refusal_consequence": "Lawsuits, lobbying against",
+          "measure": "Industry position analysis"
+        }
+      },
+      "factors_target_group": [
+        "Contact mode and channel",
+        "Who makes the offer",
+        "Topic stigma",
+        "Prior experience with similar programmes",
+        "Level of institutional trust",
+        "Voluntary vs coercive",
+        "Timing (crisis vs stable state)",
+        "Cultural and religious appropriateness"
+      ],
+      "factors_practitioners": [
+        "Match with professional identity (TDF domain 3)",
+        "Perceived additional workload",
+        "Trust in evidence base",
+        "Availability of training and support",
+        "Organisational culture"
+      ],
+      "formulas": {
+        "basic": "A = (N_total - N_refused) / N_total × 100%; A_norm = A / 100",
+        "by_subgroup": "A_subgroup_i = (N_total_i - N_refused_i) / N_total_i × 100%",
+        "multi_stakeholder": "A_weighted = w_target × A_target + w_practitioners × A_practitioners + w_funders × A_funders (w_target typically 0.5-0.7)",
+        "predictive": "A_predicted = A_base_analog × context_adjustment_factor (factor: 0.7–1.3)"
+      }
+    },
+    "Practicability": {
+      "code": "P",
+      "original_question": "Can it be implemented at scale in the intended context, with available material and human resources? What would need to be done to ensure resources and personnel are in place, and IS THE INTERVENTION SUSTAINABLE?",
+      "three_levels": {
+        "initial_feasibility": "Can it be launched with setup resources?",
+        "scalability": "Can it be implemented at planned scale?",
+        "sustainability": "Can it be maintained without external support in routine conditions? (Critical: pilot with grant ≠ sustainable in routine)"
+      },
+      "formulas": {
+        "basic": "P = N_feasible / N_total_steps × 100%",
+        "weighted": "P_weighted = (N_fully_feasible + 0.5 × N_conditionally) / N_total × 100%",
+        "critical_steps": "P_critical = N_critical_feasible / N_critical_steps × 100%",
+        "sustainable": "P_sustainable = P_weighted × sustainability_factor",
+        "sustainability_factors": {
+          "fully_sustainable": 1.0,
+          "moderate_external_support": 0.7,
+          "grant_dependent": 0.5
+        }
+      }
+    },
+    "Effectiveness": {
+      "code": "E",
+      "original_question": "How effective is it (likely to be) in achieving policy objectives? How far will it REACH the intended target group and how large an effect will it have on those who are reached?",
+      "two_components": {
+        "reach": "% of target group actually reached by the intervention",
+        "effect_size_among_reached": "How much behaviour/outcome changes in those who participated",
+        "population_effect": "Reach × Effect size among reached = key metric for policies"
+      },
+      "outcome_specificity": {
+        "unacceptable": "improvement in condition",
+        "insufficient": "reduction in depression",
+        "operational": "reduction in PHQ-9 by ≥5 points at 12 weeks, verified by repeat measurement"
+      },
+      "formulas": {
+        "binary": "E_binary = outcome(T) >= theta → {1, 0}",
+        "cohens_d": "d = (M_intervention - M_control) / SD_pooled; SD_pooled = sqrt(((n1-1)×SD1² + (n2-1)×SD2²) / (n1+n2-2))",
+        "d_interpretation": {
+          "negligible": "<0.2",
+          "small": "0.2-0.5",
+          "medium": "0.5-0.8",
+          "large": ">0.8"
+        },
+        "binary_outcomes": "RR = (events_int/N_int)/(events_ctrl/N_ctrl); ARR = R_control - R_int; NNT = 1/ARR",
+        "population_effect": "E_population = Reach × ARR × N_target_population",
+        "normalised": "E_norm = min(d / d_max, 1) where d_max set by context (typically 1.5–2.0)"
+      }
+    },
+    "Equity": {
+      "code": "Eq",
+      "original_question": "How far will it, or is it likely to, INCREASE OR DECREASE differences between advantaged and disadvantaged sectors of society?",
+      "critical_note": "Equity can move in BOTH directions. Intervention may not only reduce but also INCREASE inequality if it disproportionately benefits privileged groups. Tudor Hart's Inverse Care Law: availability of care is inversely proportional to need.",
+      "stratification_axes": [
+        "Geographic (urban/suburban/rural/remote)",
+        "Socioeconomic (income, employment, education)",
+        "Demographic (age, sex, family status)",
+        "Ethnic and linguistic",
+        "Disability (physical, cognitive, sensory)",
+        "Digital literacy",
+        "Insurance coverage / legal status"
+      ],
+      "formulas": {
+        "simple_gap": "Eq_gap = Reach_max - Reach_min [pp]; Eq_norm = 1 - Eq_gap / 100",
+        "weighted_gap": "Eq_weighted = Σ |Reach_i - Reach_mean| × weight_i where weight_i = subpopulation share in target group",
+        "slope_index_of_inequality": "Reach = alpha + beta × SES_rank; beta = SII (negative beta = lower SES → lower Reach)",
+        "burden_reach_mismatch": "Mismatch_i = Burden_share_i - Reach_share_i (positive = bears more burden than receives coverage)",
+        "concentration_index": "CI = 2 × cov(Reach_i, SES_rank_i) / mean(Reach); CI=-1: all resources to poor; CI=0: equality; CI=+1: all to rich",
+        "direction_check": "Delta_inequality = Eq_gap_after - Eq_gap_before (negative = intervention reduced inequality; positive = increased)"
+      }
+    }
+  },
+  "bcw_interventions_apease_matrix": {
+    "_note": "Ratings: +++ strong positive, ++ moderate, + weak, ~ neutral, - weak negative, -- moderate negative, --- strong negative",
+    "Education": {
+      "A": "++",
+      "P": "++",
+      "E": "+",
+      "Af": "+++",
+      "S": "+++ (min AE; halo↑)",
+      "Eq": "+",
+      "note": "After content created: variable cost ≈ 0. Risk: fear appeals without efficacy → anxiety, paralysis."
+    },
+    "Persuasion": {
+      "A": "+++",
+      "P": "++",
+      "E": "++",
+      "Af": "++",
+      "S": "++",
+      "Eq": "+",
+      "note": "MI for addictions d=0.5-0.8. Risk: psychological reactance if MI-spirit violated."
+    },
+    "Incentivisation": {
+      "A": "++",
+      "P": "+",
+      "E": "+++",
+      "Af": "--",
+      "S": "-- (crowding out) / +++ (beneficial)",
+      "Eq": "+++",
+      "note": "Short-term high effectiveness. Problem: extinction after removal. Equity advantage: disproportionately attractive to low-income."
+    },
+    "Coercion": {
+      "A": "--",
+      "P": "++",
+      "E": "++",
+      "Af": "++",
+      "S": "-- (resistance, underground)",
+      "Eq": "--",
+      "note": "Normalises over 5-10 years (seatbelts). Risk: iatrogenic resistance, stigma, therapeutic alliance breakdown."
+    },
+    "Training": {
+      "A": "++",
+      "P": "++",
+      "E": "+++",
+      "Af": "-",
+      "S": "++",
+      "Eq": "+",
+      "note": "Very high for behaviours where skill is the barrier. Improves significantly in group format."
+    },
+    "Restriction": {
+      "A": "--",
+      "P": "++",
+      "E": "++",
+      "Af": "++",
+      "S": "-- / + (displacement)",
+      "Eq": "--",
+      "note": "MUP Scotland: -13.4% alcohol mortality. Fiscal regressivity risk."
+    },
+    "Environmental_restructuring": {
+      "A": "+++",
+      "P": "-",
+      "E": "+++",
+      "Af": "--",
+      "S": "+ / +++ (beneficial)",
+      "Eq": "+++",
+      "note": "Default options: 90%+ adoption rate vs 40% opt-in. High initial investment, excellent long-term ROI."
+    },
+    "Modelling": {
+      "A": "+++",
+      "P": "+++",
+      "E": "++",
+      "Af": "+++",
+      "S": "++ / - (comparison trap)",
+      "Eq": "++",
+      "note": "Peer models from target group — culturally and linguistically relevant. Social contagion of behaviour change."
+    },
+    "Enablement": {
+      "A": "++",
+      "P": "++",
+      "E": "++",
+      "Af": "-",
+      "S": "++ / - (dependency risk)",
+      "Eq": "+++",
+      "note": "Implementation intentions: +20-30% intention execution. Most direct equity instrument."
+    }
+  },
+  "bcw_policies_apease_matrix": {
+    "_note": "Policies create conditions for interventions — regulatory, financial, communication, infrastructure environment.",
+    "Communication_marketing": {
+      "A": "++",
+      "P": "++",
+      "E": "+",
+      "Af": "+++",
+      "S": "++ / + (beneficial)",
+      "Eq": "+",
+      "note": "Good as reaching agent. Alone: awareness up, behaviour change +15-25%. Risk: incorrect messages → stigmatise."
+    },
+    "Guidelines": {
+      "A": "++",
+      "P": "+++",
+      "E": "+",
+      "Af": "+++",
+      "S": "++",
+      "Eq": "+",
+      "note": "Single guideline changes practice 5-15%. Guideline + training + audit&feedback = strong complex."
+    },
+    "Fiscal_measures": {
+      "A": "-/++",
+      "P": "++",
+      "E": "++",
+      "Af": "++",
+      "S": "- / ++",
+      "Eq": "--/+++",
+      "note": "Taxes: -12% sugar consumption Mexico year 1. Taxes financially regressive, health-progressively. Subsidies: +++ equity."
+    },
+    "Regulation": {
+      "A": "-",
+      "P": "++",
+      "E": "+++",
+      "Af": "++",
+      "S": "- / +",
+      "Eq": "++",
+      "note": "Trans fat ban: significant reduction in cardiovascular mortality. Acts regardless of consumer SES."
+    },
+    "Legislation": {
+      "A": "--",
+      "P": "-",
+      "E": "+++",
+      "Af": "++",
+      "S": "-- / +++",
+      "Eq": "++",
+      "note": "Low acceptance at adoption → 0.80 after 5-10 years. Legislative process: 2-5 years."
+    },
+    "Environmental_social_planning": {
+      "A": "++",
+      "P": "-",
+      "E": "+++",
+      "Af": "--",
+      "S": "+ / +++ (co-benefits)",
+      "Eq": "+++",
+      "note": "Netherlands cycling infrastructure: 27% trips by bike. Multiple co-benefits justify high initial cost."
+    },
+    "Service_provision": {
+      "A": "+++",
+      "P": "++",
+      "E": "++",
+      "Af": "--",
+      "S": "++",
+      "Eq": "++",
+      "note": "Mobile clinics: direct elimination of geographic barrier. High cost-effectiveness when targeting high-risk groups."
+    }
+  },
+  "comb_apease": {
+    "_note": "Diagnose COM-B component with deficit FIRST. Intervention addressing wrong component will have low Effectiveness regardless of other APEASE scores.",
+    "Physical_Capability": {
+      "question": "Can the person physically do it? Strength, dexterity, endurance, sensory abilities?",
+      "priority_bcw": [
+        "Training (physical rehabilitation)",
+        "Enablement (assistive technology)",
+        "Environmental_restructuring (barrier-free environment)"
+      ],
+      "spillover_note": "Physical capability training → positive spillover: mobility → independence → social engagement → mental health → reduced cognitive decline"
+    },
+    "Psychological_Capability": {
+      "question": "Does the person know how? Understand why? Have cognitive and emotional resources?",
+      "subcomponents": [
+        "Knowledge",
+        "Skills",
+        "Executive functions (ADHD, dementia)",
+        "Emotional regulation (anxiety, depression block execution)"
+      ],
+      "priority_bcw": [
+        "Education (Knowledge)",
+        "Training (Skills)",
+        "Enablement (scaffolding, prompts, checklists to reduce cognitive load)"
+      ]
+    },
+    "Physical_Opportunity": {
+      "question": "Does the physical environment allow it? Is there time, place, resources?",
+      "priority_bcw": [
+        "Environmental_restructuring (create opportunities)",
+        "Enablement (subsidies for access, transport)",
+        "Service_provision (bring service to people)"
+      ],
+      "spillover_note": "Eliminating Physical Opportunity barriers often has rich positive spillover — creating conditions for one behaviour facilitates adjacent behaviours"
+    },
+    "Social_Opportunity": {
+      "question": "Do social norms support it? Are there role models in the group?",
+      "examples": [
+        "Workplace norm: no lunch walks",
+        "Family: food = love = lots of food",
+        "Smoking as social ritual",
+        "Alcohol as group membership marker"
+      ],
+      "priority_bcw": [
+        "Modelling (demonstrate new norm via peer models)",
+        "Education (normative feedback)",
+        "Environmental_restructuring (change social environment)"
+      ],
+      "spillover_note": "Social Opportunity interventions have most powerful positive spillover through social contagion — norm change in one person spreads through network"
+    },
+    "Reflective_Motivation": {
+      "question": "Does the person want to? Have intentions? Value the outcome? Identify with the behaviour?",
+      "subcomponents": [
+        "Intention: planning but not now",
+        "Attitudes: do not consider it important",
+        "Identity: not for me/people like me",
+        "Outcome expectancies: do not believe it will help",
+        "Self-efficacy: do not believe they can manage"
+      ],
+      "key_problem": "intention-behaviour gap: person intends but does not act. Transition from intention to action requires additional instruments.",
+      "priority_bcw": [
+        "Persuasion (MI, framing, normative feedback)",
+        "Education (consequences, especially immediate)",
+        "Modelling (identity-relevant models)",
+        "Incentivisation"
+      ]
+    },
+    "Automatic_Motivation": {
+      "question": "Do habits and affective reactions support it? Are there automatic impulses toward unwanted behaviour?",
+      "key_principle": "Reflective Motivation interventions (persuasion, education) are practically ineffective when Automatic Motivation dominates — habitual behaviour is not mediated by conscious decision.",
+      "examples": [
+        "Smoking habit with coffee",
+        "Alcohol as automatic response to stress",
+        "Lift as automatic choice",
+        "Emotional overeating"
+      ],
+      "priority_bcw": [
+        "Environmental_restructuring (cue disruption)",
+        "Restriction (remove stimulus access)",
+        "Enablement (implementation intentions: if-then rules)"
+      ]
+    }
+  },
+  "tdf_14_domains_apease": {
+    "_note": "TDF operationalises COM-B to 14 psychological constructs. Each domain with deficit = potential target for separate BCW instrument with separate APEASE assessment.",
+    "diagnostic_process": [
+      "1. Define target behaviour",
+      "2. TDF interview or questionnaire across 14 domains",
+      "3. Identify domains with deficit",
+      "4. For each deficit domain: select BCW instrument → assess by APEASE",
+      "5. Select instrument combination with best overall APEASE profile"
+    ],
+    "domains": {
+      "D1_Knowledge": {
+        "com_b": "Psychological_Capability",
+        "question": "Does person know what to do, why, and how?",
+        "priority_bcw": [
+          "Education",
+          "Guidelines"
+        ]
+      },
+      "D2_Skills": {
+        "com_b": "Physical_Psychological_Capability",
+        "question": "Can they physically and cognitively perform it?",
+        "priority_bcw": [
+          "Training",
+          "Modelling"
+        ]
+      },
+      "D3_Social_professional_identity": {
+        "com_b": "Social_Opportunity + Reflective_Motivation",
+        "question": "Do they see themselves as someone who does this?",
+        "priority_bcw": [
+          "Modelling",
+          "Education"
+        ],
+        "example": "Doctors not doing brief alcohol intervention — consider it not their role"
+      },
+      "D4_Beliefs_about_capabilities": {
+        "com_b": "Reflective_Motivation",
+        "question": "Do they believe they can manage in real conditions? (0-10 scale)",
+        "techniques": [
+          "Mastery experiences (small successes)",
+          "Vicarious learning (observing similar others)",
+          "Verbal persuasion",
+          "Physiological feedback"
+        ],
+        "priority_bcw": [
+          "Training",
+          "Modelling",
+          "Persuasion"
+        ]
+      },
+      "D5_Optimism": {
+        "com_b": "Reflective_Motivation",
+        "question": "Do they believe change is possible and future can be better?",
+        "distinction": "self-efficacy = I can; optimism = this makes sense at all",
+        "priority_bcw": [
+          "Persuasion",
+          "Modelling"
+        ]
+      },
+      "D6_Beliefs_about_consequences": {
+        "com_b": "Reflective_Motivation",
+        "question": "What do they expect to happen if they change/do not change?",
+        "key_problem": "temporal discounting: people underestimate distant consequences. Effective framing: emphasis on IMMEDIATE benefits.",
+        "priority_bcw": [
+          "Education",
+          "Persuasion"
+        ]
+      },
+      "D7_Reinforcement": {
+        "com_b": "Automatic_Motivation",
+        "question": "What immediate reinforcement does person get for unwanted behaviour? Is there reinforcement for target behaviour?",
+        "key_principle": "Unwanted behaviour often has strong immediate reinforcement. Task: create immediate reinforcement for target behaviour.",
+        "priority_bcw": [
+          "Incentivisation",
+          "Environmental_restructuring"
+        ]
+      },
+      "D8_Intentions": {
+        "com_b": "Reflective_Motivation",
+        "question": "Does person intend to? When? Under what conditions?",
+        "key_problem": "intention-behaviour gap. Intention without specific plan → low execution.",
+        "priority_bcw": [
+          "Persuasion",
+          "Enablement"
+        ]
+      },
+      "D9_Goals": {
+        "com_b": "Reflective_Motivation",
+        "question": "Are there specific goals? Do goals conflict?",
+        "key_problem": "goal conflict: want to be healthy (goal 1) AND want time with children (goal 2) — perceived as incompatible.",
+        "priority_bcw": [
+          "Enablement (SMART goal-setting, action planning, implementation intentions)",
+          "Persuasion (goal hierarchy restructuring)"
+        ]
+      },
+      "D10_Memory_attention_decision": {
+        "com_b": "Psychological_Capability",
+        "question": "Does person remember? Decide at right moment? Cognitively overloaded?",
+        "priority_bcw": [
+          "Environmental_restructuring (prompts, reminders, default options)",
+          "Enablement (checklists to reduce cognitive load)"
+        ]
+      },
+      "D11_Environmental_context": {
+        "com_b": "Physical_Opportunity",
+        "question": "What in physical environment helps or hinders behaviour execution?",
+        "priority_bcw": [
+          "Environmental_restructuring",
+          "Service_provision",
+          "Enablement"
+        ]
+      },
+      "D12_Social_influences": {
+        "com_b": "Social_Opportunity",
+        "question": "What does social environment do/think/say?",
+        "types": [
+          "Descriptive norms (what they actually do)",
+          "Injunctive norms (what they approve)",
+          "Social support",
+          "Social pressure"
+        ],
+        "priority_bcw": [
+          "Modelling",
+          "Education (normative feedback)"
+        ]
+      },
+      "D13_Emotion": {
+        "com_b": "Automatic_Motivation",
+        "question": "Do emotions support or block target behaviour? Is unwanted behaviour a way to regulate emotions?",
+        "examples": [
+          "Alcohol/food/smoking = stress relief",
+          "Anxiety blocks doctor visit",
+          "Shame prevents discussing problem"
+        ],
+        "priority_bcw": [
+          "Enablement (emotion regulation skills — DBT, mindfulness)",
+          "Persuasion (reframing)",
+          "Environmental_restructuring"
+        ]
+      },
+      "D14_Behavioural_regulation": {
+        "com_b": "Psychological_Capability",
+        "question": "Does person have a plan? Monitor behaviour? What do they do after relapse?",
+        "evidence": "Self-monitoring + action planning — most systematically supported BCT combination for PA and diet (Michie et al. 2009)",
+        "priority_bcw": [
+          "Training (self-monitoring)",
+          "Enablement (diaries, apps, if-then templates)"
+        ]
+      }
+    }
+  },
+  "bcw_to_apease_instrument_matrix": {
+    "_note": "For redesign: which BCW instrument primarily drives which APEASE dimension",
+    "Education": {
+      "primary": "E (knowledge), A",
+      "secondary": "Eq (with adaptation)",
+      "risk": "none"
+    },
+    "Persuasion": {
+      "primary": "A, E (intention)",
+      "secondary": "none",
+      "risk": "S (reactance)"
+    },
+    "Incentivisation": {
+      "primary": "E (short-term), Eq",
+      "secondary": "A",
+      "risk": "Af, S (crowding out)"
+    },
+    "Training": {
+      "primary": "E (skills), P",
+      "secondary": "A",
+      "risk": "Af"
+    },
+    "Environmental_restructuring": {
+      "primary": "E (automatic), Eq",
+      "secondary": "P (after creation)",
+      "risk": "Af (initial)"
+    },
+    "Modelling": {
+      "primary": "A, Eq",
+      "secondary": "E, Af",
+      "risk": "S (comparison trap)"
+    },
+    "Enablement": {
+      "primary": "Eq, E (opportunity)",
+      "secondary": "A",
+      "risk": "Af"
+    },
+    "Restriction": {
+      "primary": "E",
+      "secondary": "P",
+      "risk": "A, S, Eq"
+    },
+    "Coercion": {
+      "primary": "E (with enforcement)",
+      "secondary": "none",
+      "risk": "A, S, Eq"
+    }
+  },
+  "redesign_algorithms": {
+    "Acceptability_failed": [
+      "1. Survey refusers: stigma / distrust / no point / no time",
+      "2. Stigma → reconsider framing + channel + intermediary",
+      "3. Distrust → more trusted intermediary (doctor vs official)",
+      "4. No point → Education on outcomes + Modelling (similar people with success)",
+      "5. No time → simplify format, embed in existing routine",
+      "6. Failed for practitioners → training + include in KPI + identity reframing",
+      "7. Failed for funders → rework economic case (Affordability arguments + Cost_inaction)"
+    ],
+    "Practicability_failed": [
+      "1. Audit infeasible steps: staff / equipment / regulation / time",
+      "2. Specialist unavailable → peer-trained substitute / group / teleformat",
+      "3. No time → embed in existing routines, reduce contact",
+      "4. IT unavailable → paper analogue",
+      "5. Not sustainable → find permanent funding source / embed in standard budget",
+      "6. Regulatory obstacle → legal consultation / protocol adaptation"
+    ],
+    "Effectiveness_failed": [
+      "1. Diagnosis: is COM-B correctly identified? Is TDF domain correct?",
+      "2. Wrong COM-B → switch to correct component + corresponding BCW",
+      "3. Correct COM-B, weak instrument → more intensive / evidence-based",
+      "4. High attrition → work on Acceptability + Enablement",
+      "5. Low Reach → work on Acceptability + Equity",
+      "6. Correct instrument, weak intensity → increase dose / duration",
+      "7. Add: Reinforcement, self-monitoring, implementation intentions (Domain 14)"
+    ],
+    "Affordability_failed": [
+      "1. Three levels: is Cost_inaction included? Recalculate Af_net",
+      "2. Is positive spillover included in Saving_projected?",
+      "3. Af_total high → group format / peer substitutes / digital delivery",
+      "4. Setup costs high → shared infrastructure with other programmes",
+      "5. Participant costs high → subsidies / online (consider digital Equity)",
+      "6. Budget ceiling → earmark savings → reinvest in programme"
+    ],
+    "Spill_over_failed": [
+      "1. Review catalogue: which AE materialised? What positive spillover actually received?",
+      "2. AE > forecast → high-risk screening / dose modification / intensity reduction",
+      "3. Positive spillover > forecast → update Saving_projected, recalculate Af_net",
+      "4. Displacement found → add component for substitute behaviour",
+      "5. Critical AE → stopping rule → immediate wave halt",
+      "6. Inaction spillover not accounted → update S_net, recalculate decision"
+    ],
+    "Equity_failed": [
+      "1. Stratify Reach: who exactly is dropping out?",
+      "2. Calculate Mismatch: does the dropping-out group bear the greatest burden?",
+      "3. Barrier analysis: physical / financial / linguistic / digital / stigma",
+      "4. Physical → mobile formats / outreach points",
+      "5. Financial → transport subsidies / reduced participation cost",
+      "6. Linguistic → translators / bilingual materials / peer leaders from group",
+      "7. Digital → offline analogues / public internet access points",
+      "8. Stigma → destigmatising Modelling from subpopulation",
+      "9. Check: does intervention increase or decrease inequality? (Direction check)"
+    ]
+  },
+  "iteration_principles": [
+    "1. Do not change everything at once. If 2 of 6 failed — change only components responsible for those dimensions.",
+    "2. Fix redesign hypothesis BEFORE each wave: expect change X to raise dimension Y from Z1 to Z2.",
+    "3. Stopping criterion defined BEFORE first wave.",
+    "4. Minimum informative wave size: Acceptability — 50-100 first contacts; Effectiveness — power analysis (usually N≥30 per group for pilot)."
+  ],
+  "iteration_stopping_criteria": {
+    "implement": "All 6 dimensions passed veto thresholds AND score ≥ target",
+    "concept_revision": "After N pre-specified waves no combination passed",
+    "budget_exhausted": "Implement best achieved combination with explicit statement of residual risks",
+    "critical_AE": "Immediate stop + S-catalogue revision",
+    "systematic_non_improvement": "One dimension systematically not improving → reconsider COM-B diagnosis: possibly wrong component selected"
+  },
+  "postfactum_protocol": {
+    "description": "5-step blind scoring protocol for gap analysis of published studies",
+    "anti_bias_rule": "Steps 1-3 completed BEFORE reading Discussion/Conclusion/Abstract — only Methods and Results",
+    "steps": {
+      "step_1_extraction_5min": {
+        "extract_from_methods_results_only": [
+          "N, design, context",
+          "Primary outcome and measurement",
+          "Effect size and significance",
+          "Cost data (if any)",
+          "Adverse effects data (if any)",
+          "Subpopulation data (if any)",
+          "Reach data (if any)"
+        ],
+        "do_not_read": "Discussion, Conclusion, Abstract — only Methods + Results"
+      },
+      "step_2_blind_scoring_15min": {
+        "rule": "3 independent assessors, each scoring only their assigned dimension",
+        "assessor_A": "Acceptability only — recruitment process described? N_refused/N_total? Stakeholders beyond target group?",
+        "assessor_B": "Practicability + Affordability only — cost described? Cost_inaction included? Sustainability in routine described?",
+        "assessor_C": "Spill-over + Equity only — positive spillover described? All 4 quadrants or only 1? Results stratified by subpopulation?"
+      },
+      "step_3_normalisation_2min": "All six indices → [0,1] by standard formulas. Missing data in article → mark as 'not assessed' (absence ≠ good value; = gap)",
+      "step_4_aggregate_critique": {
+        "calculate": "APEASE_score = Σ(w_i × norm_i) for available data",
+        "identify": [
+          "Dimensions not assessed in article",
+          "Dimensions assessed incompletely",
+          "Impact of gaps on external validity of conclusions"
+        ]
+      },
+      "step_5_verdict": {
+        "valid": "APEASE_score (by available data) ≥ 0.70 AND no critical gaps → results externally valid conditional on...",
+        "limited": "Critical gaps (Spill-over, Equity, Affordability not assessed) → results limited: missing [list]. Cannot recommend for scale-up without..."
+      }
+    },
+    "typical_literature_gaps": {
+      "effectiveness_only_no_affordability": "~75% RCTs",
+      "adverse_only_no_positive_spillover": "~70% studies",
+      "inaction_spillover_absent": "~80% studies",
+      "acceptability_target_group_only": "~65% studies",
+      "AE_short_term_only": "~60% studies",
+      "equity_not_stratified": "~70% studies",
+      "displacement_not_measured": "~75% studies",
+      "practicability_routine_conditions_absent": "~80% studies"
+    }
+  },
+  "operability_checklist_16": [
+    {
+      "n": 1,
+      "artifact": "Problem operational definition with baseline data",
+      "source": "Administrative, epidemiological",
+      "responsible": "Analyst"
+    },
+    {
+      "n": 2,
+      "artifact": "Cost_inaction across all components",
+      "source": "Insurance, HR, social services",
+      "responsible": "Economist"
+    },
+    {
+      "n": 3,
+      "artifact": "Spill-over AE catalogue of inaction with P and severity",
+      "source": "Cohort data, epidemiology",
+      "responsible": "Epidemiologist"
+    },
+    {
+      "n": 4,
+      "artifact": "COM-B diagnosis of target behaviour",
+      "source": "Qualitative research",
+      "responsible": "Behaviour specialist"
+    },
+    {
+      "n": 5,
+      "artifact": "Step-by-step SOP intervention protocol",
+      "source": "BCW-based design",
+      "responsible": "Team"
+    },
+    {
+      "n": 6,
+      "artifact": "Resource inventory + sustainability assessment",
+      "source": "Institution audit",
+      "responsible": "Manager"
+    },
+    {
+      "n": 7,
+      "artifact": "Subpopulation data, barriers, and Burden-Reach Mismatch",
+      "source": "Demographics, GIS, epidemiology",
+      "responsible": "Analyst"
+    },
+    {
+      "n": 8,
+      "artifact": "Systematic review of analogous interventions",
+      "source": "PubMed, Cochrane",
+      "responsible": "Researcher"
+    },
+    {
+      "n": 9,
+      "artifact": "Spill-over AE catalogue of intervention with P and severity",
+      "source": "Literature, Delphi",
+      "responsible": "Clinician"
+    },
+    {
+      "n": 10,
+      "artifact": "Positive spillover catalogue with P and magnitude",
+      "source": "Literature (halo effects, social contagion)",
+      "responsible": "Researcher"
+    },
+    {
+      "n": 11,
+      "artifact": "Acceptability across all stakeholders",
+      "source": "Survey, interviews, position analysis",
+      "responsible": "Team"
+    },
+    {
+      "n": 12,
+      "artifact": "Veto thresholds for all 6 dimensions",
+      "source": "Stakeholder consensus",
+      "responsible": "Team + stakeholders"
+    },
+    {
+      "n": 13,
+      "artifact": "Weights for composite index",
+      "source": "Context decision",
+      "responsible": "Team + stakeholders"
+    },
+    {
+      "n": 14,
+      "artifact": "Permitted number of waves and stopping criterion",
+      "source": "Study protocol",
+      "responsible": "PI"
+    },
+    {
+      "n": 15,
+      "artifact": "AE monitoring protocol and stopping rules",
+      "source": "Ethics committee",
+      "responsible": "Ethics committee"
+    },
+    {
+      "n": 16,
+      "artifact": "Measurement instruments for each APEASE dimension",
+      "source": "Psychometric databases",
+      "responsible": "Researcher"
+    }
+  ],
+  "operability_by_horizon": {
+    "H1_entry_point_forecast": {
+      "immediately_operable": [
+        "Affordability (budget arithmetic)",
+        "Practicability (resource audit)"
+      ],
+      "requires_preparation": [
+        "Acceptability (pilot contact or analogue)",
+        "Effectiveness (meta-analysis)",
+        "Spill-over (Delphi)",
+        "Equity (subpopulation data)"
+      ]
+    },
+    "H2_after_pilot": {
+      "available": [
+        "Acceptability (actual)",
+        "First Spill-over signals",
+        "First Equity data"
+      ],
+      "still_requires": [
+        "Effectiveness (needs time point T)",
+        "Final Equity"
+      ]
+    },
+    "H3_after_full_wave": "All 6 dimensions — actual data",
+    "postfactum_analysis": "Depends on completeness of data in source. Often missing: Spill-over, Equity, Affordability (Cost_inaction)"
+  },
+  "final_principles": [
+    "Zero-stage filter: without APEASE there is no basis to begin BCW/COM-B/TDF planning",
+    "All four spillover quadrants: negative/positive × intervention/inaction",
+    "Closed loop: Spill-over AE inaction → Cost_inaction → Af_net",
+    "All stakeholders: Acceptability for target group, practitioners, funders, community groups",
+    "Population effect: Effectiveness = Reach × Effect size among reached",
+    "Direction check: Equity can increase OR decrease — both directions require assessment",
+    "Sustainability: Practicability includes sustainability in routine conditions",
+    "Profile over index: radar profile mandatory. Index = orientation, not verdict",
+    "Pre- and post-factum: APEASE applicable both before launch and for critiquing others' research",
+    "Directed iteration: each wave = one precise hypothesis, one targeted redesign"
+  ],
+  "deep_analysis_only": true,
+  "apease_not_default_runtime": true,
+  "role": "deep_analysis",
+  "scope": {
+    "what_this_file_answers": "How to perform deep APEASE analysis when mode is already active?",
+    "role": "Deep analytic layer. Activated only after entry conditions confirmed in APEASE_REFERENCE.json.",
+    "not_primary_route_override": true,
+    "apease_does_not_replace": "BCIO ontology analysis (T1-T16), graph mode, R1-R6 pipeline"
+  }
+}
