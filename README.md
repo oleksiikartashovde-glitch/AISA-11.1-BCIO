@@ -2,6 +2,8 @@
 
 *Ontology-driven case analysis across all 13 modules*
 
+Bot: [AISA 11.1 on ChatGPT](https://chatgpt.com/g/g-69a6ab4b5adc81919a5be72eecbd2f81-aisa-11-1)
+
 **The quality of the response depends on the quality of the request.**
 
 ## What AISA 11.1 is
