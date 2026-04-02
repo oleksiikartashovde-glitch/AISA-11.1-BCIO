@@ -2,7 +2,8 @@
 
 *Ontology-driven case analysis across all 13 modules*
 
-Bot: [AISA 11.1 on ChatGPT](https://chatgpt.com/g/g-69a6ab4b5adc81919a5be72eecbd2f81-aisa-11-1)
+Bot: [Open AISA 11.1 in ChatGPT](https://chatgpt.com/g/g-69a6ab4b5adc81919a5be72eecbd2f81-aisa-11-1)  
+Instruction: [Open User Guide](./docs/REFERENCE_UserGuide.md)
 
 **The quality of the response depends on the quality of the request.**
 
@@ -535,7 +536,8 @@ At any point you can say:
 
 ## Document links
 
-- **User Guide:** <REFERENCE_UserGuide.md>
+- Bot: [Open AISA 11.1 in ChatGPT](https://chatgpt.com/g/g-69a6ab4b5adc81919a5be72eecbd2f81-aisa-11-1)  
+- Instruction: [Open User Guide](./docs/REFERENCE_UserGuide.md)
 
 -----
 
