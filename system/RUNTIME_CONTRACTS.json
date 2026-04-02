@@ -1,0 +1,157 @@
+{
+  "runtime_contracts_version": "v84.25_index_first_db31",
+  "language_policy_contract": {
+    "default_response_language": "user_language",
+    "ontology_id_language": "original",
+    "ontology_label_primary_language": "English",
+    "ontology_label_parenthetical_language": "user_language",
+    "ontology_definition_language": "user_language",
+    "semantic_query_bridge_language": "English",
+    "semantic_query_visible_languages": [
+      "English",
+      "user_language"
+    ],
+    "translation_override_allowed": true
+  },
+  "rendering_contract": {
+    "label_render_format_required": "EN_label (user_language_label)",
+    "definition_render_language_required": "user_language",
+    "user_language_parenthetical_required_for_visible_labels": true,
+    "source_material_segment_label_allowed": true,
+    "source_material_segment_label_position": "preambule_one_line",
+    "source_material_segment_label_only_required_when_detected": true
+  },
+  "free_analytic_visible_contract": {
+    "visible_stage_ritual_forbidden": true,
+    "visible_internal_kitchen_forbidden": true,
+    "visible_route_trace_forbidden": true,
+    "visible_hidden_json_discussion_forbidden": true,
+    "visible_reasoning_forbidden": true,
+    "visible_editorial_commentary_on_source_type_forbidden": true,
+    "visible_fit_justification_between_source_and_ontology_forbidden": true
+  },
+  "normalization_source_contract": {
+    "default_normalization_source": "loaded_ontologies_only",
+    "allowed_normalization_sources": [
+      "loaded_ontologies_only",
+      "BCIO_only",
+      "user_specified_source",
+      "theory_layer_if_explicitly_requested"
+    ],
+    "loaded_ontology_scope": [
+      "BCIO",
+      "ADDICTO",
+      "GO",
+      "MeSH",
+      "MF",
+      "MFOEM",
+      "APA",
+      "iSci",
+      "ENVO",
+      "BFO",
+      "OMRSE",
+      "IAO",
+      "OBI",
+      "UBERON",
+      "PDRO",
+      "OPMI",
+      "OGMS",
+      "SEPIO",
+      "PATO",
+      "RO",
+      "GAZ",
+      "SDGIO"
+    ],
+    "theory_jump_without_user_instruction_forbidden": true,
+    "framework_jump_without_user_instruction_forbidden": true,
+    "non_loaded_ontology_ids_forbidden_under_default_source": true,
+    "non_bcio_ids_forbidden_under_default_source": false
+  },
+  "regression_checks": {
+    "fail_if_visible_label_not_rendered_as_english_plus_user_language_parentheses": true,
+    "fail_if_visible_definition_not_in_user_language_without_override": true,
+    "fail_if_semantic_query_skips_english_bridge": true,
+    "fail_if_theory_jump_occurs_without_user_instruction": true,
+    "fail_if_framework_jump_occurs_without_user_instruction": true,
+    "fail_if_visible_internal_kitchen_appears": true,
+    "fail_if_source_type_editorial_commentary_appears": true,
+    "fail_if_source_type_changes_workflow_visible_or_hidden_without_rule": true,
+    "fail_if_source_material_segment_label_is_missing_when_required": true
+  },
+  "case_to_design_runtime_contract": {
+    "route_name": "CASE_TO_DESIGN_ROUTE",
+    "embedded_only": true,
+    "new_files_forbidden": true,
+    "default_route_preserved": true,
+    "tables_first_required": true,
+    "cross_stage_linking_required": true,
+    "gap_logic_required": true,
+    "shared_module_pool_required": true,
+    "equal_module_weight_required": true,
+    "user_defined_module_assignment_required": true,
+    "hard_diagnostic_prognostic_partition_forbidden": true,
+    "many_to_many_relation_model_required": true,
+    "cumulative_reporting_supported": true,
+    "prior_validated_outputs_may_be_inherited": true,
+    "carry_forward_only_when_not_contradicted": true
+  },
+  "case_to_design_cumulative_contract": {
+    "default_mode": "cumulative_when_relevant_prior_output_exists",
+    "inherit_links": true,
+    "inherit_conclusions": true,
+    "inherit_unresolved_gaps": true,
+    "status_update_required": true,
+    "link_status_vocabulary": [
+      "inherited",
+      "confirmed",
+      "refined",
+      "expanded",
+      "weakened",
+      "rejected",
+      "replaced"
+    ]
+  },
+  "problem_first_contract": {
+    "problem_extraction_required_before_module_routing": true,
+    "module_routing_required_before_ontology_mapping": true,
+    "problem_not_equal_module": true
+  },
+  "hidden_problem_contract": {
+    "hidden_problem_requires_row_level_support": true,
+    "free_paraphrase_for_hidden_problem_forbidden": true
+  },
+  "honest_null_mapping_contract": {
+    "mapping_status_none_allowed": true,
+    "empty_preferred_over_low_rank_candidate": true
+  },
+  "dual_module_contract": {
+    "primary_module_required": true,
+    "secondary_module_allowed": true,
+    "forced_single_module_forbidden": true
+  },
+  "problem_layer_contract": {
+    "allowed_problem_layers": [
+      "phenomenon",
+      "measurement",
+      "mixed"
+    ],
+    "measurement_is_not_module": true
+  },
+  "operational_db_contract": {
+    "primary_operational_source": "bcio_index.json",
+    "secondary_navigation_source": "bcio_by_module.json",
+    "tertiary_lexical_source": "bcio_clean.json",
+    "required_truth_fields_from_primary": [
+      "id",
+      "label",
+      "definition",
+      "modules",
+      "module_position",
+      "source_ontology"
+    ],
+    "id_must_be_read_from_primary": true,
+    "manual_id_reconstruction_forbidden": true,
+    "module_is_secondary_coordinate": true,
+    "module_position_is_primary_coordinate_layer": true
+  }
+}

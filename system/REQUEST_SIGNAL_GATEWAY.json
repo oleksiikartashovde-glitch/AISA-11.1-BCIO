@@ -1,0 +1,95 @@
+{
+  "request_signal_gateway_version": "v84.22_free_analytic_mode",
+  "owner_scope": [
+    "inspection_input_reading",
+    "noise_filtering",
+    "signal_extraction",
+    "primary_secondary_separation",
+    "coverage_metrics_preparation",
+    "normalization_target_payload",
+    "problem_signal_detection",
+    "problem_signal_candidate_rules",
+    "problem_non_problem_filter"
+  ],
+  "input_rule": {
+    "accepted_input_types": [
+      "uploaded_file",
+      "pasted_text",
+      "mixed_request"
+    ],
+    "visible_stage_ritual_not_required": true
+  },
+  "wave_0_signal_gateway": {
+    "required_before_any_hidden_structuring": true,
+    "normalize_signal_not_utterance": true,
+    "repetition_collapse": true,
+    "noise_filtering_required": true
+  },
+  "signal_partition": {
+    "required_internal_outputs": [
+      "primary_signal",
+      "secondary_context",
+      "noise_filtered_out",
+      "normalization_target_payload"
+    ],
+    "primary_signal_definition": "core user request content that should shape hidden structuring",
+    "secondary_context_definition": "supporting context that may help interpretation but must not independently shape route",
+    "noise_filtered_out_definition": "rhetoric, repetition, filler, and non-routing material",
+    "normalization_target_payload_definition": "clean payload used for hidden structuring and later normalization"
+  },
+  "coverage_metrics_preparation": {
+    "required_hidden_metrics": [
+      "words_in_input",
+      "words_processed",
+      "sentences_in_input",
+      "sentences_processed",
+      "paragraphs_in_input",
+      "paragraphs_processed",
+      "pages_in_input",
+      "pages_processed"
+    ],
+    "absolute_counts_only": true,
+    "visible_output_forbidden_by_default": true
+  },
+  "route_shaping_rules": {
+    "route_build_allowed_only_from": [
+      "primary_signal",
+      "normalization_target_payload"
+    ],
+    "route_shaping_from_secondary_context_forbidden": true,
+    "route_shaping_from_noise_forbidden": true,
+    "hostile_tone_must_not_shape_route": true
+  },
+  "handoff_output": {
+    "next_owner": "REQUEST_NORMALIZER.json",
+    "next_stage_input": "normalization_target_payload",
+    "problem_signal_candidates": "problem-like fragments passed to normalizer",
+    "problem_non_problem_filtered_out": "neutral or non-problem fragments filtered before normalizer"
+  },
+  "problem_signal_detection": {
+    "enabled": true,
+    "problem_signal_candidates_output": true,
+    "problem_non_problem_filtered_out_output": true,
+    "cue_terms": [
+      "limitation",
+      "restrict",
+      "bias",
+      "missing",
+      "fail",
+      "decline",
+      "weak",
+      "poor",
+      "overlap",
+      "not capture",
+      "too restrictive",
+      "little information",
+      "limited accuracy",
+      "negative impact",
+      "interpolation",
+      "extrapolation",
+      "unavailable",
+      "inconsistent",
+      "varying scale"
+    ]
+  }
+}

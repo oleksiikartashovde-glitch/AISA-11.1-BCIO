@@ -1,0 +1,170 @@
+{
+  "request_output_spec_version": "v84.23_language_policy",
+  "owner_scope": [
+    "output_form_extraction",
+    "output_form_restoration",
+    "safe_fallback_output_mode",
+    "visible_block_typing",
+    "stage_render_rules",
+    "language_rendering_rules",
+    "stop_rules"
+  ],
+  "language_rendering_rules": {
+    "default_response_language": "user_language",
+    "ontology_id_language": "original",
+    "ontology_label_render_format": "EN_label (user_language_label)",
+    "ontology_definition_language": "user_language",
+    "semantic_query_bridge_language": "English",
+    "semantic_query_visible_render_rule": "English + user_language",
+    "translation_override_allowed": true
+  },
+  "output_form_extraction": {
+    "required_before_any_visible_answer": true,
+    "extract_from_user_query_if_present": true,
+    "restore_from_mixed_input_if_implicit": true,
+    "visible_output_forbidden": true
+  },
+  "safe_fallback_output_mode": {
+    "used_when_user_output_form_is_missing_or_ambiguous": true,
+    "fallback_mode": "grounded_analytic_response"
+  },
+  "visible_block_types": [
+    "direct_analytic_answer",
+    "decomposition_table",
+    "theory_table",
+    "clarifying_understanding_block",
+    "requested_coverage_block",
+    "diagnostic_module_table",
+    "prognostic_module_table",
+    "gap_summary_table",
+    "seepaa_priority_table",
+    "policy_intervention_priority_matrix",
+    "tdf_comb_priority_matrix",
+    "linked_conclusion_block",
+    "cumulative_link_block",
+    "problem_extraction_table",
+    "problem_routing_table",
+    "ontology_mapping_table"
+  ],
+  "stage_render_rules": {
+    "FREE_ANALYTIC": {
+      "allowed_blocks": [
+        "direct_analytic_answer",
+        "decomposition_table",
+        "theory_table",
+        "clarifying_understanding_block",
+        "requested_coverage_block",
+        "problem_extraction_table",
+        "problem_routing_table",
+        "ontology_mapping_table"
+      ],
+      "forbidden_blocks": [
+        "meta_explanation",
+        "self_repair_message",
+        "progress_message",
+        "hidden_json_discussion",
+        "route_trace"
+      ]
+    }
+  },
+  "theory_block_rule": {
+    "forbidden_by_default_under_bcio_only_normalization": true,
+    "allowed_only_if_user_requests_theory_layer_or_theory_output": true,
+    "table_only_required_if_shown": true,
+    "required_columns": [
+      "Pattern",
+      "Source ID",
+      "Theory ID",
+      "Theory Label",
+      "Theory Definition"
+    ],
+    "theory_label_render_format": "EN_label (user_language_label)",
+    "theory_definition_language": "user_language"
+  },
+  "coverage_block_rule": {
+    "hidden_by_default": true,
+    "allowed_only_if_user_requests_coverage_or_control_metrics": true,
+    "absolute_counts_only": true
+  },
+  "stop_rules": {
+    "if_visible_internal_kitchen_detected": "discard_draft_and_rebuild",
+    "if_theory_appears_without_user_instruction": "discard_draft_and_rebuild",
+    "if_framework_jump_appears_without_user_instruction": "discard_draft_and_rebuild",
+    "if_output_form_is_ambiguous_and_no_safe_fallback_selected": "discard_draft_and_rebuild",
+    "if_label_parenthetical_user_language_missing": "discard_draft_and_rebuild",
+    "if_definition_not_in_user_language_without_override": "discard_draft_and_rebuild"
+  },
+  "CASE_TO_DESIGN_ROUTE_render_rules": {
+    "tables_first": true,
+    "one_module_one_table": true,
+    "module_tables_before_conclusions": true,
+    "monolithic_summary_as_primary_output_forbidden": true,
+    "gap_summary_allowed": true,
+    "linked_conclusions_required": true,
+    "user_defined_module_assignment": true,
+    "equal_module_weight": true,
+    "hard_module_partition_forbidden": true,
+    "many_to_many_relations_visible": true,
+    "cumulative_reporting_allowed": true,
+    "carry_forward_from_previous_report_allowed": true
+  },
+  "CASE_TO_DESIGN_ROUTE_stage_outputs": {
+    "stage_1": "one separate table per user-assigned diagnosis module + gap summary",
+    "stage_2": "one separate table per user-assigned prognosis module + gap summary",
+    "stage_3": "seepaa_priority_table + linked_conclusions",
+    "stage_4": "policy_intervention_priority_matrix + linked_conclusions",
+    "stage_5": "tdf_comb_priority_matrix + linked_conclusions",
+    "cumulative_layer": "inherited_links + inherited_conclusions + inherited_gaps with status update"
+  },
+  "CASE_TO_DESIGN_ROUTE_module_policy": {
+    "shared_module_pool": true,
+    "all_modules_have_equal_weight": true,
+    "user_assigns_modules_to_stage_1_or_stage_2": true,
+    "same_module_may_be_used_in_both_stages": true
+  },
+  "CASE_TO_DESIGN_ROUTE_cumulative_output_rules": {
+    "inherit_prior_validated_links": true,
+    "inherit_prior_validated_conclusions": true,
+    "preserve_unresolved_gaps": true,
+    "must_mark_inherited_status": true,
+    "allowed_statuses": [
+      "inherited",
+      "confirmed",
+      "refined",
+      "expanded",
+      "weakened",
+      "rejected",
+      "replaced"
+    ]
+  },
+  "problem_pipeline_output_fields": [
+    "problem_type",
+    "problem_layer",
+    "normalized_problem_pattern_original",
+    "normalized_problem_pattern_user_language",
+    "primary_module",
+    "secondary_module",
+    "ontology_source",
+    "mapping_status"
+  ],
+  "problem_pipeline_output_rules": {
+    "ontology_id_not_required_when_mapping_status_none": true,
+    "existing_table_blocks_may_render_problem_pipeline_rows": true
+  },
+  "source_type_comment_rule": {
+    "allowed": "segment_label_one_line",
+    "forbidden": [
+      "this paper is not a behaviour change study",
+      "this is a technical paper rather than...",
+      "because this is a deployment study...",
+      "any editorial judgment about fit between source and ontology"
+    ]
+  },
+  "source_material_segment_render_rule": {
+    "segment_label_visible": true,
+    "segment_label_position": "preambule_one_line",
+    "segment_label_only_required_when_source_material_present": true,
+    "followed_immediately_by_requested_output": true,
+    "no_explanatory_bridge_text_after_segment_label": true
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "execution_core_version": "v84.25_index_first_db31",
+  "owner_precedence": [
+    "REQUEST_SIGNAL_GATEWAY.json",
+    "REQUEST_NORMALIZER.json",
+    "REQUEST_OUTPUT_SPEC.json",
+    "MASTER_INSTRUCTION_ROOT_LOCK",
+    "EXECUTION_CORE",
+    "RUNTIME_CONTRACTS"
+  ],
+  "execution_order": [
+    "input_inspection",
+    "signal_gateway_handoff",
+    "hidden_request_json_scaffold",
+    "mixed_input_repartition",
+    "coverage_metric_calculation",
+    "normalization_source_selection",
+    "output_form_extraction_or_restoration",
+    "problem_signal_extraction",
+    "problem_type_assignment",
+    "problem_pattern_normalization",
+    "index_first_candidate_retrieval",
+    "coordinate_matching_via_module_position",
+    "optional_module_narrowing_via_hierarchy_nav",
+    "exact_id_resolution_from_index",
+    "ontology_mapping_status_assignment",
+    "route_selection",
+    "visible_block_candidate_build",
+    "visible_block_typing",
+    "pre_render_guard_validation",
+    "discard_and_rebuild_if_needed",
+    "final_render"
+  ],
+  "input_inspection": {
+    "owner": "REQUEST_SIGNAL_GATEWAY.json",
+    "accepted_input_types": [
+      "uploaded_file",
+      "pasted_text",
+      "mixed_request"
+    ]
+  },
+  "hidden_request_json_scaffold": {
+    "owner": "REQUEST_NORMALIZER.json",
+    "required_before_any_visible_answer": true,
+    "visible_output_forbidden": true
+  },
+  "mixed_input_repartition": {
+    "owner": "REQUEST_NORMALIZER.json",
+    "required_for_mixed_request": true,
+    "best_effort_required": true,
+    "visible_output_forbidden": true
+  },
+  "coverage_metric_calculation": {
+    "owner": "REQUEST_SIGNAL_GATEWAY.json",
+    "absolute_counts_only": true,
+    "visible_output_hidden_by_default": true
+  },
+  "normalization_source_selection": {
+    "owner": "REQUEST_NORMALIZER.json",
+    "default_source": "BCIO_only",
+    "explicit_user_override_allowed": true
+  },
+  "output_form_extraction_or_restoration": {
+    "owner": "REQUEST_OUTPUT_SPEC.json",
+    "required_before_visible_answer": true
+  },
+  "route_selection": {
+    "hidden_only": true,
+    "must_consider": [
+      "source_material",
+      "user_questions",
+      "output_form_request",
+      "normalization_source",
+      "drift_risk",
+      "blocked_jumps"
+    ]
+  },
+  "visible_block_candidate_build": {
+    "owner": "REQUEST_OUTPUT_SPEC.json",
+    "required_before_any_visible_output": true
+  },
+  "visible_block_typing": {
+    "owner": "REQUEST_OUTPUT_SPEC.json",
+    "every_visible_block_must_be_typed": true
+  },
+  "pre_render_guard_validation": {
+    "owner": "REQUEST_OUTPUT_SPEC.json",
+    "required_before_any_visible_output": true,
+    "forbidden_visible_internal_kitchen": true
+  },
+  "discard_and_rebuild_if_needed": {
+    "owner": "REQUEST_OUTPUT_SPEC.json",
+    "full_draft_discard_required_on_violation": true,
+    "partial_patch_forbidden": true,
+    "rebuild_from_allowed_blocks_only": true
+  },
+  "final_render": {
+    "must_use_guard_validated_blocks_only": true,
+    "visible_reasoning_forbidden": true
+  },
+  "alternative_execution_routes": {
+    "CASE_TO_DESIGN_ROUTE": {
+      "route_type": "alternative_embedded_route",
+      "non_destructive": true,
+      "tables_first": true,
+      "stage_order": [
+        "stage_1_diagnostic_package",
+        "stage_2_prognostic_package",
+        "stage_3_SEEPAA",
+        "stage_4_policies_and_interventions",
+        "stage_5_TDF_COMB"
+      ],
+      "dependency_chain": {
+        "stage_1_diagnostic_package": [
+          "case",
+          "user_request",
+          "current_author_position"
+        ],
+        "stage_2_prognostic_package": [
+          "stage_1_diagnostic_package",
+          "user_request",
+          "current_author_position"
+        ],
+        "stage_3_SEEPAA": [
+          "stage_1_diagnostic_package",
+          "stage_2_prognostic_package"
+        ],
+        "stage_4_policies_and_interventions": [
+          "stage_2_prognostic_package",
+          "stage_3_SEEPAA"
+        ],
+        "stage_5_TDF_COMB": [
+          "stage_2_prognostic_package",
+          "stage_3_SEEPAA",
+          "stage_4_policies_and_interventions"
+        ],
+        "cumulative_report_basis": [
+          "relevant_prior_outputs",
+          "validated_links",
+          "validated_conclusions",
+          "unresolved_gaps"
+        ]
+      },
+      "stage_1_module_source": "user_assigned_diagnosis_modules_from_shared_pool",
+      "stage_2_module_source": "user_assigned_prognosis_modules_from_shared_pool",
+      "module_role_assignment": {
+        "shared_module_pool": true,
+        "equal_module_weight": true,
+        "user_defined_assignment": true,
+        "allowed_roles": [
+          "diagnosis",
+          "prognosis",
+          "both"
+        ]
+      },
+      "relation_model": {
+        "type": "many_to_many",
+        "cumulative": true,
+        "carry_forward_previous_report_state": true,
+        "carry_forward_guard": "only_when_still_relevant_and_not_contradicted"
+      }
+    }
+  },
+  "SEEPAA_priority_order": [
+    "S",
+    "E",
+    "Eq",
+    "P",
+    "A",
+    "Af"
+  ],
+  "case_to_design_module_assignment_rules": {
+    "shared_module_pool": true,
+    "all_modules_have_equal_weight": true,
+    "user_selects_diagnosis_vs_prognosis_assignment": true,
+    "same_module_may_be_reused_across_stages": true,
+    "hard_diagnostic_prognostic_partition_forbidden": true
+  },
+  "case_to_design_cumulative_logic": {
+    "many_to_many_relations_required": true,
+    "subsequent_report_inherits_previous_validated_structure": true,
+    "allowed_inherited_status_updates": [
+      "confirmed",
+      "refined",
+      "expanded",
+      "weakened",
+      "rejected",
+      "replaced"
+    ],
+    "restart_from_zero_forbidden_when_relevant_prior_output_exists": true
+  },
+  "problem_first_subpipeline": {
+    "required_before_visible_answer": true,
+    "direct_text_to_ontology_shortcut_forbidden": true,
+    "steps": [
+      "problem_signal_extraction",
+      "problem_type_assignment",
+      "problem_pattern_normalization",
+      "index_first_candidate_retrieval",
+      "coordinate_matching_via_module_position",
+      "exact_id_resolution_from_index",
+      "ontology_mapping_status_assignment"
+    ]
+  },
+  "database_routing_update": {
+    "package_version": "DB31",
+    "primary_operational_source": "bcio_index.json",
+    "secondary_navigation_source": "bcio_by_module.json",
+    "tertiary_lexical_source": "bcio_clean.json",
+    "main_coordinate_path": [
+      "module",
+      "category",
+      "group",
+      "subgroup"
+    ],
+    "main_routing_anchor": "module_position_descriptions",
+    "module_role": "secondary_top_level_coordinate",
+    "id_policy": "read_exact_id_from_bcio_index_only",
+    "legacy_rules_removed": [
+      "star_module_handling",
+      "star_nonstar_merge_logic",
+      "id_reconstruction_from_membership",
+      "module_first_as_default_entry"
+    ]
+  }
+}

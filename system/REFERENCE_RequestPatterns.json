@@ -1,0 +1,114 @@
+{
+  "version": "v84",
+  "guide_patterns": [
+    {
+      "raw_input_pattern": "Reference & guideMap",
+      "detected_task_type": "guide_access",
+      "recommended_route": "guide_direct_markdown_link_output",
+      "required_output": "literal_markdown_link_only",
+      "exact_output": "[Reference & guideMap](https://raw.githubusercontent.com/oleksiikartashovde-glitch/AISA-guide/main/REFERENCE_UserGuide.pdf)",
+      "forbidden": [
+        "file lookup",
+        "reference retrieval",
+        "source inspection",
+        "normalizer search",
+        "inline guide rendering",
+        "Guide link not found in the provided files."
+      ],
+      "stop_immediately_after_link": true
+    },
+    {
+      "raw_input_pattern": "guide / reference / help / show guide / open guide / reference & guidemap",
+      "detected_task_type": "guide_access",
+      "recommended_route": "guide_direct_markdown_link_output",
+      "required_output": "literal_markdown_link_only",
+      "exact_output": "[Reference & guideMap](https://raw.githubusercontent.com/oleksiikartashovde-glitch/AISA-guide/main/REFERENCE_UserGuide.pdf)",
+      "forbidden": [
+        "file lookup",
+        "reference retrieval",
+        "source inspection",
+        "normalizer search",
+        "inline guide rendering",
+        "Guide link not found in the provided files."
+      ],
+      "stop_immediately_after_link": true
+    }
+  ],
+  "note": "Guide intents are hard bypass patterns. They do not inspect knowledge files and return the exact markdown link only.",
+  "gate_first_patterns": {
+    "normalizer_offer_required": true,
+    "first_output": "Optimize request for bot logic first? Y / N",
+    "route_preview_before_gate_forbidden": true,
+    "applies_to": [
+      "analysis + recommendation",
+      "diagnosis + decision",
+      "conceptual explanation + theory + practical implications",
+      "long multi-part request"
+    ]
+  },
+  "signal_gateway_defaults": {
+    "signal_extraction_before_task_classification": true,
+    "normalize_signal_not_utterance": true,
+    "noise_never_shapes_route": true
+  },
+  "normalization_defaults": {
+    "single_normalized_request_default": true,
+    "single_output_specification_default": true,
+    "residual_note_only_after_internal_expansion": true,
+    "recommendation_requires_problem_goal_result": true
+  },
+  "alternative_route_patterns": [
+    {
+      "raw_input_pattern": "case + diagnostic modules + prognostic modules + seepaa + policies + tdf comb",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "case analysis by modules",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "separate tables per module",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "gap detection with tables",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "SEEPAA + policies and interventions + TDF COM-B matrices",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    }
+  ],
+  "case_to_design_patterns": [
+    {
+      "raw_input_pattern": "user chooses which modules belong to diagnosis and which belong to prognosis",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "same module can appear in diagnosis and prognosis",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "all modules have equal weight",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "next report should inherit and extend previous conclusions and links",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    },
+    {
+      "raw_input_pattern": "many to many cumulative links",
+      "detected_task_type": "case_to_design_route",
+      "recommended_route": "CASE_TO_DESIGN_ROUTE"
+    }
+  ]
+}

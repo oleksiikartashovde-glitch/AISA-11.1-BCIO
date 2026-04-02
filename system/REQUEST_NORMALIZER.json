@@ -1,0 +1,329 @@
+{
+  "request_normalizer_version": "v84.25_index_first_db31",
+  "owner_scope": [
+    "hidden_request_json_scaffold",
+    "mixed_input_repartition",
+    "normalization_source_control",
+    "pattern_extraction",
+    "pattern_normalization",
+    "id_assignment",
+    "json_to_table_projection",
+    "language_rendering_policy",
+    "problem_extraction_normalization",
+    "problem_type_assignment",
+    "problem_layer_assignment",
+    "module_routing_fields",
+    "ontology_scope_control",
+    "mapping_status_fields",
+    "database_source_control",
+    "index_first_candidate_retrieval",
+    "module_position_coordinate_routing"
+  ],
+  "language_rendering_policy": {
+    "default_response_language": "user_language",
+    "ontology_id_language": "original",
+    "ontology_label_primary_language": "English",
+    "ontology_label_parenthetical_language": "user_language",
+    "ontology_definition_language": "user_language",
+    "label_render_format": "EN_label (user_language_label)",
+    "semantic_query_bridge_language": "English",
+    "semantic_query_visible_languages": [
+      "English",
+      "user_language"
+    ],
+    "translation_override_allowed": true
+  },
+  "hidden_request_json_scaffold": {
+    "required_before_any_visible_answer": true,
+    "visible_output_forbidden": true,
+    "required_layers": [
+      "user_layer",
+      "package_layer",
+      "execution_layer",
+      "entity_layer",
+      "problem_layer",
+      "routing_layer",
+      "mapping_layer"
+    ]
+  },
+  "mixed_input_repartition": {
+    "required_for_mixed_request": true,
+    "repartition_targets": [
+      "source_material",
+      "user_questions",
+      "output_form_request"
+    ],
+    "best_effort_required": true,
+    "visible_output_forbidden": true
+  },
+  "source_material_type_detection": {
+    "required": true,
+    "types": [
+      "behaviour_change_intervention_study",
+      "technical_deployment_study",
+      "policy_document",
+      "clinical_protocol",
+      "corporate_programme",
+      "other"
+    ],
+    "output": "segment_label_only",
+    "segment_label_visible": true,
+    "segment_label_position": "preambule_one_line",
+    "editorial_commentary_on_type": "forbidden",
+    "workflow_change_based_on_type": "forbidden"
+  },
+  "normalization_source_control": {
+    "normalization_source_required": true,
+    "default_normalization_source": "loaded_ontologies_only",
+    "allowed_normalization_sources": [
+      "loaded_ontologies_only",
+      "BCIO_only",
+      "BCIO_loaded_files_only",
+      "user_specified_source",
+      "theory_layer_if_explicitly_requested"
+    ],
+    "loaded_ontology_scope": [
+      "BCIO",
+      "ADDICTO",
+      "GO",
+      "MeSH",
+      "MF",
+      "MFOEM",
+      "APA",
+      "iSci",
+      "ENVO",
+      "BFO",
+      "OMRSE",
+      "IAO",
+      "OBI",
+      "UBERON",
+      "PDRO",
+      "OPMI",
+      "OGMS",
+      "SEPIO",
+      "PATO",
+      "RO",
+      "GAZ",
+      "SDGIO"
+    ],
+    "theory_jump_without_user_instruction_forbidden": true,
+    "framework_jump_without_user_instruction_forbidden": true,
+    "non_loaded_ontology_ids_forbidden_under_default_source": true,
+    "non_bcio_ids_forbidden_under_default_source": false
+  },
+  "pattern_extraction_rule": {
+    "runs_when_needed_by_route": true,
+    "source_must_be_user_text_or_user_file_text": true,
+    "pattern_must_be_literal_text_span_or_direct_text_fragment": true,
+    "invented_patterns_forbidden": true,
+    "minimum_one_pattern_required_if_normalizing": true,
+    "all_non_noise_entities_must_be_represented_when_normalizing": true,
+    "population_entity_coverage_required_when_explicitly_named": true,
+    "programme_entity_coverage_required_when_explicitly_named": true
+  },
+  "pattern_normalization_rule": {
+    "pattern_normalization_required_for_each_pattern_when_normalizing": true,
+    "must_remain_close_to_literal_pattern": true,
+    "must_not_become_theory": true,
+    "must_not_become_conclusion": true,
+    "must_not_become_recommendation": true,
+    "max_words": 5,
+    "slashes_forbidden": true,
+    "explanatory_phrases_forbidden": true
+  },
+  "id_assignment_rule": {
+    "runs_when_normalization_route_is_selected": true,
+    "bcio_ids_only_under_default_source": false,
+    "assigned_id_required_for_each_valid_pattern": true,
+    "multi_id_allowed_per_pattern": true,
+    "required_output_columns": [
+      "Pattern",
+      "Pattern normalization",
+      "ID",
+      "Label",
+      "Definition",
+      "ID role"
+    ],
+    "id_role_allowed_values": [
+      "primary",
+      "secondary"
+    ],
+    "one_pattern_one_or_more_rows": true,
+    "multiple_ids_in_one_cell_forbidden": true,
+    "normalization_ends_at_assigned_id_terms": true,
+    "unresolved_id_must_be_explicit": true,
+    "theory_ids_forbidden_in_normalization_table_under_default_source": true,
+    "framework_ids_forbidden_in_normalization_table_under_default_source": true,
+    "module_names_as_id_substitutes_forbidden": true,
+    "pseudo_ids_forbidden": true
+  },
+  "json_to_table_projection_rule": {
+    "runs_only_when_visible_decomposition_is_requested_or_selected": true,
+    "each_candidate_id_becomes_one_visible_row": true,
+    "pattern_column_maps_from": "entity_layer.entities.text_span",
+    "pattern_normalization_column_maps_from": "entity_layer.entities.normalized_term",
+    "id_column_maps_from": "entity_layer.entities.candidate_ids.id",
+    "label_column_maps_from": "entity_layer.entities.candidate_ids.label",
+    "definition_column_maps_from": "entity_layer.entities.candidate_ids.definition",
+    "id_role_column_maps_from": "entity_layer.entities.candidate_ids.id_role",
+    "label_render_format": "EN_label (user_language_label)",
+    "definition_render_language": "user_language"
+  },
+  "alternative_route_recognition": {
+    "CASE_TO_DESIGN_ROUTE": {
+      "trigger_signals": [
+        "case analysis by module",
+        "diagnostic modules",
+        "prognostic modules",
+        "tables first",
+        "gap detection",
+        "SEEPAA",
+        "policies and interventions matrix",
+        "TDF COM-B matrix",
+        "user assigns modules to diagnosis or prognosis",
+        "same module in diagnosis and prognosis",
+        "equal module weight"
+      ],
+      "required_sources_stage_1": [
+        "case",
+        "user_request",
+        "current_author_position"
+      ],
+      "required_sources_stage_2": [
+        "stage_1_output",
+        "user_request",
+        "current_author_position",
+        "wishes",
+        "recommendations",
+        "design_intent"
+      ],
+      "route_candidate_field": "CASE_TO_DESIGN_ROUTE",
+      "non_destructive": true
+    }
+  },
+  "case_to_design_hidden_fields": {
+    "route_candidate": "CASE_TO_DESIGN_ROUTE",
+    "tables_first_mode": true,
+    "gap_detection_mode": true,
+    "segment_mode": "segment|aggregate|mixed",
+    "stage_chain_required": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "module_role_assignment_mode": "user_defined",
+    "equal_module_weight_mode": true,
+    "hard_module_partition_forbidden": true,
+    "relation_model": "many_to_many",
+    "cumulative_report_mode": true,
+    "carry_forward_previous_outputs": true
+  },
+  "module_status_vocabulary": [
+    "explicit",
+    "implicit",
+    "missing",
+    "underspecified",
+    "conflicting"
+  ],
+  "case_to_design_module_pool": [
+    "Behaviour",
+    "Population",
+    "Setting",
+    "Dose",
+    "Reach",
+    "Behaviour Change Technique",
+    "Mechanism of Action",
+    "Mode of Delivery",
+    "Source",
+    "Style of Delivery",
+    "Engagement",
+    "Fidelity",
+    "Schedule"
+  ],
+  "module_role_assignment_policy": {
+    "module_pool_shared": true,
+    "all_modules_have_equal_weight": true,
+    "user_assigns_module_role": true,
+    "allowed_roles": [
+      "diagnosis",
+      "prognosis",
+      "both"
+    ],
+    "same_module_may_appear_in_both_stages": true,
+    "hard_partition_between_diagnostic_and_prognostic_modules_forbidden": true
+  },
+  "case_to_design_relation_model": {
+    "relation_type": "many_to_many",
+    "cumulative_carry_forward": true,
+    "carry_forward_rule": "inherit_validated_links_conclusions_and_gaps_unless_revised_contradicted_or_replaced",
+    "report_basis": "current_request_plus_relevant_prior_outputs",
+    "link_status_vocabulary": [
+      "inherited",
+      "confirmed",
+      "refined",
+      "expanded",
+      "weakened",
+      "rejected",
+      "replaced"
+    ]
+  },
+  "problem_record_schema": {
+    "problem_type": "explicit | hidden",
+    "problem_layer": "phenomenon | measurement | mixed",
+    "normalized_problem_pattern_original": "",
+    "normalized_problem_pattern_user_language": "",
+    "primary_module": "",
+    "secondary_module": "",
+    "module_assignment_status": "single | multi | unresolved",
+    "ontology_source": "",
+    "mapping_status": "exact | near | none"
+  },
+  "problem_first_rules": {
+    "problem_is_not_module": true,
+    "problem_extraction_precedes_module_routing": true,
+    "module_routing_precedes_ontology_mapping": true,
+    "secondary_module_allowed": true,
+    "measurement_layer_not_equal_module": true,
+    "normalized_pattern_must_preserve_literal_core": true
+  },
+  "database_source_control": {
+    "primary_operational_source": "bcio_index.json",
+    "secondary_navigation_source": "bcio_by_module.json",
+    "tertiary_lexical_source": "bcio_clean.json",
+    "primary_source_truth_fields": [
+      "id",
+      "label",
+      "definition",
+      "modules",
+      "module_position",
+      "source_ontology"
+    ],
+    "module_is_not_primary_entry_signal": true
+  },
+  "module_position_coordinate_routing": {
+    "enabled": true,
+    "main_coordinate_fields": [
+      "category",
+      "group",
+      "subgroup"
+    ],
+    "main_description_fields": [
+      "category_desc",
+      "group_desc",
+      "subgroup_desc"
+    ],
+    "module_role": "secondary_top_level_coordinate",
+    "matching_order": [
+      "category_desc",
+      "group_desc",
+      "subgroup_desc"
+    ],
+    "null_subgroup_valid": true,
+    "special_categories_valid": [
+      "_no_cat",
+      "Population statistics"
+    ]
+  }
+}

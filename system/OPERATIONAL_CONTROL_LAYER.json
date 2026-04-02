@@ -1,0 +1,107 @@
+{
+  "operational_control_layer_version": "v84.25_index_first_db31",
+  "owner_precedence": [
+    "REQUEST_SIGNAL_GATEWAY.json",
+    "REQUEST_NORMALIZER.json",
+    "REQUEST_OUTPUT_SPEC.json",
+    "MASTER_INSTRUCTION_ROOT_LOCK",
+    "EXECUTION_CORE.json",
+    "RUNTIME_CONTRACTS.json"
+  ],
+  "orchestration_order": [
+    "input_inspection",
+    "hidden_request_json_scaffold",
+    "mixed_input_repartition",
+    "coverage_metric_calculation",
+    "normalization_source_selection",
+    "output_form_extraction_or_restoration",
+    "index_first_candidate_retrieval",
+    "coordinate_matching_via_module_position",
+    "optional_module_narrowing_via_hierarchy_nav",
+    "hidden_route_selection",
+    "visible_block_candidate_build",
+    "visible_block_typing",
+    "pre_render_guard_check",
+    "discard_and_rebuild_if_needed",
+    "render_only_guard_approved_blocks"
+  ],
+  "boundary_rules": {
+    "visible_mode_is_free_analytical": true,
+    "hidden_mode_is_strict_structured_processing": true,
+    "no_visible_internal_kitchen": true,
+    "no_theory_jump_without_user_instruction": true,
+    "no_framework_jump_without_user_instruction": true,
+    "problem_not_equal_module": true,
+    "module_not_equal_mapping": true,
+    "forced_single_module_forbidden": true,
+    "forced_ontology_mapping_forbidden": true,
+    "measurement_layer_not_module": true,
+    "loaded_ontologies_allowed_as_default": true,
+    "forced_bcio_only_forbidden_unless_user_requests": true,
+    "module_is_secondary_coordinate_not_primary_entry": true,
+    "module_position_descriptions_are_primary_coordinate_layer": true,
+    "bcio_index_is_primary_operational_source": true,
+    "bcio_by_module_is_navigation_only_after_coordinate_match": true,
+    "bcio_clean_is_lexical_support_only": true,
+    "legacy_star_module_logic_forbidden": true,
+    "manual_id_reconstruction_forbidden": true
+  },
+  "alternative_route_control": {
+    "default_route_preserved": true,
+    "allowed_embedded_alternative_routes": [
+      "CASE_TO_DESIGN_ROUTE"
+    ],
+    "alternative_route_non_destructive": true,
+    "route_collision_forbidden": true,
+    "module_assignment_policy": {
+      "shared_module_pool": true,
+      "equal_module_weight": true,
+      "user_defined_role_assignment": true,
+      "hard_partition_forbidden": true
+    }
+  },
+  "case_to_design_cross_stage_linking": {
+    "stage_3_must_link_to": [
+      "stage_1_module_assignments",
+      "stage_2_module_assignments"
+    ],
+    "stage_4_must_link_to": [
+      "stage_2_module_assignments",
+      "stage_3_conclusions"
+    ],
+    "stage_5_must_link_to": [
+      "stage_2_module_assignments",
+      "stage_3_conclusions",
+      "stage_4_conclusions"
+    ],
+    "stage_4_must_also_consider": [
+      "relevant_prior_outputs"
+    ],
+    "stage_5_must_also_consider": [
+      "relevant_prior_outputs"
+    ]
+  },
+  "case_to_design_cumulative_link_control": {
+    "relation_model": "many_to_many",
+    "cumulative_by_default": true,
+    "previous_validated_links_may_be_inherited": true,
+    "previous_validated_conclusions_may_be_inherited": true,
+    "unresolved_gaps_must_be_carry_forward_candidates": true,
+    "carry_forward_only_when_not_contradicted": true
+  },
+  "problem_first_orchestration_rules": {
+    "problem_first_processing_required": true,
+    "mapping_only_after_problem_routing": true
+  },
+  "database_routing_contract": {
+    "primary": "bcio_index.json",
+    "secondary": "bcio_by_module.json",
+    "tertiary": "bcio_clean.json",
+    "main_flow": [
+      "candidate_retrieval_from_index",
+      "coordinate_matching_via_module_position",
+      "optional_hierarchy_nav_narrowing",
+      "return_exact_id_from_index"
+    ]
+  }
+}

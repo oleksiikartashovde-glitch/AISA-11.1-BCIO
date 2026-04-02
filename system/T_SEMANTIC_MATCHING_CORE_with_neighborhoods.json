@@ -1,0 +1,1594 @@
+{
+  "status": "t_semantic_matching_core",
+  "purpose": "Merged semantic and matching core for T-mode to reduce project file count.",
+  "merged_from": [
+    "DUAL_MODULE_MATCHING_RULES.json",
+    "MODULE_SEMANTIC_HINTS.json",
+    "PTR_CONTEXT_RULES.json",
+    "T_PATTERN_MODULE_MATCHES_SCHEMA.json",
+    "BCIO_SEMANTIC_LINK_RULES.json"
+  ],
+  "sections": {
+    "dual_module_matching_rules": {
+      "status": "dual_module_matching_rules",
+      "purpose": "Two-sided validation for T-mode module assignment: term-side semantics + module-side semantics.",
+      "pipeline_order": [
+        "literal_fragment_validation",
+        "ptr_context_selection",
+        "term_side_semantic_fit",
+        "term_neighborhood_fit",
+        "module_side_semantic_fit",
+        "module_assignment"
+      ],
+      "hard_gate_rules": {
+        "pattern_must_be_literal_fragment_compliant": true,
+        "free_paraphrase_forbidden": true,
+        "cross_paragraph_reconstruction_forbidden": true,
+        "module_plus_without_row_level_textual_support_forbidden": true
+      },
+      "term_side_validation": {
+        "sources": [
+          "BCIO_SEMANTICS_all.json",
+          "bcio_index.json",
+          "bcio_by_module.json"
+        ],
+        "required_checks": [
+          "matched_term_exists",
+          "matched_term_semantic_keywords_fit_fragment",
+          "matched_term_module_membership_checked",
+          "matched_term_parent_sibling_child_zone_checked"
+        ],
+        "term_neighborhood_rule": {
+          "source": "bcio_index.json",
+          "components": {
+            "parent": "read directly from hierarchy",
+            "children": "read directly from hierarchy",
+            "siblings": "compute as children of the same parent excluding the current term"
+          },
+          "usage": {
+            "must_check_parent_zone": true,
+            "must_check_children_zone": true,
+            "must_check_sibling_zone": true,
+            "neighborhood_supports_term_side_validation_only": true,
+            "neighborhood_must_not_override_literal_fragment_gate": true,
+            "neighborhood_must_not_create_plus_without_row_level_textual_support": true
+          }
+        }
+      },
+      "module_side_validation": {
+        "source": "MODULE_SEMANTIC_HINTS.json",
+        "required_checks": [
+          "module_trigger_fit",
+          "module_context_fit",
+          "no_forbidden_shortcut"
+        ]
+      },
+      "assignment_policy": {
+        "visible_table_value": "legacy_disabled_for_module_cells",
+        "internal_match_metadata_required_for_plus": true,
+        "plus_without_bcio_id_support_forbidden": true,
+        "preferred_policy": "plus_should_be_backed_by_one_or_more_bcio_ids",
+        "legacy_module_plus_assignment_disabled": true,
+        "current_ptrc_visible_table_value": "plus_or_minus_only",
+        "current_module_visible_table_value": "ontology_id_or_empty_downstream"
+      }
+    },
+    "module_semantic_hints": {
+      "status": "module_semantic_hints",
+      "purpose": "Module-side semantic hints for T-mode screening.",
+      "modules": [
+        "BCT",
+        "MoA",
+        "Mode of Delivery",
+        "Setting",
+        "Source",
+        "Population",
+        "Behaviour",
+        "Style of Delivery",
+        "Dose",
+        "Schedule",
+        "Engagement",
+        "Reach",
+        "Fidelity"
+      ],
+      "scan_order_policy": {
+        "pass_1": [
+          "Dose",
+          "Schedule",
+          "Engagement",
+          "Reach",
+          "Fidelity"
+        ],
+        "pass_2": [
+          "BCT",
+          "MoA",
+          "Mode of Delivery",
+          "Setting",
+          "Source",
+          "Population",
+          "Behaviour",
+          "Style of Delivery"
+        ],
+        "do_not_stop_after_first_module_match": true,
+        "multi_module_assignment_allowed": true
+      }
+    },
+    "ptr_context_rules": {
+      "status": "ptr_context_rules",
+      "purpose": "Rules for selecting exactly one active Problem/Target/Result context per T row.",
+      "contexts": {
+        "Problem": {
+          "strong_cues": [
+            "decline",
+            "barrier",
+            "risk",
+            "lack",
+            "problem",
+            "difficulty",
+            "unintended",
+            "failure",
+            "low rate"
+          ],
+          "description": "Problem state, deficit, barrier, harmful condition, or obstacle."
+        },
+        "Target": {
+          "strong_cues": [
+            "target",
+            "goal",
+            "desired behavior",
+            "turnout",
+            "use",
+            "uptake",
+            "adoption",
+            "intention to"
+          ],
+          "description": "Behavior or state intended to be changed, increased, maintained, or achieved."
+        },
+        "Result": {
+          "strong_cues": [
+            "raises",
+            "decreases",
+            "effect",
+            "outcome",
+            "improved",
+            "no indication",
+            "difference",
+            "odds ratio",
+            "percentage points"
+          ],
+          "description": "Observed effect, evaluation result, measured outcome, or comparative finding."
+        }
+      },
+      "hard_rule": {
+        "exactly_one_plus_required_per_row": true,
+        "design_or_delivery_descriptors_must_not_default_to_result": true
+      },
+      "problem_gate_enhancement": {
+        "status": "enhanced_problem_gate",
+        "purpose": "Increase sensitivity to explicit and implicit problem signals without collapsing target into problem.",
+        "channels": {
+          "direct_problem_detection": {
+            "strong_cues": [
+              "decline",
+              "barrier",
+              "risk",
+              "lack",
+              "problem",
+              "difficulty",
+              "unintended",
+              "failure",
+              "low",
+              "insufficient",
+              "weak",
+              "no effect",
+              "poor",
+              "limited",
+              "inadequate",
+              "not effective"
+            ],
+            "rule": "direct deficit/harm/obstacle statements may activate Problem"
+          },
+          "gap_or_deficit_detection": {
+            "strong_cues": [
+              "low baseline",
+              "low turnout",
+              "contact rate",
+              "coverage gap",
+              "insufficient reach",
+              "limited contact",
+              "weak effect",
+              "no indication",
+              "lower than control",
+              "inconsistent",
+              "non-adherence",
+              "underuse"
+            ],
+            "rule": "baseline deficits, insufficiency cues, and weak/negative effect cues may activate Problem"
+          },
+          "target_derived_problem_inference": {
+            "enabled": true,
+            "rule": "target may imply hidden deficit only when supported by at least one deficit/insufficiency/rationale cue",
+            "required_support_any_of": [
+              "baseline deficit cue",
+              "weak or negative outcome cue",
+              "insufficiency cue",
+              "explicit rationale for intervention need",
+              "low or poor current-state cue"
+            ],
+            "forbidden": [
+              "target_alone_implies_problem",
+              "automatic_problem_from_goal_wording_only"
+            ]
+          }
+        },
+        "classification_priority": [
+          "direct_problem_detection",
+          "gap_or_deficit_detection",
+          "target_derived_problem_inference_if_supported"
+        ],
+        "global_rules": {
+          "problem_must_still_be_grounded_in_pattern_or_pattern_cluster_context": true,
+          "problem_detection_must_not_override_exactly_one_of_four_rule": true,
+          "problem_plus_must_not_be_assigned_from_target_alone": true
+        }
+      }
+    },
+    "pattern_module_matches_schema": {
+      "status": "t_pattern_module_matches_schema",
+      "purpose": "Internal metadata schema backing plus-assignments in T tables with BCIO IDs.",
+      "record_unit": "one_pattern_row",
+      "required_fields": [
+        "locator",
+        "pattern_id",
+        "pattern",
+        "ptr_context",
+        "module_matches"
+      ],
+      "module_match_object": {
+        "value": "plus_or_minus",
+        "matched_bcio_ids": [
+          "BCIO:000000"
+        ],
+        "matched_labels": [
+          "example label"
+        ],
+        "evidence_type": "direct_literal_fragment_or_same_paragraph_composite",
+        "support_fragment": "literal fragment used as support",
+        "term_side_fit": {
+          "semantic_keyword_overlap": [],
+          "parent_labels_used": [],
+          "sibling_labels_used": [],
+          "child_labels_used": [],
+          "neighborhood_source": "bcio_index.json",
+          "computed_siblings_rule": "children_of_same_parent_excluding_current_term"
+        },
+        "module_side_fit": {
+          "matched_triggers": [],
+          "matched_context_types": [],
+          "forbidden_shortcut_triggered": false
+        }
+      }
+    },
+    "bcio_semantic_link_rules": {
+      "status": "bcio_semantic_link_rules",
+      "purpose": "Rules for creating candidate semantic links between BCIO entities based on shared semantic keywords.",
+      "scope": "candidate_semantic_links_only_not_formal_ontology_relations",
+      "input_sources": {
+        "entity_source": "BCIO_SEMANTICS_all.json",
+        "keyword_field": "semantic_keywords"
+      },
+      "comparison_rules": {
+        "compare_field": "semantic_keywords",
+        "case_normalization": true,
+        "deduplicate_keywords_per_entity": true,
+        "self_links_forbidden": true,
+        "bidirectional_duplicates_forbidden": true,
+        "canonical_pair_rule": "store_only_source_id_less_than_target_id"
+      },
+      "stopword_filter": {
+        "enabled": true,
+        "stopwords": [
+          "behaviour",
+          "behavior",
+          "person",
+          "people",
+          "process",
+          "attribute",
+          "entity",
+          "activity",
+          "individual",
+          "group",
+          "intervention",
+          "population",
+          "setting",
+          "source",
+          "delivery",
+          "style",
+          "result",
+          "problem",
+          "target"
+        ]
+      },
+      "link_thresholds": {
+        "minimum_shared_keywords": 1,
+        "strength_rules": {
+          "1": "weak",
+          "2": "medium",
+          "3_or_more": "strong"
+        }
+      },
+      "output_record_schema": {
+        "source_id": "BCIO ID of first entity in canonical pair order",
+        "target_id": "BCIO ID of second entity in canonical pair order",
+        "shared_keywords": "array of normalized shared semantic keywords after stopword filtering",
+        "shared_count": "integer count of shared keywords",
+        "link_strength": "weak | medium | strong",
+        "source_modules": "modules of source entity",
+        "target_modules": "modules of target entity",
+        "module_intersection": "shared modules between source and target",
+        "cross_module_overlap": "true if module_intersection is non-empty",
+        "same_ontology": "true if source and target have same source_ontology"
+      },
+      "recommended_output_files": [
+        "BCIO_SEMANTIC_LINKS.json",
+        "BCIO_SEMANTIC_LINKS_manifest.json"
+      ],
+      "interpretation_limits": {
+        "not_a_formal_relation": true,
+        "not_a_hierarchy_edge": true,
+        "not_proof_of_equivalence": true,
+        "use_as_navigation_or_similarity_signal_only": true
+      }
+    },
+    "stage_narrative_ontology": {
+      "embedded_from": "PTRC_STAGE_NARRATIVE_ONTOLOGY.rebuilt.json",
+      "file_role": "PTRC_STAGE_NARRATIVE_ONTOLOGY",
+      "version": "v1.1_rebuilt_from_available_project_files",
+      "purpose": "Hierarchical stage narrative ontology for Problem, Goal, Result, and Context. Used to select a whole-stage narrative root, then refine through children and siblings before module matching.",
+      "global_rules": {
+        "stages_exact": [
+          "Problem",
+          "Goal",
+          "Result",
+          "Context"
+        ],
+        "select_root_first": true,
+        "children_and_siblings_are_refinement_layers": true,
+        "whole_stage_narrative_must_be_checked_before_module_projection": true,
+        "narrative_id_selection_precedes_stage_vector_lookup": true
+      },
+      "stages": {
+        "Goal": {
+          "root_concepts": [
+            {
+              "id": "BCIO:006049.13.07.ma",
+              "label": "goal",
+              "definition": "A <cognitive representation> of an end state towards which one is striving.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Core goal narrative concept."
+            },
+            {
+              "id": "BCIO:006114.00.32.ma",
+              "label": "goal setting process",
+              "definition": "A <mental process> that establishes a cognitive representation of the desired end state.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Narrative of setting a goal."
+            },
+            {
+              "id": "BCIO:006096.02.14.ma",
+              "label": "goal pursuit process",
+              "definition": "A <bodily process> in which attempts are made to achieve a desired end state.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Narrative of pursuing a goal."
+            },
+            {
+              "id": "BCIO:006070.01.00.ma",
+              "label": "mental plan for a behaviour",
+              "definition": "A <mental plan> that is realised in mental processes representing the steps to enact a behaviour and the conditions under which the behaviour will be enacted.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Narrative of behavioural planning linked to a goal."
+            },
+            {
+              "id": "BCIO:007001.18.19.bc",
+              "label": "goal directed BCT",
+              "definition": "A <behaviour change technique> that sets or changes goals.",
+              "modules": [
+                "BCT"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Narrative where the goal appears as a goal-directed intervention technique."
+            }
+          ],
+          "narrative_selection_rules": {
+            "select_root_first": true,
+            "prefer_child_over_root_when_phrase_is_more_specific": true,
+            "allow_sibling_fallback_when_root_zone_matches_but_child_does_not": true,
+            "do_not_select_sibling_outside_root_zone": true,
+            "whole_stage_narrative_must_be_checked_before_decomposition_only_matching": true
+          }
+        },
+        "Problem": {
+          "root_concepts": [
+            {
+              "id": "BCIO:006017.01.31.ma.r",
+              "label": "belief about barriers to a behaviour",
+              "definition": "A <belief> about a factor that could restrict or impede a person from engaging in a behaviour.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Problem narrative framed as barrier to behaviour."
+            },
+            {
+              "id": "BCIO:006030.01.31.ma",
+              "label": "belief about severity of an outcome",
+              "definition": "A <belief> about how serious the harm associated with an outcome could be.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Problem narrative framed as severity of an outcome."
+            },
+            {
+              "id": "BCIO:006055.01.05.ma",
+              "label": "knowledge regarding a threat",
+              "definition": "<Knowledge> regarding a potential harm.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Problem narrative framed as threat-related knowledge."
+            },
+            {
+              "id": "BCIO:006088.00.04.ma.r",
+              "label": "healthcare access",
+              "definition": "A <behavioural opportunity> regarding how easy it is for a person to approach and use a healthcare service.",
+              "modules": [
+                "Mechanisms of Action",
+                "Reach"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Problem narrative framed as access problem."
+            },
+            {
+              "id": "BCIO:006157.00.00.ma",
+              "label": "mental plan for coping with barriers",
+              "definition": "A <mental plan for a behaviour> regarding a strategy to deal with conditions that could prevent the performance of a behaviour.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Problem narrative framed as coping with barriers."
+            }
+          ],
+          "narrative_selection_rules": {
+            "select_root_first": true,
+            "prefer_child_over_root_when_phrase_is_more_specific": true,
+            "allow_sibling_fallback_when_root_zone_matches_but_child_does_not": true,
+            "do_not_select_sibling_outside_root_zone": true,
+            "whole_stage_narrative_must_be_checked_before_decomposition_only_matching": true
+          }
+        },
+        "Result": {
+          "root_concepts": [
+            {
+              "id": "BCIO:002000.00.00.bc.be.d.ma.md.p.sd.se.so",
+              "label": "behaviour change intervention outcome behaviour",
+              "definition": "Human behaviour that is an intervention outcome.",
+              "modules": [
+                "Mode of Delivery",
+                "Setting",
+                "Mechanisms of Action",
+                "Source",
+                "Behaviour",
+                "BCT",
+                "Population",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Result narrative framed as outcome behaviour."
+            },
+            {
+              "id": "BCIO:006023.00.31.ma.e",
+              "label": "belief about gain",
+              "definition": "A <belief> about the existence of an increase from an initial reference point.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Result narrative framed as gain."
+            },
+            {
+              "id": "BCIO:006027.00.31.ma.e",
+              "label": "belief about reduction",
+              "definition": "A <belief> about the existence of a decrease from an initial reference point.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Result narrative framed as reduction."
+            },
+            {
+              "id": "BCIO:036103.01.00.be.ma.sd",
+              "label": "tobacco smoking behaviour",
+              "definition": "A tobacco use behaviour that involves setting light to a combustible tobacco product and ingesting the tobacco smoke that is produced.",
+              "modules": [
+                "Behaviour",
+                "Mechanisms of Action",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Result narrative framed as tobacco smoking behaviour outcome zone."
+            },
+            {
+              "id": "BCIO:036105.00.00.be.ma.sd",
+              "label": "cigarette smoking behaviour",
+              "definition": "A tobacco smoking behaviour that involves setting light to one end of a cigarette, putting the other end to the lips and sucking in order to ingest cigarette smoke.",
+              "modules": [
+                "Behaviour",
+                "Mechanisms of Action",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Result narrative framed as cigarette smoking behaviour outcome zone."
+            }
+          ],
+          "narrative_selection_rules": {
+            "select_root_first": true,
+            "prefer_child_over_root_when_phrase_is_more_specific": true,
+            "allow_sibling_fallback_when_root_zone_matches_but_child_does_not": true,
+            "do_not_select_sibling_outside_root_zone": true,
+            "whole_stage_narrative_must_be_checked_before_decomposition_only_matching": true
+          }
+        },
+        "Context": {
+          "root_concepts": [
+            {
+              "id": "BCIO:005000.00.04.bc.be.p.ma.md.se.so.sd",
+              "label": "behaviour change intervention context",
+              "definition": "An aggregate of entities that are not dependent on the intervention but may influence the effect of a BCI on its outcome behaviour.",
+              "modules": [
+                "Mode of Delivery",
+                "Setting",
+                "Mechanisms of Action",
+                "Source",
+                "Behaviour",
+                "BCT",
+                "Population",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Context narrative root."
+            },
+            {
+              "id": "BCIO:006085.00.02.be.ma.sd",
+              "label": "location",
+              "definition": "A spatial <quality> that inheres in a bearer by virtue of its position relative to other entities.",
+              "modules": [
+                "Mechanisms of Action",
+                "Behaviour",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Context narrative framed as location."
+            },
+            {
+              "id": "BCIO:006087.00.02.ma",
+              "label": "financial behavioural opportunity",
+              "definition": "A <physical behavioural opportunity> that involves the person having sufficient financial resources.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Context narrative framed as financial behavioural opportunity."
+            },
+            {
+              "id": "BCIO:006001.09.03.ma",
+              "label": "social environmental system",
+              "definition": "An <environmental system> that consists of people, their pets, social and cultural institutions and processes that influence the life of people and social groups.",
+              "modules": [
+                "Mechanisms of Action"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Context narrative framed as social environmental system."
+            },
+            {
+              "id": "BCIO:015052.00.08.be.p.ma.sd",
+              "label": "employed",
+              "definition": "An employment status realised by an individual being engaged in an activity or service for wages or salary.",
+              "modules": [
+                "Population",
+                "Mechanisms of Action",
+                "Behaviour",
+                "Style of Delivery"
+              ],
+              "parent": null,
+              "children": [],
+              "siblings": [],
+              "stage_fit_reason": "Context narrative framed as employed population status."
+            }
+          ],
+          "narrative_selection_rules": {
+            "select_root_first": true,
+            "prefer_child_over_root_when_phrase_is_more_specific": true,
+            "allow_sibling_fallback_when_root_zone_matches_but_child_does_not": true,
+            "do_not_select_sibling_outside_root_zone": true,
+            "whole_stage_narrative_must_be_checked_before_decomposition_only_matching": true
+          }
+        }
+      }
+    },
+    "stage_vector_rules": {
+      "embedded_from": "PTRC_STAGE_VECTOR_RULES.json",
+      "file_role": "PTRC_STAGE_VECTOR_RULES",
+      "version": "v1",
+      "purpose": "Convert active PTRC stage flags into a stage-to-module influence vector for all 13 modules before ontology matching.",
+      "global_rules": {
+        "active_stages_exact": [
+          "Problem",
+          "Goal",
+          "Result",
+          "Context"
+        ],
+        "active_modules_exact": [
+          "Dose",
+          "Schedule",
+          "Engagement",
+          "Reach",
+          "Fidelity",
+          "BCT",
+          "MoA",
+          "Mode of Delivery",
+          "Setting",
+          "Source",
+          "Population",
+          "Behaviour",
+          "Style of Delivery"
+        ],
+        "all_13_modules_must_be_covered_for_each_stage": true,
+        "weights_range": "0.0_to_1.0",
+        "priority_values_exact": [
+          "primary",
+          "secondary",
+          "weak"
+        ],
+        "stage_vector_must_influence_decomposition": true,
+        "stage_vector_must_influence_candidate_retrieval": true,
+        "stage_vector_must_influence_candidate_ranking": true
+      },
+      "stages": {
+        "Problem": {
+          "narrative_role": "deficit_barrier_failure_risk_frame",
+          "core_interpretation": "Interpret the phrase as a problem-state, barrier-state, deficit-state, risk-state, failure-state, or adverse condition before module matching.",
+          "module_map": {
+            "Dose": {
+              "weight": 0.95,
+              "priority": "primary",
+              "reason": "Problems often surface as absence, insufficiency, excess, or mismatch of intervention amount or exposure."
+            },
+            "Schedule": {
+              "weight": 0.92,
+              "priority": "primary",
+              "reason": "Problems often appear through timing failures, delays, absences, or badly aligned temporal conditions."
+            },
+            "Engagement": {
+              "weight": 0.86,
+              "priority": "primary",
+              "reason": "Problems frequently involve dropout, non-participation, incomplete uptake, or weak adherence to active components."
+            },
+            "Reach": {
+              "weight": 0.82,
+              "priority": "primary",
+              "reason": "Problems often involve low coverage, missed exposure, or failure to reach intended recipients."
+            },
+            "Fidelity": {
+              "weight": 0.9,
+              "priority": "primary",
+              "reason": "Problems often arise when delivery is not as intended, inconsistent, or protocol-incongruent."
+            },
+            "BCT": {
+              "weight": 0.48,
+              "priority": "secondary",
+              "reason": "A problem statement may imply a missing or misapplied intervention component, but not always directly."
+            },
+            "MoA": {
+              "weight": 0.63,
+              "priority": "secondary",
+              "reason": "A problem may reflect failed mechanisms such as low motivation, low self-efficacy, or barrier-driven processes."
+            },
+            "Mode of Delivery": {
+              "weight": 0.4,
+              "priority": "weak",
+              "reason": "Problems can be linked to how content was or was not delivered, but this is not the default interpretation."
+            },
+            "Setting": {
+              "weight": 0.44,
+              "priority": "weak",
+              "reason": "Some problems are setting-bound, but setting is usually contextual rather than the primary problem carrier."
+            },
+            "Source": {
+              "weight": 0.38,
+              "priority": "weak",
+              "reason": "Problems can involve source mismatch or absent deliverer identity, but this is secondary."
+            },
+            "Population": {
+              "weight": 0.5,
+              "priority": "secondary",
+              "reason": "Problem-statements may be located in a recipient group, but the group is not always the problem itself."
+            },
+            "Behaviour": {
+              "weight": 0.66,
+              "priority": "secondary",
+              "reason": "Problems often concern problematic behaviour, non-performance, or harmful performance."
+            },
+            "Style of Delivery": {
+              "weight": 0.34,
+              "priority": "weak",
+              "reason": "Style may contribute to a problem, but it is rarely the first interpretation of problem narratives."
+            }
+          }
+        },
+        "Goal": {
+          "narrative_role": "desired_state_intended_change_frame",
+          "core_interpretation": "Interpret the phrase as a desired state, intended direction of change, plan target, or goal-oriented intervention frame before module matching.",
+          "module_map": {
+            "Dose": {
+              "weight": 0.7,
+              "priority": "secondary",
+              "reason": "Goals can specify intended amount, target level, or desired exposure conditions."
+            },
+            "Schedule": {
+              "weight": 0.72,
+              "priority": "secondary",
+              "reason": "Goals often contain planned time horizons, deadlines, future target states, or intended temporal progression."
+            },
+            "Engagement": {
+              "weight": 0.58,
+              "priority": "secondary",
+              "reason": "Some goals concern participation, completion, or adherence, though not all goal phrases do."
+            },
+            "Reach": {
+              "weight": 0.52,
+              "priority": "secondary",
+              "reason": "Goals may include intended coverage or uptake, but this is not always central."
+            },
+            "Fidelity": {
+              "weight": 0.56,
+              "priority": "secondary",
+              "reason": "Some goals specify planned correct delivery or intended implementation quality."
+            },
+            "BCT": {
+              "weight": 0.95,
+              "priority": "primary",
+              "reason": "Goal narratives strongly align with intervention techniques targeting change, planning, or commitment."
+            },
+            "MoA": {
+              "weight": 0.9,
+              "priority": "primary",
+              "reason": "Goals strongly align with motivational, cognitive, and intentional mechanisms."
+            },
+            "Mode of Delivery": {
+              "weight": 0.42,
+              "priority": "weak",
+              "reason": "Delivery mode may support goals, but is not usually the core goal-space."
+            },
+            "Setting": {
+              "weight": 0.34,
+              "priority": "weak",
+              "reason": "Setting may contextualize a goal, but typically does not define the goal itself."
+            },
+            "Source": {
+              "weight": 0.3,
+              "priority": "weak",
+              "reason": "Source may support goal pursuit, but is not usually the main goal signal."
+            },
+            "Population": {
+              "weight": 0.46,
+              "priority": "weak",
+              "reason": "Goals may be framed for a group, but the group is usually not the main target concept."
+            },
+            "Behaviour": {
+              "weight": 0.86,
+              "priority": "primary",
+              "reason": "Goals frequently specify desired behaviour states or desired behaviour change endpoints."
+            },
+            "Style of Delivery": {
+              "weight": 0.36,
+              "priority": "weak",
+              "reason": "Communication style may support goals, but is not usually the first goal interpretation."
+            }
+          }
+        },
+        "Result": {
+          "narrative_role": "observed_change_outcome_effect_frame",
+          "core_interpretation": "Interpret the phrase as an observed outcome, measured effect, realised change, achieved state, or post-intervention result before module matching.",
+          "module_map": {
+            "Dose": {
+              "weight": 0.44,
+              "priority": "weak",
+              "reason": "Results may reflect exposure level or delivered amount, but dose is often upstream rather than the result itself."
+            },
+            "Schedule": {
+              "weight": 0.5,
+              "priority": "secondary",
+              "reason": "Results may be temporally situated or time-dependent, especially in follow-up outcome statements."
+            },
+            "Engagement": {
+              "weight": 0.84,
+              "priority": "primary",
+              "reason": "Results often concern uptake, completion, participation, retention, or adherence outcomes."
+            },
+            "Reach": {
+              "weight": 0.8,
+              "priority": "primary",
+              "reason": "Results often include achieved coverage, exposure rates, recruitment success, or response levels."
+            },
+            "Fidelity": {
+              "weight": 0.76,
+              "priority": "primary",
+              "reason": "Results may be expressed as achieved implementation quality or delivery as intended."
+            },
+            "BCT": {
+              "weight": 0.38,
+              "priority": "weak",
+              "reason": "A result may refer back to intervention techniques, but the technique is usually not the outcome itself."
+            },
+            "MoA": {
+              "weight": 0.6,
+              "priority": "secondary",
+              "reason": "Results can include changed beliefs, motivation, self-efficacy, or other mechanism states."
+            },
+            "Mode of Delivery": {
+              "weight": 0.28,
+              "priority": "weak",
+              "reason": "Mode of delivery rarely acts as the outcome meaning, except in design-reporting contexts."
+            },
+            "Setting": {
+              "weight": 0.26,
+              "priority": "weak",
+              "reason": "Setting rarely carries the result meaning directly."
+            },
+            "Source": {
+              "weight": 0.22,
+              "priority": "weak",
+              "reason": "Source is rarely the direct result construct."
+            },
+            "Population": {
+              "weight": 0.4,
+              "priority": "weak",
+              "reason": "Results may be attached to a group, but the group is usually not the result concept itself."
+            },
+            "Behaviour": {
+              "weight": 0.95,
+              "priority": "primary",
+              "reason": "Results strongly align with observed behaviour change, outcome behaviour, abstinence, uptake, or performance."
+            },
+            "Style of Delivery": {
+              "weight": 0.2,
+              "priority": "weak",
+              "reason": "Style is rarely itself the outcome, except in delivery-evaluation contexts."
+            }
+          }
+        },
+        "Context": {
+          "narrative_role": "condition_setting_population_delivery_frame",
+          "core_interpretation": "Interpret the phrase as contextual framing, condition setting, recipient group, source framing, environmental setting, or delivery condition before module matching.",
+          "module_map": {
+            "Dose": {
+              "weight": 0.42,
+              "priority": "weak",
+              "reason": "Context can include comparator exposure or no-exposure conditions, but dose is not always the main context carrier."
+            },
+            "Schedule": {
+              "weight": 0.58,
+              "priority": "secondary",
+              "reason": "Context often includes timing conditions, follow-up windows, or scheduled conditions."
+            },
+            "Engagement": {
+              "weight": 0.34,
+              "priority": "weak",
+              "reason": "Context may include participation conditions, but engagement is not usually the default context meaning."
+            },
+            "Reach": {
+              "weight": 0.36,
+              "priority": "weak",
+              "reason": "Context may frame who was reached or not reached, but reach is often downstream."
+            },
+            "Fidelity": {
+              "weight": 0.46,
+              "priority": "secondary",
+              "reason": "Context can include arm-by-design delivery conditions or protocol conditions."
+            },
+            "BCT": {
+              "weight": 0.3,
+              "priority": "weak",
+              "reason": "Context may mention intervention components, but contextual phrases are not always BCT-first."
+            },
+            "MoA": {
+              "weight": 0.24,
+              "priority": "weak",
+              "reason": "Mechanism terms usually are not the first interpretation of context statements."
+            },
+            "Mode of Delivery": {
+              "weight": 0.82,
+              "priority": "primary",
+              "reason": "Context often specifies channel, medium, or contact format."
+            },
+            "Setting": {
+              "weight": 0.95,
+              "priority": "primary",
+              "reason": "Context strongly aligns with setting, location, environment, institution, or site."
+            },
+            "Source": {
+              "weight": 0.9,
+              "priority": "primary",
+              "reason": "Context often specifies who delivers, who provides, or who communicates."
+            },
+            "Population": {
+              "weight": 0.95,
+              "priority": "primary",
+              "reason": "Context strongly aligns with the recipient group, comparator group, subgroup, or population frame."
+            },
+            "Behaviour": {
+              "weight": 0.32,
+              "priority": "weak",
+              "reason": "Behaviour may appear inside context statements, but is not usually the primary contextual carrier."
+            },
+            "Style of Delivery": {
+              "weight": 0.76,
+              "priority": "primary",
+              "reason": "Context can include interpersonal style, framing style, or communication manner."
+            }
+          }
+        }
+      }
+    },
+    "operational_module_derived_hierarchy": {
+      "embedded_from": "OPERATIONAL_MODULE_DERIVED_HIERARCHY.with_definitions.json",
+      "file_role": "OPERATIONAL_MODULE_DERIVED_HIERARCHY",
+      "version": "v1.3_author_defined_with_full_sibling_layer_and_definitions",
+      "purpose": "Author-defined working hierarchy for operational modules. Built for algorithmic decomposition, retrieval, and ranking rather than imported as a canonical ontology tree.",
+      "global_rules": {
+        "derived_hierarchy": true,
+        "author_defined_operational_structure": true,
+        "external_ids_may_be_attached_after_hierarchy_mapping": true,
+        "core_operational_logic_first": true,
+        "module_first_design": true,
+        "siblings_within_root_enabled": true,
+        "root_siblings_enabled": true,
+        "external_supporting_siblings_placeholder_enabled": true,
+        "external_supporting_siblings_filled_from_module_map_first": true,
+        "relation_status_values_exact": [
+          "derived_child",
+          "derived_sibling",
+          "external_supporting_sibling"
+        ],
+        "child_definitions_filled_from_bcio_clean": true,
+        "sibling_definitions_filled_from_bcio_clean": true
+      },
+      "modules": [
+        "Dose",
+        "Schedule",
+        "Engagement",
+        "Reach",
+        "Fidelity"
+      ]
+    },
+    "universal_phrase_algorithm_v3": {
+      "status": "active",
+      "scope": "all_T_mode_phrases",
+      "core_formula": "ptrc_flags -> whole_stage_narrative -> stage_vector -> semantic_decomposition -> operational_hierarchy_pass -> 13_module_projection -> downstream_candidate_retrieval",
+      "runtime_slot_strategy": "embedded_inside_T_SEMANTIC_MATCHING_CORE_only",
+      "hard_rules": {
+        "new_runtime_files_forbidden": true,
+        "lazy_single_pass_forbidden": true,
+        "quality_has_priority_over_speed": true,
+        "ptrc_flags_remain_plus_minus": true,
+        "module_cells_remain_ontology_id_or_empty_downstream": true
+      },
+      "pipeline_order": [
+        "V73_expansion_trigger_check",
+        "PHASE_0_graph_pre_activation",
+        "ptrc_flag_read",
+        "whole_stage_narrative_selection",
+        "stage_vector_lookup",
+        "Step_3a_process_type_decomposition",
+        "Step_3b_semantic_core",
+        "PHASE_2_theory_pattern_scan",
+        "P1_search_with_failure_cluster_and_full_cluster",
+        "P2_synonym_antonym_search",
+        "P3_variability_plus_coactivation_expansion",
+        "PHASE_4_term_combo_pass",
+        "13_module_projection",
+        "downstream_candidate_retrieval_and_ranking",
+        "V73_extended_quality_gate"
+      ],
+      "whole_stage_narrative_selection_rules": {
+        "if_problem_plus_then_problem_narrative_checked": true,
+        "if_goal_plus_then_goal_narrative_checked": true,
+        "if_result_plus_then_result_narrative_checked": true,
+        "if_context_plus_then_context_narrative_checked": true,
+        "whole_stage_narrative_checked_before_decomposition_only_matching": true
+      },
+      "operational_hierarchy_pass_rules": {
+        "operational_modules_checked_before_remaining_modules": true,
+        "operational_modules_exact": [
+          "Dose",
+          "Schedule",
+          "Engagement",
+          "Reach",
+          "Fidelity"
+        ],
+        "operational_hierarchy_source_embedded_section": "operational_module_derived_hierarchy"
+      },
+      "downstream_binding": {
+        "candidate_ranker_expected_downstream": "BCIO_CANDIDATE_RANKER.json",
+        "gate_expected_downstream": "BCIO_CANDIDATE_RANKER.json",
+        "forecast_expected_downstream": "BCIO_CANDIDATE_RANKER.json",
+        "normalization_expected_downstream": "BCIO_NORMALIZATION_RULES.json"
+      },
+      "V73_expansion_note": "If query is affective/abstract/social/polysemous: Block A (Step 3a process types + Step 3b synonyms/antonyms) feeds into semantic_unit_decomposition. P1->P2->P3 search vectors replace or augment standard decomposition."
+    }
+  },
+  "usage_note": {
+    "replaces_five_files_with_one": true,
+    "recommended_runtime_filename": "T_SEMANTIC_MATCHING_CORE.json",
+    "db31_primary_operational_source": "bcio_index.json",
+    "db31_primary_coordinate_layer": "module_position",
+    "db31_navigation_support": "bcio_by_module.hierarchy_nav"
+  },
+  "two_pass_module_scan_policy": {
+    "status": "disabled_after_db31",
+    "reason": "module is no longer the primary first-step routing anchor; coordinate matching via module_position descriptions now precedes module narrowing"
+  },
+  "step_10_patch_note": {
+    "status": "pattern_star_execution_fix",
+    "purpose": "Expose exact-vs-near-exact grounded decision path inside semantic matching core."
+  },
+  "pattern_star_execution": {
+    "status": "pattern_star_execution_enabled",
+    "purpose": "Operationalize Pattern* rendering for near-exact grounded patterns.",
+    "decision_flow": [
+      "extract_candidate_fragment",
+      "check_if_exact_literal_fragment",
+      "if_exact_render_without_star",
+      "if_not_exact_check_near_exact_grounded_conditions",
+      "if_near_exact_grounded_render_with_trailing_asterisk",
+      "if_not_grounded_do_not_render_row"
+    ],
+    "exact_pattern_rule": {
+      "render_marker": "",
+      "requirements": [
+        "literal_or_contiguous_fragment_preferred",
+        "same_paragraph_composite_allowed_if_already_permitted"
+      ]
+    },
+    "near_exact_grounded_pattern_rule": {
+      "render_marker": "*",
+      "all_required": [
+        "fact_preserved",
+        "logic_preserved",
+        "no_semantic_distortion",
+        "no_cross_paragraph_reconstruction",
+        "row_level_auditability_preserved"
+      ],
+      "render_rule": "append_trailing_asterisk_to_pattern_text"
+    },
+    "forbidden_for_star": [
+      "fact_changed",
+      "logic_changed",
+      "semantic_drift",
+      "cross_paragraph_stitching",
+      "model_written_bridge_text_that_alters_meaning"
+    ],
+    "failure_policy": {
+      "if_not_exact_and_not_star_qualified": "do_not_render_row",
+      "if_starred_pattern_fails_grounded_validation": "do_not_render_row"
+    }
+  },
+  "problem_gate_enhancement": {
+    "status": "enhanced_problem_gate",
+    "purpose": "Increase sensitivity to explicit and implicit problem signals without collapsing target into problem.",
+    "channels": {
+      "direct_problem_detection": {
+        "strong_cues": [
+          "decline",
+          "barrier",
+          "risk",
+          "lack",
+          "problem",
+          "difficulty",
+          "unintended",
+          "failure",
+          "low",
+          "insufficient",
+          "weak",
+          "no effect",
+          "poor",
+          "limited",
+          "inadequate",
+          "not effective"
+        ],
+        "rule": "direct deficit/harm/obstacle statements may activate Problem"
+      },
+      "gap_or_deficit_detection": {
+        "strong_cues": [
+          "low baseline",
+          "low turnout",
+          "contact rate",
+          "coverage gap",
+          "insufficient reach",
+          "limited contact",
+          "weak effect",
+          "no indication",
+          "lower than control",
+          "inconsistent",
+          "non-adherence",
+          "underuse"
+        ],
+        "rule": "baseline deficits, insufficiency cues, and weak/negative effect cues may activate Problem"
+      },
+      "target_derived_problem_inference": {
+        "enabled": true,
+        "rule": "target may imply hidden deficit only when supported by at least one deficit/insufficiency/rationale cue",
+        "required_support_any_of": [
+          "baseline deficit cue",
+          "weak or negative outcome cue",
+          "insufficiency cue",
+          "explicit rationale for intervention need",
+          "low or poor current-state cue"
+        ],
+        "forbidden": [
+          "target_alone_implies_problem",
+          "automatic_problem_from_goal_wording_only"
+        ]
+      }
+    },
+    "classification_priority": [
+      "direct_problem_detection",
+      "gap_or_deficit_detection",
+      "target_derived_problem_inference_if_supported"
+    ],
+    "global_rules": {
+      "problem_must_still_be_grounded_in_pattern_or_pattern_cluster_context": true,
+      "problem_detection_must_not_override_exactly_one_of_four_rule": true,
+      "problem_plus_must_not_be_assigned_from_target_alone": true
+    }
+  },
+  "cumulative_step_embed_stage_and_operational_layers": {
+    "status": "cumulative_step_embed_stage_and_operational_layers",
+    "purpose": "Embed stage narrative ontology, stage vector rules, and operational derived hierarchy directly into T_SEMANTIC_MATCHING_CORE_with_neighborhoods.json because no new runtime slots are available."
+  },
+  "locator_level_and_render_sync_policy": {
+    "stage_narrative_layer_embedded": true,
+    "stage_vector_layer_embedded": true,
+    "operational_hierarchy_layer_embedded": true,
+    "new_runtime_slots_not_required": true
+  },
+  "wave_1_cumulative_runtime_alignment": {
+    "status": "active",
+    "purpose": "Split candidate vs final write, enable abstract/summary coding rules, preserve PTRC while requiring valid module ID for visible rows, and keep Pattern ID separate from ontology ID."
+  },
+  "candidate_vs_final_write_split_policy": {
+    "status": "active",
+    "candidates_allowed_internally_without_final_id": true,
+    "final_write_requires_gate_pass": true,
+    "visible_row_requires_validated_row_status": true,
+    "visible_row_requires_at_least_one_valid_module_id": true,
+    "ptrc_without_valid_module_id_is_insufficient_for_visible_row": true
+  },
+  "abstract_summary_semantic_policy": {
+    "status": "active",
+    "abstract_candidate_legal": true,
+    "summary_fragment_may_enter_normal_coding_path": true,
+    "stronger_threshold_for_final_write_than_procedural": true,
+    "summary_may_code_to_parent_or_ancestor": true,
+    "no_sibling_final_write_from_abstract_only_support": true
+  },
+  "hierarchy_write_semantic_policy": {
+    "status": "active",
+    "final_write_order": [
+      "exact_child",
+      "near_exact_child",
+      "validated_parent",
+      "validated_ancestor",
+      "suppress"
+    ],
+    "select_lowest_honestly_supported_level": true,
+    "upward_generalization_allowed": true,
+    "sideways_sibling_final_write_forbidden": true,
+    "too_generic_ancestor_forbidden": true
+  },
+  "pattern_anchor_module_separation_policy": {
+    "status": "active",
+    "pattern_id_not_required_as_battle_layer": true,
+    "pattern_id_slot_is_technical_anchor_slot": true,
+    "module_id_only_in_module_columns": true,
+    "pattern_id_auto_fill_from_module_id_forbidden": true
+  },
+  "multi_module_row_retention_policy": {
+    "status": "active",
+    "one_fragment_may_support_multiple_modules": true,
+    "each_module_evaluated_independently_through_cascade": true,
+    "row_stays_single_unless_truly_separate_patterns": true
+  },
+  "wave_2_cumulative_render_alignment": {
+    "status": "wave_2_cumulative_render_alignment",
+    "purpose": "Keep candidate search, validated row assembly, and visible rendering as separate semantic states."
+  },
+  "validated_row_assembly_semantic_policy": {
+    "status": "active",
+    "semantic_stages": [
+      "candidate_detection",
+      "ptrc_vector_resolution",
+      "module_candidate_ranking",
+      "hierarchy_cascade_selection",
+      "gate_validation",
+      "validated_row_assembly"
+    ],
+    "visible_render_requires_validated_row_state": true,
+    "candidate_state_not_renderable": true
+  },
+  "source_unit_disposition_semantic_policy": {
+    "status": "active",
+    "candidate_only_source_unit_is_semantically_nonempty": true,
+    "abstract_only_page_is_content_type_not_failure_state": true,
+    "source_unit_with_no_codable_content_is_distinct_from_candidate_only_source_unit": true,
+    "source_unit_status_must_not_be_rewritten_as_fake_screening_row": true
+  },
+  "service_explanation_split_policy": {
+    "status": "active",
+    "service_explanation_is_not_screening_row": true,
+    "reason_labels_may_explain_but_may_not_substitute_for_coding": true,
+    "debug_explanation_allowed_only_outside_main_screening_table": true,
+    "dialogue_feedback_must_not_mutate_row_semantics_mid_run": true
+  },
+  "wave_3_cumulative_semantic_alignment": {
+    "status": "active",
+    "purpose": "Add narrative normalization, anchor traceability semantics, and row split discipline on top of wave 2."
+  },
+  "narrative_coding_semantic_policy": {
+    "narrative_has_no_special_visible_privilege": true,
+    "important_narrative_enters_candidate_or_validated_path_only": true,
+    "narrative_without_valid_module_assignment_remains_internal_or_suppressed": true,
+    "summary_and_narrative_semantics_follow_same_visibility_gate": true
+  },
+  "anchor_traceability_semantic_policy": {
+    "anchor_id_tracks_same_unit_across_internal_states": true,
+    "anchor_id_not_semantic_class": true,
+    "pattern_id_slot_semantically_maps_to_anchor_not_module": true
+  },
+  "row_split_semantic_policy": {
+    "one_fragment_one_row_default": true,
+    "multi_module_support_without_split_allowed": true,
+    "split_requires_truly_distinct_pattern_boundaries": true,
+    "split_for_cleaner_layout_only_forbidden": true
+  },
+  "version": "v6.1-wave5-cumulative-all-modes-all-modules",
+  "summary_projection_semantic_policy": {
+    "status": "active",
+    "purpose": "Keep semantic candidate exploration separate from canonical M-summary projection.",
+    "candidate_semantics_may_influence_internal_search_only": true,
+    "candidate_semantics_must_not_influence_summary_counts_directly": true,
+    "only_gate_passed_validated_module_assignments_may_project_to_summary": true,
+    "source_unit_status_semantics_must_not_project_to_summary": true,
+    "reason_label_semantics_must_not_project_to_summary": true,
+    "abstract_summary_candidate_semantics_must_not_project_without_final_gate_pass": true
+  },
+  "screening_summary_semantic_alignment": {
+    "status": "active",
+    "purpose": "Semantic alignment between visible screening rows and canonical M-summary rows.",
+    "summary_is_semantic_projection_of_visible_screening_eligibility": true,
+    "projection_requires_same_scope_and_same_visible_row_gate": true,
+    "summary_must_not_semantically_revive_excluded_rows": true
+  },
+  "partial_run_semantic_stability_policy": {
+    "status": "active",
+    "selected_locator_scope_is_semantic_boundary": true,
+    "candidate_generation_must_be_selected_scope_only": true,
+    "validated_row_assembly_must_be_selected_scope_only": true,
+    "source_unit_status_inference_must_be_selected_scope_only": true,
+    "abstract_summary_handling_must_match_full_run_policy_within_selected_scope": true,
+    "partial_run_must_not_promote_candidates_due_to_missing_unselected_context": true
+  },
+  "fail_safe_semantic_policy": {
+    "status": "active",
+    "semantic_uncertainty_may_continue_internally_but_must_fail_closed_at_visible_boundary": true,
+    "no_partial_visible_semantic_salvage_after_gate_failure": true,
+    "invalid_semantic_projection_must_trigger_rebuild_not_explanation": true
+  },
+  "audit_consistency_semantic_policy": {
+    "status": "active",
+    "visible_counts_semantically_defined_by_validated_rows_only": true,
+    "module_totals_semantically_defined_by_non_empty_valid_module_assignments_only": true,
+    "summary_totals_semantically_defined_by_projectable_summary_eligible_rows_only": true,
+    "candidate_semantics_must_not_leak_into_visible_counts": true
+  },
+  "wave7_audit_consistency_layer": {
+    "status": "active",
+    "purpose": "Keep semantic candidate exploration separate from visible counting and summary projection.",
+    "candidate_semantics_do_not_project_to_counts": true,
+    "suppressed_semantics_do_not_project_to_counts": true,
+    "source_unit_disposition_semantics_do_not_project_to_counts": true,
+    "reason_label_semantics_do_not_project_to_counts": true,
+    "validated_row_semantics_only_project_to_visible_counts": true
+  },
+  "regression_semantic_hardening_policy": {
+    "status": "active",
+    "purpose": "Keep semantic matching behavior stable across edge cases and repeated dialogue.",
+    "abstract_heavy_source_unit_keeps_candidate_path_without_forced_visible_row": true,
+    "source_unit_with_candidates_only_keeps_internal_signal_without_fake_summary_projection": true,
+    "source_unit_with_no_codable_content_keeps_empty_visible_projection": true,
+    "multi_module_single_row_keeps_single_pattern_when_support_is_shared": true,
+    "parent_or_ancestor_coding_requires_hierarchy_consistent_semantic_projection": true,
+    "sibling_neighborhood_may_support_search_but_not_final_write": true,
+    "ptrc_signal_without_valid_module_id_remains_non_visible": true,
+    "dialogue_feedback_may_inform_future_refactor_but_not_current_runtime_mutation": true
+  },
+  "cross_modulation_v3": {
+    "status": "applied",
+    "date": "2026-03",
+    "author_terms_removed": 65,
+    "imports_added": 25,
+    "cross_modulations_applied": 61,
+    "reference": "DREFS_THEORY_REFERENCE.json"
+  },
+  "drefs_hierarchy": {
+    "file_role": "DREFS_HIERARCHY",
+    "version": "v1.0",
+    "date": "2026-03",
+    "purpose": "Internal hierarchy for each DREFS module. L1=anchor (module activation), L2=mechanism type, L3=specific mechanism. Algorithm traverses top-down (L1 found -> explore L2/L3) or bottom-up (L3 found -> infer module via parent). Confidence: L1=high, L2=medium, L3=low (requires partner term for high confidence).",
+    "modules": [
+      "Dose",
+      "Engagement",
+      "Reach",
+      "Schedule",
+      "Fidelity"
+    ]
+  },
+  "_meta_drefs_hierarchy": "DREFS_HIERARCHY v1.0 merged. Contains L1/L2/L3 internal hierarchy for all 5 DREFS modules (146 terms). Use for: module activation (L1 anchor), mechanism identification (L2), specificity (L3), gap detection by level, top-down and bottom-up traversal.",
+  "narrative_module_final_write_guard": {
+    "applies_to": [
+      "T1_Result",
+      "T2_Target",
+      "T3_Result"
+    ],
+    "neighborhood_may_support_candidate_search_only": true,
+    "neighborhood_must_not_override_module_hard_gate": true,
+    "neighborhood_must_not_create_visible_row_without_valid_module_id": true,
+    "structure_before_content": true,
+    "visible_first_block_constraints": {
+      "module_report_is_structure_only": true,
+      "candidate_level_text_forbidden": true,
+      "evidence_level_text_forbidden": true
+    }
+  },
+  "wave_5_runtime_alignment": {
+    "module_gate_registry_required": true,
+    "recognition_signal_capture_required_for_kept_candidates": true,
+    "three_state_split_semantics_required": true,
+    "anti_overmatch_semantics_required": true,
+    "retrieval_modes_exact": [
+      "theory_activation_retrieval",
+      "gap_retrieval",
+      "failure_retrieval",
+      "variability_retrieval",
+      "module_diagnostic_retrieval",
+      "refactor_retrieval"
+    ]
+  },
+  "route_state_semantic_policy": {
+    "menu_is_service_state_only": true,
+    "blocked_is_hard_stop": true,
+    "intermediate_dialogue_does_not_reset_module_or_source_binding": true
+  },
+  "recognition_signal_semantic_policy": {
+    "anchor_text_required_for_real_candidate": true,
+    "recognition_templates_feed_gate_registry": true,
+    "neighbor_conflicts_feed_confidence_and_conflict_screening": true
+  },
+  "three_state_split_semantic_policy_v2": {
+    "states_exact": [
+      "ontology_state",
+      "source_support_state",
+      "selection_state"
+    ],
+    "must_keep_states_distinct_in_children_siblings_gap_and_conclusions": true
+  },
+  "anti_overmatch_semantic_policy_v2": {
+    "prefer_honest_general_match_over_over_specific_inference": true,
+    "do_not_shift_branch_without_role_support": true
+  },
+  "theory_layer_semantic_constraints_v2": {
+    "diagnostic_only": true,
+    "cannot_create_candidates": true,
+    "cannot_assign_bcio_ids": true,
+    "cannot_modify_route_state": true
+  },
+  "acceptance_semantic_policy": {
+    "runtime_acceptance_requires_regression_packs_exact": [
+      "Mercadona",
+      "Castro",
+      "session_failure"
+    ]
+  },
+  "cumulative_semantic_controls": {
+    "neighborhoods_diagnostic_not_decisive_without_source_support": true,
+    "current_uploaded_source_must_bind_output": true,
+    "cross_document_leakage_forbidden": true,
+    "module_safe_fallback_required": true,
+    "direction_descriptor_must_not_be_forced_into_entity_branch": true,
+    "quantity_must_not_be_forced_into_dose_without_role_support": true
+  },
+  "V73_semantic_expansion_trigger": {
+    "_note": "V73: pre-pipeline expansion check. Fires before universal_phrase_algorithm_v3.",
+    "position_in_pipeline": "BEFORE semantic_unit_decomposition step",
+    "trigger_check": {
+      "rule": "evaluate query term before entering standard decomposition",
+      "if_affective_or_abstract": "activate Block A expansion (V73_semantic_expansion in EXECUTION_CORE)",
+      "if_direct_bcio_match_exists": "still run expansion — direct match + expansion always better than direct match alone",
+      "if_no_match_at_all": "expansion is mandatory not optional"
+    },
+    "expansion_output_feeds_into": [
+      "P1 -> semantic_unit_decomposition (adds decomposition constructs as search units)",
+      "P2 -> bcio_semantic_link_rules (synonyms/antonyms as additional seed terms)",
+      "P3 -> downstream_candidate_retrieval_and_ranking (one-hop from P1/P2 results via hierarchy)"
+    ],
+    "integration_with_existing_pipeline": {
+      "ptrc_flags": "unchanged — expansion runs in parallel",
+      "13_module_projection": "expansion results projected across all 13 modules (T1-T16 via bcio_by_module.json)",
+      "quality_gate": "V73 quality gate replaces simple node count — requires >=4 modules >=5 nodes"
+    }
+  },
+  "V73_graph_semantic_integration": {
+    "_note": "V73: graph co-activation and affective patterns integrated into semantic pipeline",
+    "graph_pre_activation": {
+      "fires": "BEFORE semantic_unit_decomposition",
+      "reads": "MODULE_DEPENDENCY_GRAPH.json edges.co_activation_count",
+      "output": "module_search_priority_order — modules with high co-activation searched first"
+    },
+    "theory_pattern_scan": {
+      "fires": "AFTER Step 3a decomposition constructs known",
+      "reads": "THEORY_GRAPH_v5.json theories",
+      "match_against": "core_cluster IDs vs Step 3a constructs",
+      "extracts": {
+        "full_cluster": "additional search IDs beyond core",
+        "failure_cluster": "breakdown conditions — add to P1 and gap detection",
+        "gap_pattern": "missing evidence description — feeds gap block",
+        "variability_parent_children_siblings": "ontology-grounded P3 expansion candidates"
+      }
+    },
+    "variability_combinatorics": {
+      "fires": "AT P3 expansion step",
+      "reads": "THEORY_GRAPH_v5.json theories[].variability + bcio_hierarchy_index.json",
+      "rule": "for each matched BCIO ID: extract parent + children + siblings -> add as P3 candidates",
+      "depth": "max 2 hops",
+      "priority": "rank by co_activation_count from graph edges"
+    },
+    "term_combo_pass": {
+      "fires": "AFTER P1/P2/P3",
+      "reads": "term_combo_index.json",
+      "rule": "check known productive term pairs -> augment candidate set"
+    },
+    "updated_pipeline_order": [
+      "V73_expansion_trigger_check",
+      "PHASE_0_graph_pre_activation",
+      "ptrc_flag_read",
+      "whole_stage_narrative_selection",
+      "stage_vector_lookup",
+      "Step_3a_process_type_decomposition",
+      "Step_3b_semantic_core",
+      "PHASE_2_theory_pattern_scan",
+      "P1_search_with_failure_cluster_and_full_cluster",
+      "P2_synonym_antonym_search",
+      "P3_variability_plus_coactivation_expansion",
+      "PHASE_4_term_combo_pass",
+      "13_module_projection",
+      "downstream_candidate_retrieval_and_ranking",
+      "V73_extended_quality_gate"
+    ]
+  },
+  "problem_routing_constraints": {
+    "problem_must_be_localized_before_module_assignment": true,
+    "hidden_problem_requires_literal_fragment_support": true,
+    "free_paraphrase_for_hidden_problem_forbidden": true,
+    "module_assignment_requires_defect_localization": true,
+    "keyword_proximity_only_is_insufficient": true,
+    "secondary_module_requires_row_support": true,
+    "ontology_lookup_uses_loaded_ontologies": true,
+    "module_fit_remains_mandatory": true
+  },
+  "problem_to_module_routing_dictionary": {
+    "Behaviour": "defect in action, outcome dynamics, behavioural result, predictability of outcome",
+    "Population": "defect in group composition, demographic structure, subgroup representation",
+    "Setting": "defect in context, place, geography, time, environment",
+    "Mode of Delivery": "defect in delivery channel, format, medium",
+    "Source": "defect in provider, communicator, source actor",
+    "BCT_Content": "defect in active component, technique, intervention content",
+    "Mechanisms of Action": "defect in causal psychological, social or biological mechanism",
+    "Dose": "defect in amount, intensity, frequency, duration, repetition",
+    "Reach": "defect in coverage, access, inclusion, exclusion, representational capture",
+    "Fidelity": "defect in delivered as intended, protocol adherence, implementation fidelity",
+    "Engagement": "defect in uptake, participation, use, post-contact involvement",
+    "Outcome": "defect in measured end result, effect metric, endpoint",
+    "Evaluation_Measurement": "defect in data quality, bias, missingness, interpolation, restrictive definitions, scale mismatch"
+  },
+  "problem_layer_vs_module_rules": {
+    "measurement_layer_must_not_auto_collapse_into_phenomenon_module": true,
+    "phenomenon_layer_prefers_phenomenon_module_when_supported": true,
+    "mixed_layer_allows_primary_secondary_assignment": true
+  },
+  "index_first_coordinate_policy": {
+    "status": "enabled",
+    "main_flow": [
+      "retrieve_candidates_from_bcio_index",
+      "compare_label_and_definition",
+      "compare_category_desc_group_desc_subgroup_desc",
+      "select_best_coordinate_fit",
+      "optionally_narrow_inside_selected_module_using_hierarchy_nav",
+      "return_exact_id_from_index"
+    ],
+    "module_role": "secondary_top_level_coordinate",
+    "primary_coordinate_fields": [
+      "category",
+      "group",
+      "subgroup"
+    ],
+    "primary_description_fields": [
+      "category_desc",
+      "group_desc",
+      "subgroup_desc"
+    ],
+    "null_subgroup_valid": true
+  }
+}
