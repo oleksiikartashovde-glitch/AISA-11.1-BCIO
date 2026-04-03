@@ -934,90 +934,84 @@ From a BCIO-style ontology perspective, the design is partly specified but struc
 
 **Request:**
 
-> A Dutch municipality is choosing between two physical activity interventions for adults aged 65+ in low-income neighbourhoods. Option A: Group walking programme, delivered by trained peer volunteers, 3×/week in local parks, with monthly goal-review sessions and a buddy system. Option B: Personalised digital coaching app with step-count tracking, automated motivational messages, and weekly AI-generated feedback reports. Delivered via smartphone. Compare both options using the following modules: Source, Mode of Delivery, Setting, BCT, Population. For each module produce one table with columns: # / Option / Pattern / ID / Label / Definition. ID must be the exact ontology identifier. Label must follow format: English label (Dutch label). Definition in Dutch. After all module tables, apply APEASE in fixed order S, E, Eq, P, A, Af and recommend which option is more appropriate for this population and context. Highlight any equity risks.
+> A Dutch municipality is choosing between two physical activity interventions for adults aged 65+ in low-income neighbourhoods. Option A: Group walking programme, delivered by trained peer volunteers, 3×/week in local parks, with monthly goal-review sessions and a buddy system. Option B: Personalised digital coaching app with step-count tracking, automated motivational messages, and weekly AI-generated feedback reports. Delivered via smartphone. Compare both options using the following modules: Source, Mode of Delivery, Setting, BCT, Population. For each module produce one table with columns: # / Option / Pattern / ID / Label / Definition. ID must be the exact ontology identifier. After all module tables, apply APEASE in fixed order S, E, Eq, P, A, Af and recommend which option is more appropriate for this population and context. Highlight any equity risks.
 
-**Bot response:**
+**Bot response — Module tables**
 
-Below I use the closest exact ontology terms I could ground for each module. For Option B / Source, BCIO does not appear to provide a dedicated source term for “AI coach” as such, so I map it to the closest exact source construct: organisational source role. That is the weakest mapping in the set; the others are stronger.
+*Source module*
 
-**Source**
+|#|Option|Pattern                          |ID                  |Label                              |Definition                                                                                                                                                                          |
+|-|------|---------------------------------|--------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|1|A     |trained peer volunteers          |BCIO:010104.00.05.so|peer                               |A relationship in which the source is described as matching recipients on the basis of equality — for example age, social status, gender, shared experience or shared health status.|
+|2|A     |volunteer delivery role          |BCIO:010133.00.03.so|source role related to intervention|A BCI source whose professional or voluntary role is directed at delivering the behaviour change intervention.                                                                      |
+|3|B     |app/platform as delivering source|BCIO:010138.00.03.so|organisational source role         |A BCI source role borne by an organisation.                                                                                                                                         |
 
-|#|Option|Pattern                          |ID                  |Label                                                                       |Definition                                                                                                                                                                                         |
-|-|------|---------------------------------|--------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|1|A     |trained peer volunteers          |BCIO:010104.00.05.so|peer (gelijke)                                                              |Een relatie waarbij de bron wordt beschreven als passend bij ontvangers op basis van ‘gelijkheid’ — bijvoorbeeld leeftijd, sociale status, gender, gedeelde ervaring of gedeelde gezondheidsstatus.|
-|2|A     |volunteer delivery role          |BCIO:010133.00.03.so|source role related to intervention (bronrol gerelateerd aan de interventie)|Een BCI-bron waarvan de beroepsmatige of vrijwillige rol gericht is op het leveren van de gedragsveranderingsinterventie.                                                                          |
-|3|B     |app/platform as delivering source|BCIO:010138.00.03.so|organisational source role (organisatorische bronrol)                       |Een BCI-bronrol die door een organisatie wordt gedragen.                                                                                                                                           |
+*Mode of Delivery module*
 
-**Mode of Delivery**
+|#|Option|Pattern                          |ID                  |Label                              |Definition                                                                                                                             |
+|-|------|---------------------------------|--------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|1|A     |face-to-face walking sessions    |BCIO:011003.00.01.md|face to face mode of delivery      |A human interactional mode of delivery in which an intervention source and recipient are in the same location and communicate directly.|
+|2|A     |group walks                      |BCIO:011057.00.14.md|group-based mode of delivery       |A mode of delivery in which three or more people are present at the location where the intervention is delivered.                      |
+|3|B     |smartphone app                   |BCIO:011028.00.16.md|mobile application mode of delivery|An electronic mode of delivery in which the intervention recipient interacts with a mobile application.                                |
+|4|B     |personalised app for one user    |BCIO:011055.00.14.md|individual-based mode of delivery  |A mode of delivery in which one recipient is involved at the location where the intervention is delivered.                             |
+|5|B     |automated weekly reports/messages|BCIO:011061.00.14.md|asynchronous mode of delivery      |A mode of delivery in which receipt of the intervention occurs a considerable time after it was sent or delivered.                     |
 
-|#|Option|Pattern                          |ID                  |Label                                                                        |Definition                                                                                                                                         |
-|-|------|---------------------------------|--------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-|1|A     |face-to-face walking sessions    |BCIO:011003.00.01.md|face to face mode of delivery (face-to-face wijze van levering)              |Een menselijke interactionele wijze van levering waarbij een interventiebron en ontvanger zich op dezelfde locatie bevinden en direct communiceren.|
-|2|A     |group walks                      |BCIO:011057.00.14.md|group-based mode of delivery (groepsgebaseerde wijze van levering)           |Een wijze van levering waarbij drie of meer mensen aanwezig zijn op de locatie waar de interventie wordt geleverd.                                 |
-|3|B     |smartphone app                   |BCIO:011028.00.16.md|mobile application mode of delivery (mobiele-app wijze van levering)         |Een elektronische wijze van levering waarbij de ontvanger van de interventie interacteert met een mobiele applicatie.                              |
-|4|B     |personalised app for one user    |BCIO:011055.00.14.md|individual-based mode of delivery (individueel gebaseerde wijze van levering)|Een wijze van levering waarbij één ontvanger betrokken is op de locatie waar de interventie wordt geleverd.                                        |
-|5|B     |automated weekly reports/messages|BCIO:011061.00.14.md|asynchronous mode of delivery (asynchrone wijze van levering)                |Een wijze van levering waarbij ontvangst van de interventie plaatsvindt geruime tijd nadat deze zijn verzonden of geleverd.                        |
+*Setting module*
 
-**Setting**
+|#|Option|Pattern                  |ID                                        |Label          |Definition                                                                                                                                                  |
+|-|------|-------------------------|------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|1|A     |local parks              |ENVO:00000562.00.00.bc.be.p.ma.md.se.so.sd|park           |A delineated area of land or water, usually in a natural or semi-natural state, set aside for a specific purpose, usually recreation or nature conservation.|
+|2|A     |low-income neighbourhoods|BCIO:026005.00.01.se                      |low-income area|A socioeconomic area condition described as low income, at national or domestic level.                                                                      |
+|3|B     |low-income neighbourhoods|BCIO:026005.00.01.se                      |low-income area|A socioeconomic area condition described as low income, at national or domestic level.                                                                      |
 
-|#|Option|Pattern                  |ID                                        |Label                               |Definition                                                                                                                                                                   |
-|-|------|-------------------------|------------------------------------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|1|A     |local parks              |ENVO:00000562.00.00.bc.be.p.ma.md.se.so.sd|park (park)                         |Een afgebakend gebied van land of water, meestal in natuurlijke of halfnatuurlijke aangelegde staat, dat voor een bepaald doel is bestemd, meestal recreatie of natuurbehoud.|
-|2|A     |low-income neighbourhoods|BCIO:026005.00.01.se                      |low-income area (laaginkomensgebied)|Een sociaal-economische gebiedsconditie die wordt beschreven als laag inkomen, op landelijk of binnenlands niveau.                                                           |
-|3|B     |low-income neighbourhoods|BCIO:026005.00.01.se                      |low-income area (laaginkomensgebied)|Een sociaal-economische gebiedsconditie die wordt beschreven als laag inkomen, op landelijk of binnenlands niveau.                                                           |
+*BCT module*
 
-**BCT**
+|#|Option|Pattern                                  |ID                    |Label                                       |Definition                                                                                                           |
+|-|------|-----------------------------------------|----------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+|1|A     |buddy system                             |BCIO:007028.03.19.bc  |social support BCT                          |A behaviour change technique in which steps are taken to secure or provide support or assistance from another person.|
+|2|A     |monthly goal-review sessions             |BCIO:007011.00.17.bc  |review behaviour goal BCT                   |A goal-directed BCT referring to reviewing a behaviour goal.                                                         |
+|3|B     |step-count tracking                      |BCIO:007025.00.07.bc.f|self-monitor outcome of behaviour BCT       |A monitoring BCT in which the person uses a method to monitor and record an outcome of their behaviour.              |
+|4|B     |weekly AI-generated feedback reports     |BCIO:007027.00.02.bc  |provide feedback on outcome of behaviour BCT|A feedback BCT in which information is given about an outcome of a person’s previous performance of the behaviour.   |
+|5|B     |personalised coaching prompt around goals|BCIO:007003.01.03.bc  |set behaviour goal BCT                      |A BCT referring to setting a behaviour goal within goal setting BCT.                                                 |
 
-|#|Option|Pattern                                  |ID                    |Label                                                                                        |Definition                                                                                                                           |
-|-|------|-----------------------------------------|----------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-|1|A     |buddy system                             |BCIO:007028.03.19.bc  |social support BCT (sociale-steun-BCT)                                                       |Een gedragsveranderingstechniek waarbij stappen worden gezet om steun of hulp van een andere persoon veilig te stellen of te leveren.|
-|2|A     |monthly goal-review sessions             |BCIO:007011.00.17.bc  |review behaviour goal BCT (gedragsdoel herzien-BCT)                                          |Een doelgerichte BCT die verwijst naar het herzien van een gedragsdoel.                                                              |
-|3|B     |step-count tracking                      |BCIO:007025.00.07.bc.f|self-monitor outcome of behaviour BCT (uitkomst van gedrag zelf monitoren-BCT)               |Een monitoring-BCT waarbij de persoon een methode gebruikt om een uitkomst van zijn of haar gedrag te monitoren en vast te leggen.   |
-|4|B     |weekly AI-generated feedback reports     |BCIO:007027.00.02.bc  |provide feedback on outcome of behaviour BCT (feedback geven over de uitkomst van gedrag-BCT)|Een feedback-BCT waarbij informatie wordt gegeven over een uitkomst van iemands eerdere uitvoering van het gedrag.                   |
-|5|B     |personalised coaching prompt around goals|BCIO:007003.01.03.bc  |set behaviour goal BCT (gedragsdoel stellen-BCT)                                             |Een BCT die verwijst naar het stellen van een gedragsdoel binnen goal setting BCT.                                                   |
+*Population module*
 
-**Population**
+|#|Option|Pattern                             |ID                                          |Label         |Definition                                                                                       |
+|-|------|------------------------------------|--------------------------------------------|--------------|-------------------------------------------------------------------------------------------------|
+|1|A     |adults 65+                          |ADDICTO:0000352.00.20.bc.be.p.ma.md.se.so.sd|adult         |An adult; this is the closest exact population term visible in the loaded ontology for this case.|
+|2|A     |many 65+ participants may be retired|BCIO:015067.00.31.be.p.ma.sd                |retired status|A personal attribute present in a person who has withdrawn from the labour force.                |
+|3|B     |adults 65+                          |ADDICTO:0000352.00.20.bc.be.p.ma.md.se.so.sd|adult         |An adult; this is the closest exact population term visible in the loaded ontology for this case.|
+|4|B     |many 65+ participants may be retired|BCIO:015067.00.31.be.p.ma.sd                |retired status|A personal attribute present in a person who has withdrawn from the labour force.                |
 
-|#|Option|Pattern                             |ID                                          |Label                                 |Definition                                                                                                           |
-|-|------|------------------------------------|--------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-|1|A     |adults 65+                          |ADDICTO:0000352.00.20.bc.be.p.ma.md.se.so.sd|adult (volwassene)                    |Volwassene; dit is de dichtstbijzijnde exacte populatieterm die in de geladen ontologie zichtbaar is voor deze casus.|
-|2|A     |many 65+ participants may be retired|BCIO:015067.00.31.be.p.ma.sd                |retired status (gepensioneerde status)|Een persoonlijk kenmerk dat aanwezig is bij een persoon die zich uit het arbeidsproces heeft teruggetrokken.         |
-|3|B     |adults 65+                          |ADDICTO:0000352.00.20.bc.be.p.ma.md.se.so.sd|adult (volwassene)                    |Volwassene; dit is de dichtstbijzijnde exacte populatieterm die in de geladen ontologie zichtbaar is voor deze casus.|
-|4|B     |many 65+ participants may be retired|BCIO:015067.00.31.be.p.ma.sd                |retired status (gepensioneerde status)|Een persoonlijk kenmerk dat aanwezig is bij een persoon die zich uit het arbeidsproces heeft teruggetrokken.         |
+**APEASE in fixed order S, E, Eq, P, A, Af**
 
-**APEASE in fixed order: S, E, Eq, P, A, Af**
+|Criterion         |Option A                                                                                                                              |Option B                                                                                                               |Verdict                                                   |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+|S — Spill-over    |Positive spill-over likely: social connectedness, reduced isolation, increased neighbourhood cohesion.                                |Possible positive spill-over via self-insight, but risk of frustration, digital overload, or early dropout.            |A stronger                                                |
+|E — Effectiveness |Good match for this population: peer source, buddy system, fixed routine, local park, and goal review support sustained participation.|Can be effective for digitally confident participants, but effect depends heavily on smartphone use and app engagement.|A likely more effective in context                        |
+|Eq — Equity       |Stronger equity profile as long as participation is free and parks are locally accessible. Less dependent on digital resources.       |Significant equity risk: smartphone ownership, data plans, digital literacy, visual/cognitive load, AI fit.            |A clearly better                                          |
+|P — Practicability|Requires volunteer coordination and weather/mobility planning, but participant use is straightforward.                                |Technically scalable, but practical engagement in this population depends on onboarding, support, and sustained use.   |A better for participants; B better for distribution scale|
+|A — Acceptability |Likely high due to human support, social interaction, and familiar neighbourhood context.                                             |Mixed: some value autonomy, others find app use burdensome or impersonal.                                              |A stronger                                                |
+|Af — Affordability|Likely affordable through peer volunteers, though coordination and supervision costs apply.                                           |App may appear cost-efficient at scale, but development, maintenance, support, and digital inclusion costs count.      |Slight advantage for A in this context                    |
 
-|Criterion         |Option A                                                                                                                      |Option B                                                                                                                  |Verdict                                                |
-|------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
-|S — Spill-over    |Positieve neveneffecten waarschijnlijk: sociale verbondenheid, minder eenzaamheid, meer buurtcohesie.                         |Mogelijke positieve neveneffecten via zelfinzicht, maar ook risico op frustratie, digitale overbelasting of snelle uitval.|A sterker                                              |
-|E — Effectiveness |Goede match met deze populatie: peerbron, buddy-systeem, vaste routine, lokaal park en doelherziening ondersteunen volhouden. |Kan effectief zijn voor digitaal vaardige deelnemers, maar effect hangt sterk af van smartphonegebruik en app-engagement. |A waarschijnlijk effectiever in context                |
-|Eq — Equity       |Sterker equity-profiel zolang deelname gratis is en parken lokaal/toegankelijk zijn. Minder afhankelijk van digitale middelen.|Belangrijk equity-risico: smartphonebezit, databundel, digitale vaardigheden, visuele/cognitieve belasting, AI-fit.       |A duidelijk beter                                      |
-|P — Practicability|Vereist coördinatie van vrijwilligers en weers-/mobiliteitsplanning, maar gebruik door deelnemers is eenvoudig.               |Schaalbaar technisch, maar praktische inzet in deze populatie hangt af van onboarding, support en blijvend gebruik.       |A beter voor deelnemers; B beter voor distributieschaal|
-|A — Acceptability |Waarschijnlijk hoog door menselijke steun, sociale interactie en vertrouwde buurtcontext.                                     |Gemengd: sommigen waarderen autonomie, anderen ervaren appgebruik als lastig of onpersoonlijk.                            |A sterker                                              |
-|Af — Affordability|Door peer-vrijwilligers waarschijnlijk betaalbaar, al zijn coördinatie en begeleiding nodig.                                  |App kan op schaal efficiënt lijken, maar ontwikkeling, onderhoud, support en digitale inclusiekosten tellen mee.          |Licht voordeel voor A in deze context                  |
+**Recommendation: Option A.** For adults 65+ in low-income neighbourhoods, Option A is the more appropriate and equitable choice. Option B is best treated, at most, as an optional add-on for digitally confident participants rather than the primary intervention.
 
-**Recommendation:** Option A.
-
-Why: Source: peer delivery is a better fit than an impersonal organisational/app source for older adults in low-income neighbourhoods. Mode of Delivery: face-to-face and group-based delivery reduces digital exclusion. Setting: local parks plus low-income neighbourhood delivery fit the lived context better than app-only delivery. BCT mix: social support plus goal review is likely to be more robust for this population than relying mainly on self-monitoring and automated feedback.
-
-**Equity risks by option**
+**Equity risks**
 
 Option A:
 
-- Mobiliteits- of frailty-verschillen kunnen sommige 65+ deelnemers uitsluiten.
-- Parkveiligheid, bankjes, toiletten, verlichting en weersomstandigheden kunnen ongelijk verdeeld zijn tussen buurten.
-- Kwaliteit en continuïteit van peer-vrijwilligers kunnen per wijk verschillen.
-- Groepsformaten kunnen minder aantrekkelijk zijn voor sociaal angstige of cultureel minder aangesloten deelnemers.
+- Mobility or frailty differences may exclude some 65+ participants.
+- Park safety, seating, toilets, lighting, and weather conditions may vary unequally across neighbourhoods.
+- Quality and continuity of peer volunteers may differ by area.
+- Group formats may be less attractive for socially anxious or culturally less connected participants.
 
 Option B:
 
-- Digitale kloof: niet iedereen heeft een geschikte smartphone, databundel of laadmogelijkheid.
-- Lagere digitale geletterdheid bij een deel van de 65+ groep kan deelname en volhouden beperken.
-- Visuele, cognitieve of motorische beperkingen kunnen appgebruik bemoeilijken.
-- AI-feedback kan onpersoonlijk, onduidelijk of cultureel minder passend zijn.
-- Groot risico dat vooral de fittere, rijkere en digitaal vaardigere subgroep profiteert, waardoor ongelijkheid toeneemt.
-
-**Bottom line:** For adults 65+ in low-income neighbourhoods, Option A is the more appropriate and equitable choice. Option B is best treated, at most, as an optional add-on for digitally confident participants rather than the primary intervention.
+- Digital divide: not everyone has a suitable smartphone, data plan, or charging access.
+- Lower digital literacy in a portion of the 65+ group may limit participation and sustained use.
+- Visual, cognitive, or motor impairments may make app use difficult.
+- AI-generated feedback may feel impersonal, unclear, or culturally less appropriate.
+- High risk that mainly the fitter, wealthier, and digitally confident subgroup benefits, widening inequality.
 
 -----
 
