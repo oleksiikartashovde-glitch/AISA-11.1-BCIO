@@ -55,13 +55,13 @@ The following counts are taken directly from the runtime index (`bcio_index.json
 
 |Module                           |Terms in index|
 |---------------------------------|--------------|
-|D — Dose                         |35            |
+|D — Dose                         |42            |
 |R — Reach                        |37            |
-|E — Engagement                   |68            |
-|F — Fidelity                     |31            |
+|E — Engagement                   |79            |
+|F — Fidelity                     |44            |
 |S — Schedule                     |35            |
-|**Total entries (with overlaps)**|**206**       |
-|**Unique IDs across all DREFS**  |**189**       |
+|**Total entries (with overlaps)**|**237**       |
+|**Unique IDs across all DREFS**  |**201**       |
 
 ### New codification principles
 
