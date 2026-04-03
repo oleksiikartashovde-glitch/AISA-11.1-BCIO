@@ -1,0 +1,5483 @@
+{
+  "meta": {
+    "name": "DREFS Unified Package",
+    "version": "v3.0_sync",
+    "date": "2026-04",
+    "author": "Oleksii Kartashov",
+    "total_entries": 260,
+    "unique_ids": 224,
+    "import_ids": 42,
+    "ranker_semantic_additions": 23,
+    "modules": {
+      "Dose": 43,
+      "Reach": 40,
+      "Engagement": 90,
+      "Fidelity": 50,
+      "Schedule": 37
+    },
+    "sources_used": [
+      "bcio_index.json",
+      "BCIO_CANDIDATE_RANKER.json",
+      "bcio_clean.json"
+    ],
+    "sync_note": "237 entries from bcio_index + 23 entries from BCIO_CANDIDATE_RANKER not present in index. For the 23 additions: hierarchy taken from primary BCIO module (BCT or MoA); drefs_assignment=ranker_semantic.",
+    "bot": "https://chatgpt.com/g/g-69a6ab4b5adc81919a5be72eecbd2f81-aisa-11-1",
+    "repository": "https://github.com/oleksiikartashovde-glitch/AISA-11.1-BCIO",
+    "zenodo": "https://doi.org/10.5281/zenodo.19388359",
+    "bcio_source": "https://www.bciosearch.org/download (CC-BY-4.0)"
+  },
+  "entries": [
+    {
+      "base_id": "BCIO:002000",
+      "label": "behaviour change intervention outcome behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "Human behaviour that is an intervention outcome.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:002000.00.00.bc.be.d.ma.md.p.sd.se.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006014",
+      "label": "social alienation",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <mental disposition> to perceive or experience oneself as isolated from and not meaningfully involved in social groups.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006014.00.27.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006015",
+      "label": "awareness",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <mental disposition> that is realized by experiencing events, objects, sensory patterns or cognitive representations.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "awareness of standards",
+        "awareness of mortality"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006015.03.27.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006017",
+      "label": "belief about barriers to a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <belief> about a factor that could restrict or impede a person from engaging in a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "belief about effort required for a behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006017.01.31.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006023",
+      "label": "belief about gain",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <belief> about the existence of an increase from an initial reference point.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006023.00.31.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006027",
+      "label": "belief about reduction",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <belief> about the existence of a decrease from an initial reference point.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006027.00.31.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006043",
+      "label": "self-efficacy belief for a behaviour and its associated outcomes",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief> to organise and execute a behaviour and achieve the outcomes associated with this behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006043.00.02.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006044",
+      "label": "situational self-efficacy belief for a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "A <self-efficacy belief for a behaviour> when a barrier or facilitator of the behaviour is encountered.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "self-efficacy belief for a behaviour under conditions of stress",
+        "self-efficacy belief for a behaviour in the face of social pressure"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006044.02.03.e.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006044",
+      "label": "situational self-efficacy belief for a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "A <self-efficacy belief for a behaviour> when a barrier or facilitator of the behaviour is encountered.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "self-efficacy belief for a behaviour under conditions of stress",
+        "self-efficacy belief for a behaviour in the face of social pressure"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006044.02.03.e.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006059",
+      "label": "motivation to comply",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <behavioural motivation> to act in accordance with the likely approval of others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006059.00.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006060",
+      "label": "motivational orientation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <motivational disposition> to be guided by a type of outcome.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "prevention focused motivational orientation",
+        "promotion focused motivational orientation"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006060.02.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006061",
+      "label": "prevention focused motivational orientation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <motivational orientation> in which motivation is guided by a focus on the presence or absence of negative outcomes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006061.00.01.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006062",
+      "label": "promotion focused motivational orientation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <motivational orientation> in which motivation is guided by a focus on the presence or absence of positive outcomes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006062.00.01.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006065",
+      "label": "need for autonomy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <psychological need> to have a sense of personal agency and initiative.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006065.00.12.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006088",
+      "label": "healthcare access",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural opportunity> regarding how easy it is for a person to approach and use a healthcare service.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006088.00.04.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006089",
+      "label": "physical behavioural opportunity",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural opportunity> that involves time and parts of the environmental system that do not involve people or organisations.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "financial behavioural opportunity",
+        "temporal behavioural opportunity"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006089.03.04.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006090",
+      "label": "social behavioural opportunity",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural opportunity> that involves the social environmental system.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006090.00.04.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006102",
+      "label": "plan enactment",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <bodily process> by which a person attempts to follow the steps in a plan.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006102.00.14.ma.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006109",
+      "label": "feeling an urge",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <subjective affective feeling> that  arises when an impulse to enact a behaviour is activated but not immediately acted upon.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006109.00.16.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006110",
+      "label": "comprehension",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <cognitive process> that creates a representation of the meaning and significance of a communication, object, event or situation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006110.00.05.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006111",
+      "label": "decision simplification",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <cognitive process> used prior to decision-making that reduces the perceived scope or complexity of available options.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006111.00.05.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006116",
+      "label": "decision-making",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "<Judging> in which one or more propositions or behaviours are identified as preferred from a larger number.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "decisional balance process about changing behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006116.01.04.e.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006116",
+      "label": "decision-making",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "<Judging> in which one or more propositions or behaviours are identified as preferred from a larger number.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "decisional balance process about changing behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006116.01.04.e.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006119",
+      "label": "associative learning",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "<Learning> that involves changing the strength of association between two or more mental processes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "operant conditioning",
+        "extinction in classical conditioning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006119.07.04.ma.d.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006119",
+      "label": "associative learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "<Learning> that involves changing the strength of association between two or more mental processes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "operant conditioning",
+        "extinction in classical conditioning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006119.07.04.ma.d.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006119",
+      "label": "associative learning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "<Learning> that involves changing the strength of association between two or more mental processes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "operant conditioning",
+        "extinction in classical conditioning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006119.07.04.ma.d.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006120",
+      "label": "classical conditioning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "<Associative learning> that occurs when the pairing of a conditioned and unconditioned stimulus leads to the conditioned stimulus producing a response that would otherwise have only been produced by the unconditioned stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006120.00.06.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006121",
+      "label": "discrimination learning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which people learn to distinguish between appropriate responses to similar but different stimuli depending on whether a generalised response is rewarded or not.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006121.00.06.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006122",
+      "label": "extinction in classical conditioning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which the strength of a conditioned response is reduced because its conditioned stimulus is presented without being accompanied by the unconditioned stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006122.00.06.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006123",
+      "label": "extinction in operant learning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which the rate of behavioural response in the presence of a discriminative stimulus is reduced because the response is no longer followed by a reinforcer.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006123.00.06.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006124",
+      "label": "stimulus generalisation in learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Generalisation in learning> concerning the antecedent stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006124.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006125",
+      "label": "operant conditioning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which the likelihood of a particular behavioural response is influenced by the past consequences associated with performing that behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006125.00.06.e.f.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006125",
+      "label": "operant conditioning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which the likelihood of a particular behavioural response is influenced by the past consequences associated with performing that behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006125.00.06.e.f.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006125",
+      "label": "operant conditioning",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "<Associative learning> in which the likelihood of a particular behavioural response is influenced by the past consequences associated with performing that behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006125.00.06.e.f.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006126",
+      "label": "associative memory",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <memory process> that deals with the receipt, storage, retrieval and modification of information regarding a set of entities associated with a particular object or event.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006126.00.04.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006127",
+      "label": "episodic memory",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <memory process> that deals with the receipt, storage, retrieval and modification of information regarding a personally experienced event at a particular time or place.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006127.00.04.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006127",
+      "label": "episodic memory",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <memory process> that deals with the receipt, storage, retrieval and modification of information regarding a personally experienced event at a particular time or place.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006127.00.04.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006128",
+      "label": "semantic memory",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <memory process> that deals with the receipt, storage, retrieval and modification of information associated with meanings, understandings or conceptual facts about the world.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006128.00.04.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006128",
+      "label": "semantic memory",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <memory process> that deals with the receipt, storage, retrieval and modification of information associated with meanings, understandings or conceptual facts about the world.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006128.00.04.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006133",
+      "label": "behavioural motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental process> that energises and directs a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "motivation to deviate",
+        "motivation to reduce harm"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006133.09.32.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006134",
+      "label": "automatic behavioural motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Behavioural motivation> that arises from emotions and impulses that result from associative learning or innate dispositions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006134.00.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006136",
+      "label": "intrinsic motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "<Autonomous motivation> due to a behaviour's inherent enjoyment, satisfaction or benefits to oneself.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006136.00.02.e.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006136",
+      "label": "intrinsic motivation",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "<Autonomous motivation> due to a behaviour's inherent enjoyment, satisfaction or benefits to oneself.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006136.00.02.e.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006137",
+      "label": "self-monitoring",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring process> in which one observes one's own behaviour or mental processes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006137.00.01.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006142",
+      "label": "belief about the credibility of a message's source",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "A <belief about message> in terms of whether a verbal, graphic, written or recorded communication is provided by people or institutions who provide reliable information.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006142.00.02.ma.r.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006142",
+      "label": "belief about the credibility of a message's source",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "A <belief about message> in terms of whether a verbal, graphic, written or recorded communication is provided by people or institutions who provide reliable information.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006142.00.02.ma.r.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006150",
+      "label": "evaluative belief about others",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An <evaluative belief> about the attributes of others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006150.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006154",
+      "label": "self-efficacy belief for a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief> to organise and execute a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "behaviour maintenance self-efficacy",
+        "self-efficacy belief for a behaviour during routine activities"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006154.04.02.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006300",
+      "label": "approval-based motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <need-based motivation> related to gaining or maintaining social approval or a positive self-evaluation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006300.00.00.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006302",
+      "label": "autonomous motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Behavioural motivation> that is internally generated and based on a behaviour being interesting or valuable to an individual.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "behavioural importance-based motivation",
+        "intrinsic motivation"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006302.03.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006304",
+      "label": "behavioural importance-based motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Autonomous motivation> due to the perceived value or importance of the behaviour to oneself.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006304.00.02.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006307",
+      "label": "extrinsic motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Behaviour motivation> that is based on external rewards, punishments or pressure regarding a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "extrinsic social motivation"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006307.01.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006308",
+      "label": "need-based motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Autonomous motivation> due to a behaviour being perceived to satisfy a psychological need.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "approval-based motivation"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006308.01.02.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006309",
+      "label": "habit learning",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "<Associative learning> that involves strengthening an association between a stimulus and an impulse through repetition of co-occurrence of the stimulus and the behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:006309.00.06.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007002",
+      "label": "goal setting BCT",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <goal directed BCT> that sets goals.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "agree outcome goal BCT",
+        "agree behaviour goal BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007002.04.17.bc.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007010",
+      "label": "action planning BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <goal directed BCT> that involves making a detailed plan for the performance of the behaviour, which must include at least one of context, frequency, duration or intensity.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007010.00.17.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007015",
+      "label": "affirm commitment BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <goal directed BCT> that asks the person to affirm or reaffirm statements indicating commitment to change the behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007015.00.17.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007017",
+      "label": "monitoring BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <behaviour change technique> that involves gathering or using information about performance.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "self-monitor behaviour BCT",
+        "observe behaviour without feedback BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007017.08.19.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007018",
+      "label": "observe behaviour without feedback BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> that observes current performance of the behaviour with the person’s knowledge but without providing feedback about their behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007018.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007019",
+      "label": "record behaviour without feedback BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> that records current performance of the behaviour with the person’s knowledge but without providing feedback about their behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007019.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007020",
+      "label": "observe outcome of behaviour without feedback BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> that observes an outcome of performing the behaviour with the person’s knowledge but without providing feedback about the outcome.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007020.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007021",
+      "label": "record outcome of behaviour without feedback BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> that records an outcome of performing the behaviour with the person's knowledge but without providing feedback about the outcome.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007021.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007024",
+      "label": "self-monitor behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> in which the person uses a method to monitor and record their behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007024.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007025",
+      "label": "self-monitor outcome of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring BCT> in which the person uses a method to monitor and record an outcome of their behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007025.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007055",
+      "label": "demonstrate the behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <guide how to perform behaviour BCT> that provides an observable sample of the performance of the behaviour for the person to aspire to or imitate.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007055.00.04.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007057",
+      "label": "draw attention to incompatible beliefs BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <suggest different perspective on behaviour BCT> that draws the person's attention to the discrepancies between current or past behaviour and self-identity.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007057.00.03.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007084",
+      "label": "reduce cue frequency BCTs",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An <alter external stimulus BCT> in which cues for the behaviour are presented less frequently.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007084.00.06.bc.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007096",
+      "label": "context-specific repetition of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "An <advise specific behaviour BCT> that advises the person to repeat the behaviour in the same context.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007096.00.07.bc.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007096",
+      "label": "context-specific repetition of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "An <advise specific behaviour BCT> that advises the person to repeat the behaviour in the same context.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007096.00.07.bc.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007097",
+      "label": "context-specific repetition of alternative behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "An <advise specific behaviour BCT> that advises the person to repeat an alternative behaviour consistently in a context that previously elicited an unwanted behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007097.00.07.bc.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007097",
+      "label": "context-specific repetition of alternative behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "An <advise specific behaviour BCT> that advises the person to repeat an alternative behaviour consistently in a context that previously elicited an unwanted behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007097.00.07.bc.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007153",
+      "label": "reduce exposure to cues for the behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An <alter external stimulus BCT> that reduces an external stimulus that signals the behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007153.00.06.bc.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007159",
+      "label": "affirm valued self-identity BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <prompt focus on self-identity BCT> that advises engagement in activities that affirm the person's valued attributes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007159.00.03.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007172",
+      "label": "gradually increase exposure to aversive stimulus BCT",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An <expose to stimulus BCT> that involves gradually increasing exposure to an aversive stimulus to reduce the likelihood of the behaviour when encountering that stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007172.00.03.bc.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007299",
+      "label": "review behaviour goal plan BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <goal directed BCT> that reviews progress towards a behavioural goal and considers modifying the plan to achieve the goal.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:007299.00.17.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:009000",
+      "label": "behaviour change intervention schedule of delivery",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "A BCI attribute that involves its temporal organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:009000.00.03.bc.be.d.f.ma.md.p.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:009000",
+      "label": "behaviour change intervention schedule of delivery",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "A BCI attribute that involves its temporal organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:009000.00.03.bc.be.d.f.ma.md.p.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:009000",
+      "label": "behaviour change intervention schedule of delivery",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Dose",
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "A BCI attribute that involves its temporal organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:009000.00.03.bc.be.d.f.ma.md.p.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:010094",
+      "label": "relatedness between person source and the target population",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A personal role of source that is realised in some relationship to the characteristics of the intervention participants.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "peer",
+        "friend"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:010094.06.01.e.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:010138",
+      "label": "organisational source role",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A BCI source role that is borne by an organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:010138.00.03.f.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:011064",
+      "label": "gamification mode of delivery",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Mode of delivery that involves application of typical elements of game playing  to other areas of activity, typically as an online marketing technique to encourage engagement with a product or service.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:011064.00.14.md.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:013000",
+      "label": "participant engagement with behaviour change intervention",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach",
+        "Schedule"
+      ],
+      "definition": "Participant engagement with intervention, where the intervention focuses on changing behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:013000.00.00.bc.be.e.ma.md.p.r.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:013000",
+      "label": "participant engagement with behaviour change intervention",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach",
+        "Schedule"
+      ],
+      "definition": "Participant engagement with intervention, where the intervention focuses on changing behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:013000.00.00.bc.be.e.ma.md.p.r.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:013000",
+      "label": "participant engagement with behaviour change intervention",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach",
+        "Schedule"
+      ],
+      "definition": "Participant engagement with intervention, where the intervention focuses on changing behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:013000.00.00.bc.be.e.ma.md.p.r.sd.se.sh.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:015078",
+      "label": "organisational role",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A role which inheres in a person and is realised by performing the activities deemed appropriate for that particular role as specified in the organisation rules.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:015078.00.09.be.f.ma.p.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:015095",
+      "label": "intervention population",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A human population who are exposed to an intervention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "behaviour change intervention population",
+        "behaviour change intervention population",
+        "behaviour change intervention population"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:015095.01.04.bc.be.p.ma.md.se.so.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:015097",
+      "label": "ethnic group membership",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A self-identity as belonging to a social group or groups whose members have a common cultural or ancestral heritage.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:015097.00.06.be.ma.p.r.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:020000",
+      "label": "behaviour change intervention evaluation study risk of bias or error",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "An information content entity that is about the likelihood of the BCI evaluation finding misrepresenting the outcome behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:020000.00.07.bc.be.p.ma.md.se.so.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:022000",
+      "label": "behaviour change intervention dose",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A BCI content attribute that is its amount.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:022000.00.03.bc.be.d.e.ma.md.p.sd.se.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:022000",
+      "label": "behaviour change intervention dose",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A BCI content attribute that is its amount.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:022000.00.03.bc.be.d.e.ma.md.p.sd.se.so",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:026001",
+      "label": "country of intervention",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A geographical location of a country where the intervention takes place.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:026001.00.01.r.se",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:026012",
+      "label": "residential care or assisted living",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A multiple occupancy residence where multiple vulnerable people live",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:026012.00.01.r.se",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:031000",
+      "label": "behaviour change intervention study sample",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A research study sample whose behaviour is studied in a BCI evaluation study.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:031000.00.00.bc.be.p.ma.md.se.so.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:036011",
+      "label": "social organisation behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A socially-related behaviour that involves a person contributing to the functioning of a social structure or a person in relation to a social structure.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "association behaviour",
+        "association behaviour",
+        "association behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:036011.01.07.be.ma.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044011",
+      "label": "agenda-sharing communication",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A communication in which the initiator and one or more activity participants work together to determine a focus for the activity to be undertaken.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044011.00.42.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044079",
+      "label": "active participation encouraging communication style",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A communication style marked by fostering the involvement of the recipient as an engaged actor in the activity to be undertaken rather than as a passive recipient.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044079.00.50.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044084",
+      "label": "autonomy-supportive communication style",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A communication style which aims to promote the recipient's capacity to make their own decisions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044084.00.50.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044102",
+      "label": "engaging communication style",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A communication style characterised by attempting to attract and maintain a recipient's interest or attention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044102.00.50.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044113",
+      "label": "patient communication style",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A communication style conveying willingness to take time to understand or complete a process.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044113.00.50.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044119",
+      "label": "semi-structured communication style",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A communication style involving the communication content having some constituent pre-planned parts but also being responsive to inputs.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044119.00.50.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:044120",
+      "label": "structured communication style",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A communication style involving the communication content having constituent pre-planned parts.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:044120.00.50.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050214",
+      "label": "attentional self-regulation capability",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-regulation capability> to modulate one’s attention toward internal or external stimuli.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050214.00.04.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050224",
+      "label": "belief about healthcare accessibility",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <belief about one's environment> in terms of how easy it is for a person to approach and use a healthcare service.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050224.00.02.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050227",
+      "label": "disengagement due to workload",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A <mental disposition> to be detached from other people due to exhaustion experienced in one's working environment.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050227.00.27.ma.d.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050227",
+      "label": "disengagement due to workload",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A <mental disposition> to be detached from other people due to exhaustion experienced in one's working environment.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050227.00.27.ma.d.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050230",
+      "label": "temporal orientation to the future",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <temporal orientation> to focus more on future than present outcomes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050230.00.01.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050231",
+      "label": "temporal orientation to the present",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <temporal orientation> to focus more on present than future outcomes.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050231.00.01.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050239",
+      "label": "learning",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <mental process> in which a lasting mental or behavioural change occurs as the result of experience.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "nonassociative learning",
+        "associative learning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050239.05.32.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050268",
+      "label": "self-regulation process",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <bodily process> that modulates the frequency, rate or extent of a response to external or internal stimuli and that is instigated by the person.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "mental rehearsal to guide and motivate behaviour",
+        "self-talk process"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050268.03.14.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050318",
+      "label": "reflective behavioural motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Behavioural motivation> that involves reflective thinking.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050318.00.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050319",
+      "label": "memory process",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <mental process> that is the encoding, storing, and retrieval of informational stimuli.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "iconic memory",
+        "procedural memory"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050319.05.32.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050319",
+      "label": "memory process",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "A <mental process> that is the encoding, storing, and retrieval of informational stimuli.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "iconic memory",
+        "procedural memory"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050319.05.32.ma.d.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050324",
+      "label": "belief about quality of life",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <belief> about one's position in life in relation to one's goals, expectations, standards and concerns.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050324.00.31.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050400",
+      "label": "arranging a healthcare service appointment",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "Utilising healthcare that involves scheduling a time to interact with a person or organisation providing healthcare.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050400.00.03.be.ma.sd.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050410",
+      "label": "self-monitoring an aspect of health",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A health-related behaviour that uses a method to monitor and record an indicator of one’s health or wellbeing.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050410.00.04.be.f.ma.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050454",
+      "label": "behaviour starting point",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A time point that is the start of an individual human behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050454.00.04.be.ma.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050484",
+      "label": "personal history of intervention exposure for the same outcome",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A personal history part of exposure to an intervention targeting the same outcome as the current intervention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050484.00.09.be.p.ma.sd.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050485",
+      "label": "personal history of intervention exposure for the same outcome behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A personal history part  that includes exposure to a prior intervention targeting the same outcome behaviour as the current intervention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050485.00.09.be.p.ma.sd.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050486",
+      "label": "personal history of same intervention exposure",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A personal history part that includes exposure to the same intervention as the current intervention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050486.00.09.be.p.ma.sd.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050488",
+      "label": "personal history part of intervention exposure",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Reach"
+      ],
+      "definition": "A personal history part  that includes exposure to one or more interventions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050488.00.09.be.p.ma.sd.d.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050488",
+      "label": "personal history part of intervention exposure",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Dose",
+        "Reach"
+      ],
+      "definition": "A personal history part  that includes exposure to one or more interventions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050488.00.09.be.p.ma.sd.d.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050551",
+      "label": "research study sample",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A population whose behaviour is studied in a research study.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "behaviour change intervention study sample",
+        "behaviour change intervention study sample",
+        "behaviour change intervention study sample"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050551.01.04.bc.be.p.ma.md.se.so.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050562",
+      "label": "active goal",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <goal> that is being pursued at any one point in time.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050562.00.12.ma.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050565",
+      "label": "amount of social reinforcement for a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <data item> that is about the frequency and strength of social reinforcement that is experienced by the person.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050565.00.14.d.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050572",
+      "label": "attentional disposition",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental disposition> that is realised by focusing one's attention on events, objects, sensory patterns or cognitive representations.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "disposition to attend to one?s goals"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050572.01.27.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050576",
+      "label": "behaviour maintenance self-efficacy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief for a behaviour> that continues a behaviour pattern.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050576.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050577",
+      "label": "behavioural barrier",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <disposition> that includes low capability, opportunity and motivation to enact a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050577.00.08.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050583",
+      "label": "behavioural opportunity through information",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural opportunity> that is realised by the provision of accurate information.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050583.00.04.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050584",
+      "label": "behavioural recovery self-efficacy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief for a behaviour> following a lapse in that behaviour",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050584.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050586",
+      "label": "belief about a behavioural rule",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <belief> about whether there is a social rule that a behaviour must or must not occur in a given situation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "belief that a behaviour is forbidden",
+        "belief that a behaviour is compulsory"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050586.02.31.ma.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050589",
+      "label": "belief about effort required for a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <belief about barriers to a behaviour> in terms of level of effort required.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050589.00.00.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050607",
+      "label": "belief about the positive health consequences of a behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <belief about health consequences of behaviour> in which the consequences are evaluated as positive.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050607.00.01.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050656",
+      "label": "extrinsic social motivation",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An <extrinsic motivation> that derives from external rewards, punishments or pressure regarding a behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050656.00.00.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050667",
+      "label": "generality of self-efficacy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental disposition> to be self-efficacious across a wide range of situations and behaviours.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050667.00.27.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050675",
+      "label": "high motivational disposition to change behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <personal attribute> in terms of motivational disposition to change behaviour being high.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050675.00.31.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050681",
+      "label": "intention for collective behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural intention> to enact a behaviour with one or more others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050681.00.02.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050684",
+      "label": "intermittent schedule of reinforcement",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <schedule of reinforcement> in which the event following the behaviour occurs on some but not all occasions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050684.00.00.ma.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050684",
+      "label": "intermittent schedule of reinforcement",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <schedule of reinforcement> in which the event following the behaviour occurs on some but not all occasions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050684.00.00.ma.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050697",
+      "label": "low motivational disposition to change behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <personal attribute> in terms of motivational disposition to change behaviour being low.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050697.00.31.e.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050701",
+      "label": "low self-efficacy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An <personal attribute> of self-efficacy belief that is low.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050701.00.31.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050728",
+      "label": "observational learning capability",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental capability> to learn through observation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "vicarious learning capability"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050728.01.07.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050741",
+      "label": "primary reinforcer",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <reinforcer> whose effect on behaviour is innately determined.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050741.00.03.e.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050741",
+      "label": "primary reinforcer",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <reinforcer> whose effect on behaviour is innately determined.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050741.00.03.e.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050751",
+      "label": "quality of social relationships",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <social environmental system attribute> that is the extent to which social relationships with other people are positive or negative.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050751.00.00.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050760",
+      "label": "schedule of reinforcement",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <uniform process aggregate> whose members are reinforcement processes involving an individual over a period of time.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "intermittent schedule of reinforcement"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050760.01.02.ma.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050760",
+      "label": "schedule of reinforcement",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <uniform process aggregate> whose members are reinforcement processes involving an individual over a period of time.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "intermittent schedule of reinforcement"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050760.01.02.ma.e.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050765",
+      "label": "self-efficacy belief for avoiding a threat",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief> that one can take actions to avoid, reduce, or remove a threat or its effects.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050765.00.02.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050785",
+      "label": "strength of attention",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental process attribute> that is the extent to which attentional resources are focused on a target.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050785.00.00.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050789",
+      "label": "technology availability",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <behavioural opportunity> that involves the extend to which technology is available in the environmental system.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050789.00.04.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050790",
+      "label": "temporal orientation",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <mental disposition> to appraise imagined future occurrences differently according to how far in the future they are judged to occur.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "temporal orientation to the future",
+        "temporal orientation to the present"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050790.02.27.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050794",
+      "label": "vicarious learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Observational learning> that occurs through observing the consequences of the actions of others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050794.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050795",
+      "label": "vicarious learning capability",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An <observational learning capability> through the observing the consequences of the actions of others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050795.00.00.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050798",
+      "label": "willingness to adopt new behaviours",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <willingness to change behaviour> to adopt new behaviours.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050798.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050800",
+      "label": "observational learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Learning> that occurs through observing others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "vicarious learning",
+        "imitative learning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050800.02.04.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050801",
+      "label": "adherence to healthcare treatment",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "Participating in healthcare treatment in accordance with treatment instructions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050801.00.04.be.f.ma.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050807",
+      "label": "carer monitoring of child behaviour",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A monitoring behaviour in which a carer gathers information about the activities of some child in their care.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050807.00.00.be.f.ma.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050811",
+      "label": "cue management behaviour",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A regulatory behaviour in which cues that prompt a behaviour pattern are added, altered or removed.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050811.00.00.be.ma.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050817",
+      "label": "frequency of past behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A behavioural frequency about the number of times a person has enacted a behaviour per unit of time.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "low frequency of past behaviour",
+        "high frequency of past behaviour",
+        "low frequency of past behaviour",
+        "high frequency of past behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050817.02.00.be.d.ma.p.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050821",
+      "label": "health-promoting behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A health-related behaviour that improves the person’s health.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050821.00.04.be.ma.sd.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050825",
+      "label": "monitoring behaviour",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A knowledge development behaviour that involves gathering information over a period of time.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "carer monitoring of child behaviour",
+        "carer monitoring of child behaviour",
+        "carer monitoring of child behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050825.01.01.be.f.ma.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050838",
+      "label": "spontaneous recovery",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <bodily process> in which a previously learned and then extinguished stimulus-response association becomes as least partially re-established without new pairing with a reinforcer.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050838.00.14.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050839",
+      "label": "task complexity",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A process attribute that is the complexity of thought or behaviour required to achieve a goal.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050839.00.03.be.ma.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050886",
+      "label": "extent of past behavioural achievement",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A personal attribute that is the extent to which the person’s past behaviour has reached or exceeded a standard.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050886.00.31.be.p.ma.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050887",
+      "label": "leadership role",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "A social role in which the holder is given or creates authority to exert influence on other members of a social group.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050887.00.01.be.p.ma.sd.r.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050887",
+      "label": "leadership role",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "A social role in which the holder is given or creates authority to exert influence on other members of a social group.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050887.00.01.be.p.ma.sd.r.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050915",
+      "label": "rural area",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A population and resource density that involves being outside of an urban or suburban area and has a low density of population and buildings.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050915.00.02.r.se",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050916",
+      "label": "participant engagement with intervention",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An individual human activity of an intervention participant within one or more parts of the intervention.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "participant engagement with behaviour change intervention",
+        "participant engagement with behaviour change intervention",
+        "participant engagement with behaviour change intervention"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050916.01.00.bc.be.p.ma.md.se.so.sd.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050917",
+      "label": "high frequency of past behaviour",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Dose",
+        "Reach"
+      ],
+      "definition": "A frequency of past behaviour that is above a threshold.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050917.00.01.be.d.ma.p.r.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050917",
+      "label": "high frequency of past behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Reach"
+      ],
+      "definition": "A frequency of past behaviour that is above a threshold.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050917.00.01.be.d.ma.p.r.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050918",
+      "label": "low frequency of past behaviour",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A frequency of past behaviour that is below a threshold.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050918.00.01.be.d.ma.p.sd",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050929",
+      "label": "monitoring of others",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring process> in which one observes others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "social norm monitoring"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050929.01.01.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050930",
+      "label": "monitoring process",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <mental process> in which one observes to inform their own behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "self-monitoring",
+        "monitoring of others"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050930.02.32.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050932",
+      "label": "social norm monitoring",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <monitoring of others> to align one's behaviours with perceived social norms.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050932.00.00.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050936",
+      "label": "awareness of standards",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "An <awareness> of a standard or benchmark.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050936.00.02.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050947",
+      "label": "motivation to deviate",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <behavioural motivation> to act contrary to likely approval of others.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050947.00.08.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050950",
+      "label": "social learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "<Learning> that involves a social influence process.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050950.00.04.ma.r.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050950",
+      "label": "social learning",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Engagement",
+        "Reach"
+      ],
+      "definition": "<Learning> that involves a social influence process.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050950.00.04.ma.r.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050951",
+      "label": "willingness to cease behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <willingness to change behaviour> regarding the cessation of behaviours.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050951.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050952",
+      "label": "willingness to change behaviour",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <bodily disposition> to change one's behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "willingness to adopt new behaviours",
+        "willingness to cease behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050952.02.11.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050956",
+      "label": "degree of organisational hierarchy",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "An <organisational attribute> that is the strength and depth of formal authority relations between members of an organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050956.00.00.f.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050956",
+      "label": "degree of organisational hierarchy",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "An <organisational attribute> that is the strength and depth of formal authority relations between members of an organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050956.00.00.f.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050957",
+      "label": "organisational attribute",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <characteristic> that inheres in an organisation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "degree of organisational hierarchy"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050957.01.08.f.ma",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050962",
+      "label": "response generalisation in learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Generalisation in learning> concerning the behavioural response.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050962.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050963",
+      "label": "belief about accountability for the consequences of an action",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A <belief about responsibility>  about whether one should be accountable for the outcomes of an event.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050963.00.01.ma.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050965",
+      "label": "generalisation in learning",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Associative learning> in which prior learning that an antecedent stimulus signals certain consequences of a behaviour spreads to a stimulus or behaviour that differs from the original stimulus or behaviour.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "response generalisation in learning",
+        "stimulus generalisation in learning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050965.02.06.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050966",
+      "label": "hedonic goal",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <proximal goal> in which the end state is pleasure or relief from displeasure.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "CROSS",
+      "drefs_assignment": "index_suffix",
+      "full_id": "BCIO:050966.00.00.ma.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "ADDICTO:0000511",
+      "label": "subjective craving",
+      "source_ontology": "ADDICTO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <subjective affective feeling> involving a strong desire or urge.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "ADDICTO:0000511.00.16.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "ADDICTO:0001378",
+      "label": "drug withdrawal syndrome",
+      "source_ontology": "ADDICTO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A bodily disposition to undergo pathological processes characterized by physiological or psychological dysfunction that exists in an organism because of homeostatic disruption resulting from the cessation or reduction of repeated drug exposure.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "ADDICTO:0001378.00.11.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "GO:0046959",
+      "label": "habituation",
+      "source_ontology": "GO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A decrease in a behavioral response to a repeated stimulus. This is exemplified by the failure of a person to show a startle response to a loud noise that has been repeatedly presented.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "GO:0046959.00.01.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "GO:0046960",
+      "label": "sensitization",
+      "source_ontology": "GO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An increase in a behavioural response to a repeated stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "GO:0046960.00.01.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "GO:0098596",
+      "label": "imitative learning",
+      "source_ontology": "GO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "<Observational learning> in which new behaviours are acquired through imitation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "GO:0098596.00.01.ma.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000008",
+      "label": "cognitive process",
+      "source_ontology": "MF",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <mental process> that creates, modifies or has as participant some cognitive representation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "decision simplification",
+        "comprehension"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000008.06.33.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000012",
+      "label": "arousal",
+      "source_ontology": "MF",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <mental process> that involves heightened responding to an internal or external stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000012.00.33.bc.be.p.ma.md.se.so.sd.d.e.sh",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000012",
+      "label": "arousal",
+      "source_ontology": "MF",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <mental process> that involves heightened responding to an internal or external stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000012.00.33.bc.be.p.ma.md.se.so.sd.d.e.sh",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000012",
+      "label": "arousal",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement",
+        "Schedule"
+      ],
+      "definition": "A <mental process> that involves heightened responding to an internal or external stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000012.00.33.bc.be.p.ma.md.se.so.sd.d.e.sh",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000013",
+      "label": "thinking",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <cognitive process> that involves the manipulation of mental language and/or mental images.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "ruminating",
+        "reflective thinking"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000013.02.15.bc.be.p.ma.md.se.so.sd.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000018",
+      "label": "attending",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental process> whereby relevant aspects of one's mental experience are focused on specific targets.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "attending to a social norm",
+        "attending to a goal"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000018.02.33.bc.be.p.ma.md.se.so.sd.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000019",
+      "label": "perception",
+      "source_ontology": "MF",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A <mental process> which is a) produced by a causal process involving a part of the environment of the organism, and b) is experienced by the organism as being so caused, and c) in which the relevant part of the environment is thereby represented to the organism.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000019.00.33.bc.be.p.ma.md.se.so.sd.d.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000019",
+      "label": "perception",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Dose",
+        "Engagement"
+      ],
+      "definition": "A <mental process> which is a) produced by a causal process involving a part of the environment of the organism, and b) is experienced by the organism as being so caused, and c) in which the relevant part of the environment is thereby represented to the organism.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000019.00.33.bc.be.p.ma.md.se.so.sd.d.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000027",
+      "label": "planning",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental process> that involves mentally manipulating representations of steps in an imagined process which has some goal.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "action planning",
+        "coping planning"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000027.02.33.bc.be.p.ma.md.se.so.sd.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000031",
+      "label": "cognitive representation",
+      "source_ontology": "MF",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <representation> which specifically depends on an anatomical structure in the cognitive system of an organism.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "affective apraisal",
+        "identity",
+        "affective apraisal",
+        "identity"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000031.08.00.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000041",
+      "label": "belief",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity"
+      ],
+      "definition": "A <mental disposition> to represent a proposition to be true.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "belief about responsibility",
+        "belief about control over valued outcomes"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000041.32.27.bc.be.e.f.ma.md.p.sd.se.so",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000041",
+      "label": "belief",
+      "source_ontology": "MF",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity"
+      ],
+      "definition": "A <mental disposition> to represent a proposition to be true.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "belief about responsibility",
+        "belief about control over valued outcomes"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000041.32.27.bc.be.e.f.ma.md.p.sd.se.so",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000045",
+      "label": "wanting",
+      "source_ontology": "MF",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <mental process> that involves thinking about a state of affairs that is not yet the case together with a desire for that state of affairs to come about.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000045.00.33.bc.be.p.ma.md.se.so.sd.e",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MF:0000088",
+      "label": "subliminal process",
+      "source_ontology": "MF",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A <mental process> that involves neuronal activity in response to a sensory stimulus but which is not the subject of consciousness.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MF:0000088.00.38.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MFOEM:000002",
+      "label": "affective appraisal process",
+      "source_ontology": "MFOEM",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity"
+      ],
+      "definition": "A <mental process> that gives rise to an appraisal.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "accepting responsibility for changing one?s behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MFOEM:000002.01.33.bc.be.e.f.ma.md.p.sd.se.so",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MFOEM:000002",
+      "label": "affective appraisal process",
+      "source_ontology": "MFOEM",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Engagement",
+        "Fidelity"
+      ],
+      "definition": "A <mental process> that gives rise to an appraisal.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [
+        "accepting responsibility for changing one?s behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MFOEM:000002.01.33.bc.be.e.f.ma.md.p.sd.se.so",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "PDRO:0000117",
+      "label": "dose interval specification",
+      "source_ontology": "PDRO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An information content entity that specifies the minimum and maximum quantities of drug product or active ingredient in a dose administration.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "PDRO:0000117.00.07.bc.be.p.ma.md.se.so.sd.d",
+      "import_type": "IMPORT-BCIO"
+    },
+    {
+      "base_id": "MeSH:D011322",
+      "label": "priming, psychological",
+      "source_ontology": "MeSH",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "Prior exposure to a stimulus facilitates or inhibits subsequent processing. Relevant to microdosing of informational interventions and subliminal activation.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D011322.00.00.bc.ma.d",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D055808",
+      "label": "diffusion of innovation",
+      "source_ontology": "MeSH",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "The broad dissemination of new technologies, ideas, or practices through a population. Relevant to reach and population-level spread of behaviour change interventions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D055808.00.00.p.ma.r",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D005838",
+      "label": "generalization, psychological",
+      "source_ontology": "MeSH",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "The tendency to apply a learned response to stimuli other than those in original learning. Operationalises Shepard Universal Law of Generalization for engagement transfer across contexts.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D005838.00.00.ma.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D057169",
+      "label": "nudging",
+      "source_ontology": "MeSH",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Indirect suggestions and positive reinforcements influencing behaviour while maintaining freedom of choice. A form of choice architecture increasing engagement without restricting alternatives.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D057169.00.00.bc.se.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D055815",
+      "label": "dose-response relationship",
+      "source_ontology": "MeSH",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "The relationship between dose of an administered agent and the organism response. Applied to behaviour change: how effect size changes as a function of intervention dose.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D055815.00.00.ma.d",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D004304",
+      "label": "distributed practice",
+      "source_ontology": "MeSH",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A learning strategy spreading practice over time with rest periods between sessions. Produces more durable effects than massed practice (spacing effect).",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D004304.00.00.bc.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D056645",
+      "label": "massed practice",
+      "source_ontology": "MeSH",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A learning strategy concentrating practice into a single session without rest. Faster initial learning but less durable retention than distributed practice.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D056645.00.00.bc.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D000597",
+      "label": "serial learning",
+      "source_ontology": "MeSH",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "Learning to respond to stimuli in a definite order. Relates to primacy and recency effects in schedule design.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D000597.00.00.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D008568",
+      "label": "memory consolidation",
+      "source_ontology": "MeSH",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "Stabilization of newly acquired information in long-term memory following learning. Determines optimal inter-session intervals for intervention scheduling.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D008568.00.00.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D001143",
+      "label": "arousal",
+      "source_ontology": "MeSH",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "Cortical alertness or readiness to perform resulting from sensory stimulation. Relates to Yerkes-Dodson law: optimal arousal determines optimal dose intensity.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D001143.00.00.ma.d.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D001143",
+      "label": "arousal",
+      "source_ontology": "MeSH",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Dose",
+        "Schedule"
+      ],
+      "definition": "Cortical alertness or readiness to perform resulting from sensory stimulation. Relates to Yerkes-Dodson law: optimal arousal determines optimal dose intensity.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D001143.00.00.ma.d.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D004192",
+      "label": "discrimination, psychological",
+      "source_ontology": "MeSH",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "The ability to distinguish stimuli that differ in some dimension. Relates to Weber-Fechner law: just noticeable difference is a constant fraction of original stimulus.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D004192.00.00.ma.d",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D006727",
+      "label": "hormesis",
+      "source_ontology": "MeSH",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "A dose-response phenomenon characterised by low-dose stimulation and high-dose inhibition. Applied to behaviour change: low-intensity interventions may stimulate engagement while high-intensity may suppress it.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D006727.00.00.ma.d",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D003657",
+      "label": "decision making",
+      "source_ontology": "MeSH",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Selective intellectual judgment when presented with complex alternatives. Includes prospect theory constructs: loss aversion, reference point, framing effects on engagement.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D003657.00.00.ma.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D011613",
+      "label": "psychotherapy, rational-emotive",
+      "source_ontology": "MeSH",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Psychotherapy based on the ABC model: Activating event -> Belief -> Consequence. Reframed as MoA: belief appraisal drives behavioural engagement.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D011613.00.00.ma.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D064168",
+      "label": "implementation science",
+      "source_ontology": "MeSH",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "Scientific study of methods to promote uptake of evidence-based practices into routine use. Encompasses implementation intentions, fidelity, and drift constructs.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D064168.00.00.f.ma.r.se",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "MeSH:D064168",
+      "label": "implementation science",
+      "source_ontology": "MeSH",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "Scientific study of methods to promote uptake of evidence-based practices into routine use. Encompasses implementation intentions, fidelity, and drift constructs.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "MeSH:D064168.00.00.f.ma.r.se",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "GO:0007623",
+      "label": "circadian rhythm",
+      "source_ontology": "GO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A biological process recurring with approximately 24-hour regularity. Relevant to scheduling: time of day modulates receptivity to behavioural interventions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "GO:0007623.00.00.ma.se.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "GO:0097696",
+      "label": "memory consolidation",
+      "source_ontology": "GO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "Process by which newly acquired information is stabilised following learning. Required for durable behaviour change; determines optimal inter-session intervals.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "GO:0097696.00.00.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:NPT",
+      "label": "normalisation process theory",
+      "source_ontology": "iSci",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "Theory explaining how new practices become embedded in routine work through coherence, cognitive participation, collective action, and reflexive monitoring. Relevant to implementation fidelity.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:NPT.00.00.ma.se.f",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:REAIM",
+      "label": "re-aim framework",
+      "source_ontology": "iSci",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "Framework evaluating public health impact across Reach, Effectiveness, Adoption, Implementation, Maintenance. Formalises reach as a distinct evaluation dimension.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:REAIM.00.00.bc.p.r.f",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:REAIM",
+      "label": "re-aim framework",
+      "source_ontology": "iSci",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Reach"
+      ],
+      "definition": "Framework evaluating public health impact across Reach, Effectiveness, Adoption, Implementation, Maintenance. Formalises reach as a distinct evaluation dimension.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:REAIM.00.00.bc.p.r.f",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:FidelityDrift",
+      "label": "implementation drift",
+      "source_ontology": "iSci",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "Gradual deviation of an intervention from its original protocol over time. Describes the mechanics of how interventions transform during sustained delivery.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:FidelityDrift.00.00.ma.f",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:ImplementationIntentions",
+      "label": "implementation intentions",
+      "source_ontology": "iSci",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "If-then plans specifying when, where, and how a behaviour will be performed. Enhance fidelity by translating abstract goals into concrete action sequences.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:ImplementationIntentions.00.00.bc.ma.f.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "iSci:ImplementationIntentions",
+      "label": "implementation intentions",
+      "source_ontology": "iSci",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Fidelity",
+        "Schedule"
+      ],
+      "definition": "If-then plans specifying when, where, and how a behaviour will be performed. Enhance fidelity by translating abstract goals into concrete action sequences.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "iSci:ImplementationIntentions.00.00.bc.ma.f.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "APA:Flow",
+      "label": "flow, psychological",
+      "source_ontology": "APA",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Complete absorption in a challenging activity where skill matches task demands. Represents optimal engagement; predicts sustained participation in behaviour change interventions.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "APA:Flow.00.00.ma.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "APA:JDR",
+      "label": "job demands-resources model",
+      "source_ontology": "APA",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "Job demands lead to burnout while resources foster engagement. Applied to behaviour change: intervention demands vs resources determine participant engagement vs dropout.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "APA:JDR.00.00.ma.se.e",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "APA:Sensemaking",
+      "label": "sensemaking",
+      "source_ontology": "APA",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "The process by which people give meaning to collective experiences through their own frames. Determines how implementers interpret and adhere to protocols.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "APA:Sensemaking.00.00.ma.so.f",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "APA:BehavioralMomentum",
+      "label": "behavioral momentum",
+      "source_ontology": "APA",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "The tendency for behaviour to persist in the face of disruption, analogous to physical momentum. Behaviour reinforced at high rates is more resistant to change; relevant to reinforcement scheduling.",
+      "parent_id": "",
+      "parent_label": "",
+      "ancestor_path": "",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:n/a",
+      "status": "IMPORT",
+      "drefs_assignment": "index_suffix",
+      "full_id": "APA:BehavioralMomentum.00.00.ma.sh",
+      "import_type": "IMPORT-AUTHOR"
+    },
+    {
+      "base_id": "BCIO:007087",
+      "label": "arrange satiation BCT",
+      "source_ontology": "BCIO",
+      "module": "Dose",
+      "all_drefs_modules": [
+        "Dose"
+      ],
+      "definition": "An <expose to stimulus BCT> that provides sustained exposure to a stimulus to reduce or extinguish an unwanted behaviour.",
+      "parent_id": "BCIO:007085.04.06.bc",
+      "parent_label": "expose to stimulus BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > associative learning BCT > alter external stimulus BCT > expose to stimulus BCT",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007087.00.03.bc.d",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006042",
+      "label": "normative belief",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A <perceived norm> regarding whether key others think one should perform a behaviour.",
+      "parent_id": "BCIO:006039.03.31.ma",
+      "parent_label": "perceived norm",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > belief > perceived norm",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:006042.00.02.ma.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050556",
+      "label": "mass media mode of delivery",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "Informational mode of delivery of radio broadcast, television, online press and printed press to a mass audience.",
+      "parent_id": "BCIO:011001.07.14.md",
+      "parent_label": "informational mode of delivery",
+      "ancestor_path": "occurrent > process > process profile > process attribute > BCI attribute > behaviour change intervention mode of delivery > informational mode of delivery",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mode of Delivery",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050556.00.06.md.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050557",
+      "label": "social influence intervention through mass media",
+      "source_ontology": "BCIO",
+      "module": "Reach",
+      "all_drefs_modules": [
+        "Reach"
+      ],
+      "definition": "A behaviour change intervention that is an awareness of other people’s thoughts, feelings and actions BCT delivered through a mass media mode of delivery.",
+      "parent_id": "BCIO:003000.01.00.bc.be.p.ma.md.se.so.sd",
+      "parent_label": "behaviour change intervention",
+      "ancestor_path": "occurrent > process > planned process > intervention > behaviour change intervention",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mode of Delivery",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050557.00.00.md.r",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007252",
+      "label": "provide positive consequence for behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <provide consequence for behaviour BCT> where the consequence is positive.",
+      "parent_id": "BCIO:007240.02.03.bc",
+      "parent_label": "provide consequence for behaviour BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > behavioural consequence BCT > provide consequence for behaviour BCT",
+      "children": [
+        "provide positive social consequence for behaviour BCT",
+        "provide positive consequence for incompatible behaviour BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007252.08.01.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007264",
+      "label": "provide positive consequence for outcome of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <provide consequence for outcome of behaviour BCT> where the consequence is positive.",
+      "parent_id": "BCIO:007250.02.03.bc",
+      "parent_label": "provide consequence for outcome of behaviour BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > outcome consequence BCT > provide consequence for outcome of behaviour BCT",
+      "children": [
+        "provide reduced frequency of positive consequence for outcome of behaviour BCT",
+        "provide positive social consequence for outcome of behaviour BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007264.03.01.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007286",
+      "label": "remove aversive consequence for behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <remove consequence for behaviour BCT> where the consequence is aversive.",
+      "parent_id": "BCIO:007285.02.03.bc",
+      "parent_label": "remove consequence for behaviour BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > behavioural consequence BCT > remove consequence for behaviour BCT",
+      "children": [
+        "remove aversive social consequence for behaviour BCT",
+        "remove aversive material consequence for behaviour BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007286.02.01.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007289",
+      "label": "remove aversive consequence for outcome of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <remove consequence for outcome of behaviour BCT> in which the consequence is aversive.",
+      "parent_id": "BCIO:007292.02.03.bc",
+      "parent_label": "remove consequence for outcome of behaviour BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > outcome consequence BCT > remove consequence for outcome of behaviour BCT",
+      "children": [
+        "remove aversive social consequence for outcome of behaviour BCT",
+        "remove aversive material consequence for outcome of behaviour BCT"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007289.02.01.bc.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050644",
+      "label": "evaluation of information about behavioural self-efficacy",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "An <information evaluation process> about self-efficacy belief for a behaviour.",
+      "parent_id": "BCIO:050679.01.01.ma",
+      "parent_label": "information evaluation process",
+      "ancestor_path": "occurrent > process > bodily process > mental process > cognitive process > thinking > reflective thinking > information evaluation process",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050644.00.00.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050721",
+      "label": "negative reinforcement process",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <reinforcement process> in which the likelihood of behaviour is increased it being followed by termination or avoidance of a negatively appraised behaviour.",
+      "parent_id": "BCIO:050755.04.15.ma",
+      "parent_label": "reinforcement process",
+      "ancestor_path": "occurrent > process > reinforcement process",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050721.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050738",
+      "label": "positive reinforcement process",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <reinforcement process> in which the likelihood of a behaviour is increased by it being followed by a positively appraised event.",
+      "parent_id": "BCIO:050755.04.15.ma",
+      "parent_label": "reinforcement process",
+      "ancestor_path": "occurrent > process > reinforcement process",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050738.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050762",
+      "label": "self-efficacy belief for a behaviour during routine activities",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <self-efficacy belief for a behaviour> that is enacted as part of activities that are routine.",
+      "parent_id": "BCIO:006154.04.02.ma.e",
+      "parent_label": "self-efficacy belief for a behaviour",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > belief > self-efficacy belief > self-efficacy belief for a behaviour",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050762.00.03.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050763",
+      "label": "self-efficacy belief for a behaviour in the face of social pressure",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <situational self-efficacy belief for a behaviour> that is enacted against social pressire.",
+      "parent_id": "BCIO:006044.02.03.ma.e",
+      "parent_label": "situational self-efficacy belief for a behaviour",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > belief > self-efficacy belief > self-efficacy belief for a behaviour > situational self-efficacy belief for a behaviour",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050763.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050764",
+      "label": "self-efficacy belief for a behaviour under conditions of stress",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <situational self-efficacy belief for a behaviour> that is enacted when under stress.",
+      "parent_id": "BCIO:006044.02.03.ma.e",
+      "parent_label": "situational self-efficacy belief for a behaviour",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > belief > self-efficacy belief > self-efficacy belief for a behaviour > situational self-efficacy belief for a behaviour",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050764.00.01.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050898",
+      "label": "self-efficacy belief",
+      "source_ontology": "BCIO",
+      "module": "Engagement",
+      "all_drefs_modules": [
+        "Engagement"
+      ],
+      "definition": "A <belief> about one's capabilities to organise and execute a process or achieve an outcome.",
+      "parent_id": "MF:0000041.32.27.bc.be.p.ma.md.se.so.sd.e",
+      "parent_label": "belief",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > belief",
+      "children": [
+        "self-efficacy belief for a behaviour",
+        "self-efficacy belief for avoiding a threat"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050898.03.31.ma.e",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007080",
+      "label": "prompt intended action BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "An <alter external stimulus BCT> that involves introducing an external stimulus to facilitate the behaviour for which an intention has previously been formed.",
+      "parent_id": "BCIO:007079.07.02.bc",
+      "parent_label": "alter external stimulus BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > associative learning BCT > alter external stimulus BCT",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007080.00.06.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007081",
+      "label": "cue BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "An <alter external stimulus BCT> that introduces external information that is already associated with the behaviour in order to elicit that behaviour.",
+      "parent_id": "BCIO:007079.07.02.bc",
+      "parent_label": "alter external stimulus BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > associative learning BCT > alter external stimulus BCT",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007081.00.06.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:007169",
+      "label": "context-specific non-enactment of behaviour BCT",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "An <advise specific behaviour BCT> that advises the person to refrain from engaging in the behaviour in a specified context.",
+      "parent_id": "BCIO:007168.08.19.bc",
+      "parent_label": "advise specific behaviour BCT",
+      "ancestor_path": "occurrent > process > planned process > behaviour change technique > advise specific behaviour BCT",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:BCT",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:007169.00.07.bc.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050209",
+      "label": "individual human behaviour change",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "A process that results in a difference in enactment of some individual human behaviour or individual human behaviour pattern from what would have been the case otherwise.",
+      "parent_id": "BFO:0000015.21.02.bc.be.p.ma.md.se.so.sd",
+      "parent_label": "process",
+      "ancestor_path": "occurrent > process",
+      "children": [
+        "behaviour change through group norm",
+        "individual human behaviour pattern cessation",
+        "behaviour change through group norm",
+        "individual human behaviour pattern cessation"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050209.02.17.be.ma.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050834",
+      "label": "regulatory behaviour",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "An experience-related behaviour that involves monitoring and acting upon some parts of the person or their environment.",
+      "parent_id": "BCIO:050443.10.15.be.ma.sd",
+      "parent_label": "experience-related behaviour",
+      "ancestor_path": "occurrent > process > bodily process > individual human behaviour > experience-related behaviour",
+      "children": [
+        "cue management behaviour",
+        "cue management behaviour",
+        "cue management behaviour"
+      ],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050834.01.09.be.ma.sd.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:050844",
+      "label": "action planning",
+      "source_ontology": "BCIO",
+      "module": "Fidelity",
+      "all_drefs_modules": [
+        "Fidelity"
+      ],
+      "definition": "<Planning> that has as a part some goal that is specified in terms of some behaviour and a time or place where the behaviour is to be enacted.",
+      "parent_id": "MF:0000027.02.33.bc.be.p.ma.md.se.so.sd.e",
+      "parent_label": "planning",
+      "ancestor_path": "occurrent > process > bodily process > mental process > planning",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:050844.00.01.ma.f",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006155",
+      "label": "learned stimulus-behaviour co-occurrence",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "A <learned stimulus-response co-occurrence> that involves a behavioural disposition in response to an internal or external event in the person's environment, which is acquired through habit learning.",
+      "parent_id": "BCIO:006057.02.27.ma",
+      "parent_label": "learned stimulus-reponse co-occurrence",
+      "ancestor_path": "continuant > specifically dependent continuant > realizable > disposition > bodily disposition > mental disposition > learned stimulus-reponse co-occurrence",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:006155.00.01.ma.sh",
+      "import_type": "CROSS"
+    },
+    {
+      "base_id": "BCIO:006158",
+      "label": "habitual behaviour",
+      "source_ontology": "BCIO",
+      "module": "Schedule",
+      "all_drefs_modules": [
+        "Schedule"
+      ],
+      "definition": "An <individual human behaviour> that results from a learnt stimulus-behaviour co-occurrence.",
+      "parent_id": "BCIO:036000.16.16.bc.be.p.ma.md.se.so.sd",
+      "parent_label": "individual human behaviour",
+      "ancestor_path": "occurrent > process > bodily process > individual human behaviour",
+      "children": [],
+      "siblings": [],
+      "hierarchy_source": "clean:Mechanisms of Action",
+      "status": "CROSS",
+      "drefs_assignment": "ranker_semantic",
+      "full_id": "BCIO:006158.00.15.be.ma.sd.sh",
+      "import_type": "CROSS"
+    }
+  ]
+}
