@@ -31,7 +31,14 @@ Its strengths:
 
 ### BPMS
 
-In this bot, **BPMS** is a non-standard term specific to this runtime. It refers to the intervention-design layer across the main modules used in the runtime package.
+In this bot, BPMS is a non-standard term specific to this runtime. It refers to the eight BCIO sub-ontology modules that form the intervention-description layer. The abbreviation follows the first letter of each module name:
+
+- B = Behaviour + BCT (Behaviour Change Technique)
+- P = Population
+- M = Mechanisms of Action + Mode of Delivery
+- S = Source + Setting + Style of Delivery
+
+These eight modules are fully published on bciosearch.org. In practical work, final solution breakdown is carried out across all 13 modules — BPMS plus the five DREFS modules (Dose, Reach, Engagement, Fidelity, Schedule).
 
 In practical work, final solution breakdown is carried out across **all 13 modules**, not reduced to only one or two end-stage boxes.
 
