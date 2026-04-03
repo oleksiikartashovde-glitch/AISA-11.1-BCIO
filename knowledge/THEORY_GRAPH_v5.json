@@ -35,7 +35,7 @@
       "stage_model": 8
     },
     "drefs_ids_used": 87,
-    "drefs_ids_available": 146,
+    "drefs_ids_available": 224,
     "drefs_coverage_pct": 59.6
   },
   "theories": {
@@ -53230,15 +53230,16 @@
   "drefs_core_vocabulary": {
     "file": "DREFS_CORE_VOCABULARY.json",
     "version": "v2.0",
-    "total_drefs_terms": 152,
+    "total_drefs_terms": 260,
     "used_in_this_graph": 87,
     "by_module": {
-      "Engagement": 58,
-      "Reach": 22,
-      "Fidelity": 27,
-      "Dose": 32,
-      "Schedule": 33
+      "Dose": 43,
+      "Reach": 40,
+      "Engagement": 90,
+      "Fidelity": 50,
+      "Schedule": 37
     }
   },
-  "_step6_patch": "terms[] embedded per entry. Sources: label, gap_pattern, core_cluster."
+  "_step6_patch": "terms[] embedded per entry. Sources: label, gap_pattern, core_cluster.",
+  "_meta_drefs_hierarchy": "DREFS_HIERARCHY v3.0 sync. Contains L1/L2/L3 internal hierarchy for all 5 DREFS modules (224 unique IDs, 260 entries with cross-module overlaps). Sources: bcio_index.json + BCIO_CANDIDATE_RANKER.json + bcio_clean.json. Use for: module activation (L1 anchor), mechanism identification (L2), specificity (L3), gap detection by level, top-down and bottom-up traversal."
 }
