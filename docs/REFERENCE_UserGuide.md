@@ -55,13 +55,13 @@ The following counts are taken directly from the runtime index (`bcio_index.json
 
 |Module                           |Terms in index|
 |---------------------------------|--------------|
-|D — Dose                         |42            |
-|R — Reach                        |37            |
-|E — Engagement                   |79            |
-|F — Fidelity                     |44            |
-|S — Schedule                     |35            |
-|**Total entries (with overlaps)**|**237**       |
-|**Unique IDs across all DREFS**  |**201**       |
+|D — Dose                         |43            |
+|R — Reach                        |40            |
+|E — Engagement                   |90            |
+|F — Fidelity                     |50            |
+|S — Schedule                     |37            |
+|**Total entries (with overlaps)**|**260**       |
+|**Unique IDs across all DREFS**  |**224**       |
 
 ### New codification principles
 
@@ -190,14 +190,14 @@ It works with the ontology across all 13 modules available to the bot.
 
 Core DREFS modules only:
 
-- **Dose:** 35 IDs
-- **Reach:** 37 IDs
-- **Engagement:** 68 IDs
-- **Fidelity:** 31 IDs
-- **Schedule:** 35 IDs
+- **Dose:** 43 IDs
+- **Reach:** 40 IDs
+- **Engagement:** 90 IDs
+- **Fidelity:** 50 IDs
+- **Schedule:** 37 IDs
 
-Total entries across the 5 modules (with overlaps): **206**
-Unique IDs across all DREFS: **189**
+Total entries across the 5 modules (with overlaps): **260**
+Unique IDs across all DREFS: **224**
 
 ### Examples of IDs inside each DREFS module
 
