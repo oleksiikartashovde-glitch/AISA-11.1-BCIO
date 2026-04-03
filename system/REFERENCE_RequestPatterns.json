@@ -6,7 +6,7 @@
       "detected_task_type": "guide_access",
       "recommended_route": "guide_direct_markdown_link_output",
       "required_output": "literal_markdown_link_only",
-      "exact_output": "[Reference & guideMap](https://github.com/oleksiikartashovde-glitch/AISA-11.1-BCIO/blob/82413fa93909d434084bcaf78b9a8c6333191829/docs/REFERENCE_UserGuide.md)",
+      "exact_output": "[Reference & guideMap](https://github.com/oleksiikartashovde-glitch/AISA-11.1-BCIO/blob/main/docs/REFERENCE_UserGuide.md)",
       "forbidden": [
         "file lookup",
         "reference retrieval",
@@ -22,7 +22,7 @@
       "detected_task_type": "guide_access",
       "recommended_route": "guide_direct_markdown_link_output",
       "required_output": "literal_markdown_link_only",
-      "exact_output": "[Reference & guideMap](https://github.com/oleksiikartashovde-glitch/AISA-11.1-BCIO/blob/82413fa93909d434084bcaf78b9a8c6333191829/docs/REFERENCE_UserGuide.md)",
+      "exact_output": "[Reference & guideMap](https://github.com/oleksiikartashovde-glitch/AISA-11.1-BCIO/blob/main/docs/REFERENCE_UserGuide.md)",
       "forbidden": [
         "file lookup",
         "reference retrieval",
